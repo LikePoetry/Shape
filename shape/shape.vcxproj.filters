@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Shape">
+      <UniqueIdentifier>{D6A4170E-42B9-3FBF-0B3B-E31E770E3CF0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Core">
+      <UniqueIdentifier>{EE3E27F9-DAF6-6846-43FE-41A22FD50337}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Shape\Core\Application.h">
+      <Filter>Shape\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Core\Core.h">
+      <Filter>Shape\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Core\EntryPoint.h">
+      <Filter>Shape\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\hzpch.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Shape\Core\Application.cpp">
+      <Filter>Shape\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\hzpch.cpp" />
+  </ItemGroup>
+</Project>
