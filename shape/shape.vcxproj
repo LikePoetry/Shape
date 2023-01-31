@@ -55,6 +55,7 @@
   <ItemGroup>
     <ClInclude Include="Src\Shape\Core\Application.h" />
     <ClInclude Include="Src\Shape\Core\Core.h" />
+    <ClInclude Include="Src\Shape\Core\CoreSystem.h" />
     <ClInclude Include="Src\Shape\Core\EntryPoint.h" />
     <ClInclude Include="Src\hzpch.h" />
   </ItemGroup>
@@ -63,6 +64,7 @@
     <ClCompile Include="Src\hzpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\CoreSystem.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

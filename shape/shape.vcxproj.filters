@@ -19,11 +19,13 @@
       <Filter>Shape\Core</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
+    <ClInclude Include="Src\Shape\Core\CoreSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
+    <ClCompile Include="Src\Shape\Core\CoreSystem.cpp" />
   </ItemGroup>
 </Project>
