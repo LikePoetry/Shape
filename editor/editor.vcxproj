@@ -7,10 +7,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{AC2EC5FA-98D0-EFD0-818B-03256DCC7621}</ProjectGuid>
+    <ProjectGuid>{8C1A20B0-78BC-4A86-6177-5EDA4DB8D1D6}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>editor</RootNamespace>
+    <RootNamespace>Editor</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -18,7 +18,7 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -29,9 +29,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>..\bin\Debug-windows-x86_64\editor\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-x86_64\editor\</IntDir>
-    <TargetName>editor</TargetName>
+    <OutDir>..\bin\Debug-windows-x86_64\Editor\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\Editor\</IntDir>
+    <TargetName>Editor</TargetName>
     <TargetExt>.exe</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -40,7 +40,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>USE_VMA_ALLOCATOR;WIN32_LEAN_AND_MEAN;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\shape\Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Shape\Src;..\Shape\External\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -56,8 +56,8 @@
     <ClCompile Include="Src\RunTime.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\shape\shape.vcxproj">
-      <Project>{F6B45A10-62C9-82C1-2B4B-2621971E7FF2}</Project>
+    <ProjectReference Include="..\Shape\Shape.vcxproj">
+      <Project>{D6A4170E-42B9-3FBF-0B3B-E31E770E3CF0}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

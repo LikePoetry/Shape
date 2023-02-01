@@ -7,10 +7,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F6B45A10-62C9-82C1-2B4B-2621971E7FF2}</ProjectGuid>
+    <ProjectGuid>{D6A4170E-42B9-3FBF-0B3B-E31E770E3CF0}</ProjectGuid>
     <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>shape</RootNamespace>
+    <RootNamespace>Shape</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -18,7 +18,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -28,9 +28,9 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>..\bin\Debug-windows-x86_64\shape\</OutDir>
-    <IntDir>..\bin-int\Debug-windows-x86_64\shape\</IntDir>
-    <TargetName>shape</TargetName>
+    <OutDir>..\bin\Debug-windows-x86_64\Shape\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\Shape\</IntDir>
+    <TargetName>Shape</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -40,7 +40,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Src;External\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -51,6 +51,9 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>..\spdlog;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Src\Shape\Core\Application.h" />
@@ -58,13 +61,16 @@
     <ClInclude Include="Src\Shape\Core\CoreSystem.h" />
     <ClInclude Include="Src\Shape\Core\EntryPoint.h" />
     <ClInclude Include="Src\hzpch.h" />
+    <ClInclude Include="Src\Shape\Core\Log.h" />
+    <ClInclude Include="Src\Shape\Core\Version.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp" />
+    <ClCompile Include="Src\Shape\Core\CoreSystem.cpp" />
     <ClCompile Include="Src\hzpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Core\CoreSystem.cpp" />
+    <ClCompile Include="Src\Shape\Core\Log.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

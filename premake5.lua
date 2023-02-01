@@ -4,9 +4,12 @@ function SetRecommendedSettings()
 	warnings "Off"
 end
 
-workspace "shape"
+IncludeDir = {}
+IncludeDir["spdlog"] = "Shape/External/spdlog/include"
+
+workspace "Shape"
     architecture "x64"
-    startproject "editor"
+    startproject "Editor"
 
     configurations{
         "Debug"
@@ -14,11 +17,17 @@ workspace "shape"
 
     outputdir="%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+group "External"
+	require("Shape/External/spdlog/premake5")
+	SetRecommendedSettings()
+
+
 group ""
 
+
 --静态链接库，核心文件
-project "shape"
-	location "shape"
+project "Shape"
+	location "Shape"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
@@ -35,7 +44,13 @@ project "shape"
 
 	includedirs
 	{
-		"%{prj.name}/Src"
+		"%{prj.name}/Src",
+		"%{IncludeDir.spdlog}",
+	}
+
+	libdirs 
+	{ 
+		"spdlog",
 	}
 
 	filter 'architecture:x86_64'
@@ -48,7 +63,7 @@ project "shape"
 		characterset ("Unicode")
 
 		pchheader "hzpch.h"
-		pchsource "shape/Src/hzpch.cpp"
+		pchsource "Shape/Src/hzpch.cpp"
 		
 		links
 		{
@@ -59,9 +74,9 @@ project "shape"
 		"/MP", "/bigobj"
 		}
 
-		filter 'files:shape/external/**.cpp'
+		filter 'files:Shape/External/**.cpp'
 			flags  { 'NoPCH' }
-		filter 'files:shape/external/**.c'
+		filter 'files:Shape/External/**.c'
 			flags  { 'NoPCH' }
 
 
@@ -74,8 +89,8 @@ project "shape"
 		optimize "Off"
 
 -- 测试工具项目
-project "editor"
-    location "editor"
+project "Editor"
+    location "Editor"
 	kind "ConsoleApp"
 	language "C++"
 	editandcontinue "Off"
@@ -92,15 +107,16 @@ project "editor"
 
     includedirs
 	{
-        "shape/Src"
+        "Shape/Src",
+		"%{IncludeDir.spdlog}",
     }
 
     links
     {
-        "shape"
+        "Shape"
     }
 
-	filter { "files:shape/external/**"}
+	filter { "files:Shape/External/**"}
 	warnings "Off"
 
 filter 'architecture:x86_64'
