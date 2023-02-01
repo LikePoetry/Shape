@@ -35,3 +35,8 @@
 #ifdef SHAPE_ENGINE
 #define SHAPE_ASSERT SHAPE_CORE_ASSERT
 #endif // SHAPE_ENGINE
+
+
+#define NONCOPYABLE(type_identifier)                             \
+    type_identifier(const type_identifier&)            = delete; \
+    type_identifier& operator=(const type_identifier&) = delete;

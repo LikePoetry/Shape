@@ -34,6 +34,7 @@
     <ClInclude Include="Src\Shape\Core\JobSystem.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
+    <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
