@@ -1,5 +1,6 @@
 #include "Shape/Core/Application.h"
 #include "Shape/Core/EntryPoint.h"
+#include "Shape/Core/Profiler.h"
 
 using namespace Shape;
 
@@ -10,6 +11,7 @@ public:
 	explicit Runtime()
 		: Application()
 	{
+		SHAPE_PROFILE_FUNCTION();
 	}
 
 	~Runtime()

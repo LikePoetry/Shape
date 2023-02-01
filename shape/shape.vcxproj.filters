@@ -21,9 +21,16 @@
     <ClInclude Include="Src\Shape\Core\EntryPoint.h">
       <Filter>Shape\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Core\Log.h">
+      <Filter>Shape\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Core\Profiler.h">
+      <Filter>Shape\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Core\Version.h">
+      <Filter>Shape\Core</Filter>
+    </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
-    <ClInclude Include="Src\Shape\Core\Log.h" />
-    <ClInclude Include="Src\Shape\Core\Version.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -32,7 +39,10 @@
     <ClCompile Include="Src\Shape\Core\CoreSystem.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Log.cpp">
+      <Filter>Shape\Core</Filter>
+    </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Core\Log.cpp" />
+    <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp" />
   </ItemGroup>
 </Project>

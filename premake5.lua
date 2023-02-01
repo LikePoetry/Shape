@@ -6,6 +6,7 @@ end
 
 IncludeDir = {}
 IncludeDir["spdlog"] = "Shape/External/spdlog/include"
+IncludeDir["external"] = "Shape/External"
 
 workspace "Shape"
     architecture "x64"
@@ -46,6 +47,7 @@ project "Shape"
 	{
 		"%{prj.name}/Src",
 		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.external}",
 	}
 
 	libdirs 
@@ -54,6 +56,10 @@ project "Shape"
 	}
 
 	filter 'architecture:x86_64'
+		defines { "USE_VMA_ALLOCATOR"}
+
+	filter { "files:Shaper/External/**"}
+		warnings "Off"
 
 	filter "system:windows"
 		cppdialect "C++17"
@@ -64,6 +70,13 @@ project "Shape"
 
 		pchheader "hzpch.h"
 		pchsource "Shape/Src/hzpch.cpp"
+
+		defines
+		{
+			"_CRT_SECURE_NO_WARNINGS",
+			"_DISABLE_EXTENDED_ALIGNED_STORAGE",
+			"SHAPE_ENGINE"
+		}
 		
 		links
 		{
@@ -109,12 +122,18 @@ project "Editor"
 	{
         "Shape/Src",
 		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.external}",
     }
 
     links
     {
         "Shape"
     }
+
+	defines
+	{
+		"SHAPE_ENGINE"
+	}
 
 	filter { "files:Shape/External/**"}
 	warnings "Off"
