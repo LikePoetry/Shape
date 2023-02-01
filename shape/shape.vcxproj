@@ -61,10 +61,13 @@
     <ClInclude Include="Src\Shape\Core\Core.h" />
     <ClInclude Include="Src\Shape\Core\CoreSystem.h" />
     <ClInclude Include="Src\Shape\Core\EntryPoint.h" />
+    <ClInclude Include="Src\Shape\Core\JobSystem.h" />
     <ClInclude Include="Src\Shape\Core\Log.h" />
     <ClInclude Include="Src\Shape\Core\Profiler.h" />
     <ClInclude Include="Src\Shape\Core\Version.h" />
     <ClInclude Include="Src\hzpch.h" />
+    <ClInclude Include="Src\Shape\Maths\Maths.h" />
+    <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -73,6 +76,7 @@
     <ClCompile Include="Src\Shape\Core\CoreSystem.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\JobSystem.cpp" />
     <ClCompile Include="Src\Shape\Core\Log.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -80,6 +84,8 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Maths.cpp" />
+    <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp" />
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

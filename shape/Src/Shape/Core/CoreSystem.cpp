@@ -2,6 +2,7 @@
 #include "CoreSystem.h"
 #include "Log.h"
 #include "Version.h"
+#include "JobSystem.h"
 
 namespace Shape
 {
@@ -13,6 +14,9 @@ namespace Shape
 			Debug::Log::OnInit();
 
 			SHAPE_LOG_INFO("Shape Engine - Version {0}.{1}.{2}", ShapeVersion.major, ShapeVersion.minor, ShapeVersion.patch);
+
+			System::JobSystem::OnInit();
+			SHAPE_LOG_INFO("Initilising System");
 
 			return true;
 		}
