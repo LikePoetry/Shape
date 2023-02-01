@@ -35,6 +35,7 @@
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
+    <ClInclude Include="Src\Shape\Core\VFS.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -51,5 +52,6 @@
     <ClCompile Include="Src\Shape\Core\JobSystem.cpp" />
     <ClCompile Include="Src\Shape\Maths\Maths.cpp" />
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp" />
+    <ClCompile Include="Src\Shape\Core\VFS.cpp" />
   </ItemGroup>
 </Project>

@@ -66,6 +66,7 @@
     <ClInclude Include="Src\Shape\Core\Profiler.h" />
     <ClInclude Include="Src\Shape\Core\Version.h" />
     <ClInclude Include="Src\hzpch.h" />
+    <ClInclude Include="Src\Shape\Core\VFS.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
@@ -85,6 +86,7 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\VFS.cpp" />
     <ClCompile Include="Src\Shape\Maths\Maths.cpp" />
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp" />
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp" />
