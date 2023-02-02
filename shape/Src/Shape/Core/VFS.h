@@ -1,5 +1,6 @@
 #pragma once
 #include "Shape/Utilities/TSingleton.h"
+#include "Shape/Core/StringUtilities.h"
 #include <map>
 
 namespace Shape

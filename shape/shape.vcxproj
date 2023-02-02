@@ -18,7 +18,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -46,7 +46,6 @@
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <AdditionalOptions>/MP /bigobj %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -64,32 +63,27 @@
     <ClInclude Include="Src\Shape\Core\JobSystem.h" />
     <ClInclude Include="Src\Shape\Core\Log.h" />
     <ClInclude Include="Src\Shape\Core\Profiler.h" />
-    <ClInclude Include="Src\Shape\Core\Version.h" />
-    <ClInclude Include="Src\hzpch.h" />
+    <ClInclude Include="Src\Shape\Core\StringUtilities.h" />
     <ClInclude Include="Src\Shape\Core\VFS.h" />
+    <ClInclude Include="Src\Shape\Core\Version.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
+    <ClInclude Include="Src\hzpch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Src\Shape\Core\Application.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
-    <ClCompile Include="Src\Shape\Core\CoreSystem.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Application.cpp" />
+    <ClCompile Include="Src\Shape\Core\CoreSystem.cpp" />
     <ClCompile Include="Src\Shape\Core\JobSystem.cpp" />
-    <ClCompile Include="Src\Shape\Core\Log.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
-    <ClCompile Include="Src\hzpch.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-      <PrecompiledHeader>Create</PrecompiledHeader>
-    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Log.cpp" />
+    <ClCompile Include="Src\Shape\Core\StringUtilities.cpp" />
     <ClCompile Include="Src\Shape\Core\VFS.cpp" />
     <ClCompile Include="Src\Shape\Maths\Maths.cpp" />
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp" />
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp" />
+    <ClCompile Include="Src\hzpch.cpp">
+      <PrecompiledHeader>Create</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

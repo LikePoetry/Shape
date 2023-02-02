@@ -17,7 +17,7 @@
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -31,7 +31,7 @@
     <IntDir>obj\</IntDir>
     <TargetName>spdlog</TargetName>
     <TargetExt>.lib</TargetExt>
-    <ExternalIncludePath>include;$(ExternalIncludePath)</ExternalIncludePath>
+    <IncludePath>include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -43,7 +43,6 @@
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -148,27 +147,13 @@
     <ClInclude Include="include\spdlog\version.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\async.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\cfg.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\color_sinks.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\file_sinks.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\fmt.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\spdlog.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
-    <ClCompile Include="src\stdout_sinks.cpp">
-      <ExternalWarningLevel>Level3</ExternalWarningLevel>
-    </ClCompile>
+    <ClCompile Include="src\async.cpp" />
+    <ClCompile Include="src\cfg.cpp" />
+    <ClCompile Include="src\color_sinks.cpp" />
+    <ClCompile Include="src\file_sinks.cpp" />
+    <ClCompile Include="src\fmt.cpp" />
+    <ClCompile Include="src\spdlog.cpp" />
+    <ClCompile Include="src\stdout_sinks.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
