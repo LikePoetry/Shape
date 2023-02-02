@@ -7,6 +7,7 @@ end
 IncludeDir = {}
 IncludeDir["spdlog"] = "Shape/External/spdlog/include"
 IncludeDir["external"] = "Shape/External"
+IncludeDir["glm"] = "Shape/External/glm"
 
 workspace "Shape"
     architecture "x64"
@@ -48,11 +49,19 @@ project "Shape"
 		"%{prj.name}/Src",
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.external}",
+		"%{IncludeDir.glm}",
+
 	}
 
 	libdirs 
 	{ 
 		"spdlog",
+	}
+
+	defines
+	{
+		"GLM_FORCE_INTRINSICS",
+		"GLM_FORCE_DEPTH_ZERO_TO_ONE"
 	}
 
 	filter 'architecture:x86_64'
@@ -123,6 +132,7 @@ project "Editor"
         "Shape/Src",
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.external}",
+		"%{IncludeDir.glm}",
     }
 
     links
@@ -132,6 +142,8 @@ project "Editor"
 
 	defines
 	{
+		"GLM_FORCE_INTRINSICS",
+		"GLM_FORCE_DEPTH_ZERO_TO_ONE",
 		"SHAPE_ENGINE"
 	}
 

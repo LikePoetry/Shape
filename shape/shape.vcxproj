@@ -39,8 +39,8 @@
       <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <PreprocessorDefinitions>USE_VMA_ALLOCATOR;_CRT_SECURE_NO_WARNINGS;_DISABLE_EXTENDED_ALIGNED_STORAGE;SHAPE_ENGINE;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Src;External\spdlog\include;External;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;USE_VMA_ALLOCATOR;_CRT_SECURE_NO_WARNINGS;_DISABLE_EXTENDED_ALIGNED_STORAGE;SHAPE_ENGINE;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Src;External\spdlog\include;External;External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -64,6 +64,7 @@
     <ClInclude Include="Src\Shape\Core\JobSystem.h" />
     <ClInclude Include="Src\Shape\Core\Log.h" />
     <ClInclude Include="Src\Shape\Core\OS\FileSystem.h" />
+    <ClInclude Include="Src\Shape\Core\OS\OS.h" />
     <ClInclude Include="Src\Shape\Core\Profiler.h" />
     <ClInclude Include="Src\Shape\Core\StringUtilities.h" />
     <ClInclude Include="Src\Shape\Core\VFS.h" />
@@ -87,7 +88,12 @@
     <ClCompile Include="Src\Shape\Core\Log.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Core\OS\FileSystem.cpp" />
+    <ClCompile Include="Src\Shape\Core\OS\FileSystem.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\OS.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -100,8 +106,12 @@
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

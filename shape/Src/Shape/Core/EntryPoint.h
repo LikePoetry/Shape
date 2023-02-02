@@ -9,6 +9,8 @@ int main()
 	if (!Shape::Internal::CoreSystem::Init())
 		return 0;
 
+	//实例化Window
+
 	Shape::CreateApplication();
 
 	Shape::Internal::CoreSystem::Shutdown();

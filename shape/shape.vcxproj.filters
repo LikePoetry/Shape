@@ -7,8 +7,17 @@
     <Filter Include="Shape\Core">
       <UniqueIdentifier>{EE3E27F9-DAF6-6846-43FE-41A22FD50337}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape\Core\OS">
+      <UniqueIdentifier>{9FD249DE-0B93-C514-D4CD-0E92404D0AF1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Shape\Maths">
       <UniqueIdentifier>{C26DBC1E-2E23-3514-B717-2FEB23CC2B18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Platform">
+      <UniqueIdentifier>{EAB17399-D67F-679F-BF13-D8C5AB804304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Platform\Windows">
+      <UniqueIdentifier>{24A66166-10A0-8AB8-F90C-21C9E5A5F024}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\Utilities">
       <UniqueIdentifier>{C14CC8C5-2DD8-358A-36E9-B87EA2F3918A}</UniqueIdentifier>
@@ -33,6 +42,12 @@
     <ClInclude Include="Src\Shape\Core\Log.h">
       <Filter>Shape\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Core\OS\FileSystem.h">
+      <Filter>Shape\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Core\OS\OS.h">
+      <Filter>Shape\Core\OS</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Core\Profiler.h">
       <Filter>Shape\Core</Filter>
     </ClInclude>
@@ -51,12 +66,13 @@
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h">
       <Filter>Shape\Maths</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h">
+      <Filter>Shape\Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h">
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
-    <ClInclude Include="Src\Shape\Core\OS\FileSystem.h" />
-    <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -71,6 +87,12 @@
     <ClCompile Include="Src\Shape\Core\Log.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\FileSystem.cpp">
+      <Filter>Shape\Core\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\OS.cpp">
+      <Filter>Shape\Core\OS</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
@@ -83,12 +105,15 @@
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp">
       <Filter>Shape\Maths</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
+      <Filter>Shape\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
+      <Filter>Shape\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Core\OS\FileSystem.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp" />
   </ItemGroup>
 </Project>
