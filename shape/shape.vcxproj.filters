@@ -73,6 +73,7 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -115,5 +116,6 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsOS.cpp" />
   </ItemGroup>
 </Project>

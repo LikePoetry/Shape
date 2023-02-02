@@ -71,6 +71,7 @@
     <ClInclude Include="Src\Shape\Core\Version.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
     <ClInclude Include="Src\hzpch.h" />
@@ -109,6 +110,7 @@
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsOS.cpp" />
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

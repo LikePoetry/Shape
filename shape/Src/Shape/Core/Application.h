@@ -10,6 +10,11 @@ namespace Shape
 		Application();
 		virtual ~Application();
 
+		static Application& Get() { return *s_Instance; }
+
+	private:
+		static Application* s_Instance;
+
 	};
 
 	// Defined by client
