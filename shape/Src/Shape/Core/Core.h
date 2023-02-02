@@ -2,6 +2,8 @@
 
 #define SHAPE_EXPORT
 
+#define BIT(x) (1 << x)
+
 #ifdef SHAPE_ENABLE_ASSERTS
 
 #define SHAPE_ASSERT_NO_MESSAGE(condition)        \

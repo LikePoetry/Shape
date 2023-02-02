@@ -8,6 +8,7 @@ IncludeDir = {}
 IncludeDir["spdlog"] = "Shape/External/spdlog/include"
 IncludeDir["external"] = "Shape/External"
 IncludeDir["glm"] = "Shape/External/glm"
+IncludeDir["GLFW"] = "Shape/External/glfw/include/"
 
 workspace "Shape"
     architecture "x64"
@@ -21,6 +22,8 @@ workspace "Shape"
 
 group "External"
 	require("Shape/External/spdlog/premake5")
+	SetRecommendedSettings()
+	require("Shape/External/GLFWpremake5")
 	SetRecommendedSettings()
 
 
@@ -50,7 +53,7 @@ project "Shape"
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.external}",
 		"%{IncludeDir.glm}",
-
+		"%{IncludeDir.GLFW}",
 	}
 
 	libdirs 
@@ -89,6 +92,7 @@ project "Shape"
 		
 		links
 		{
+			"glfw",
 		}
 
 		buildoptions
@@ -133,11 +137,13 @@ project "Editor"
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.external}",
 		"%{IncludeDir.glm}",
+		"%{IncludeDir.GLFW}",
     }
 
     links
     {
-        "Shape"
+        "Shape",
+		"glfw",
     }
 
 	defines

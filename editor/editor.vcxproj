@@ -40,7 +40,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;SHAPE_ENGINE;USE_VMA_ALLOCATOR;WIN32_LEAN_AND_MEAN;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Shape\Src;..\Shape\External\spdlog\include;..\Shape\External;..\Shape\External\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Shape\Src;..\Shape\External\spdlog\include;..\Shape\External;..\Shape\External\glm;..\Shape\External\glfw\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -61,6 +61,9 @@
   <ItemGroup>
     <ProjectReference Include="..\Shape\Shape.vcxproj">
       <Project>{D6A4170E-42B9-3FBF-0B3B-E31E770E3CF0}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Shape\External\glfw.vcxproj">
+      <Project>{9563977C-819A-980D-2A87-7E10169D140F}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

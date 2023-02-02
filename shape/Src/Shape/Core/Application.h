@@ -3,6 +3,12 @@
 
 namespace Shape
 {
+
+	class Event;
+	class WindowCloseEvent;
+	class WindowResizeEvent;
+
+
 	class SHAPE_EXPORT Application
 	{
 		friend class RunTime;

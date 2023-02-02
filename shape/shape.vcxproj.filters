@@ -66,6 +66,9 @@
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h">
       <Filter>Shape\Maths</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h">
+      <Filter>Shape\Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h">
       <Filter>Shape\Platform\Windows</Filter>
     </ClInclude>
@@ -73,7 +76,14 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
-    <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Window.h" />
+    <ClInclude Include="Src\Shape\Events\Event.h" />
+    <ClInclude Include="Src\Shape\Core\OS\KeyCodes.h" />
+    <ClInclude Include="Src\Shape\Events\KeyEvent.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Input.h" />
+    <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
+    <ClInclude Include="Src\Shape\Events\ApplicationEvent.h" />
+    <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -109,6 +119,9 @@
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
       <Filter>Shape\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsOS.cpp">
+      <Filter>Shape\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
       <Filter>Shape\Platform\Windows</Filter>
     </ClCompile>
@@ -116,6 +129,7 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Windows\WindowsOS.cpp" />
+    <ClCompile Include="Src\Shape\Core\OS\Window.cpp" />
+    <ClCompile Include="Src\Shape\Core\OS\Input.cpp" />
   </ItemGroup>
 </Project>
