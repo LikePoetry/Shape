@@ -63,12 +63,14 @@
     <ClInclude Include="Src\Shape\Core\EntryPoint.h" />
     <ClInclude Include="Src\Shape\Core\JobSystem.h" />
     <ClInclude Include="Src\Shape\Core\Log.h" />
+    <ClInclude Include="Src\Shape\Core\OS\FileSystem.h" />
     <ClInclude Include="Src\Shape\Core\Profiler.h" />
     <ClInclude Include="Src\Shape\Core\StringUtilities.h" />
     <ClInclude Include="Src\Shape\Core\VFS.h" />
     <ClInclude Include="Src\Shape\Core\Version.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
     <ClInclude Include="Src\hzpch.h" />
   </ItemGroup>
@@ -85,6 +87,7 @@
     <ClCompile Include="Src\Shape\Core\Log.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\FileSystem.cpp" />
     <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -97,6 +100,8 @@
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp" />
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

@@ -3,6 +3,7 @@
 #include "Log.h"
 #include "Version.h"
 #include "JobSystem.h"
+#include "VFS.h"
 
 namespace Shape
 {
@@ -18,11 +19,17 @@ namespace Shape
 			System::JobSystem::OnInit();
 			SHAPE_LOG_INFO("Initilising System");
 
+			VFS::Get();
+			SHAPE_LOG_INFO("Mount VFS System");
+
 			return true;
 		}
 
 		void CoreSystem::Shutdown()
 		{
+			SHAPE_LOG_INFO("Shutting down System");
+			VFS::Release();
+
 			Debug::Log::OnRelease();
 		}
 	}

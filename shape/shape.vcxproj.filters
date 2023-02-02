@@ -55,6 +55,8 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
+    <ClInclude Include="Src\Shape\Core\OS\FileSystem.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -85,5 +87,8 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
+    <ClCompile Include="Src\Shape\Core\OS\FileSystem.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp" />
   </ItemGroup>
 </Project>

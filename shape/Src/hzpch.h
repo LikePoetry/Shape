@@ -22,5 +22,6 @@
 #include <stdio.h>
 #include <math.h>
 
+#include "Shape/Core/Log.h"
 #include "Shape/Core/Core.h"
 #include "Shape/Core/Profiler.h"
