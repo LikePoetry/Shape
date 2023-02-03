@@ -29,7 +29,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <OutDir>bin\Debug\</OutDir>
-    <IntDir>obj\</IntDir>
+    <IntDir>obj\Debug\glfw\</IntDir>
     <TargetName>glfw</TargetName>
     <TargetExt>.lib</TargetExt>
   </PropertyGroup>

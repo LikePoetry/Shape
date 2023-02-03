@@ -10,11 +10,23 @@
     <Filter Include="Shape\Core\OS">
       <UniqueIdentifier>{9FD249DE-0B93-C514-D4CD-0E92404D0AF1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape\Events">
+      <UniqueIdentifier>{FAC314E5-E626-A489-8FAC-DC3F7BEE6F0C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Graphics">
+      <UniqueIdentifier>{D63DB918-C20B-AD1E-AB9F-1D45970C8983}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Graphics\RHI">
+      <UniqueIdentifier>{08654B2C-F448-0C82-5DA9-06D549ACF603}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Shape\Maths">
       <UniqueIdentifier>{C26DBC1E-2E23-3514-B717-2FEB23CC2B18}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\Platform">
       <UniqueIdentifier>{EAB17399-D67F-679F-BF13-D8C5AB804304}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Platform\GLFW">
+      <UniqueIdentifier>{692FBC7F-D590-998D-5EFE-DF3FCA5ED04C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\Platform\Windows">
       <UniqueIdentifier>{24A66166-10A0-8AB8-F90C-21C9E5A5F024}</UniqueIdentifier>
@@ -45,7 +57,16 @@
     <ClInclude Include="Src\Shape\Core\OS\FileSystem.h">
       <Filter>Shape\Core\OS</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Core\OS\Input.h">
+      <Filter>Shape\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Core\OS\KeyCodes.h">
+      <Filter>Shape\Core\OS</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Core\OS\OS.h">
+      <Filter>Shape\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Core\OS\Window.h">
       <Filter>Shape\Core\OS</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Core\Profiler.h">
@@ -60,11 +81,32 @@
     <ClInclude Include="Src\Shape\Core\Version.h">
       <Filter>Shape\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Events\ApplicationEvent.h">
+      <Filter>Shape\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Events\Event.h">
+      <Filter>Shape\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Events\KeyEvent.h">
+      <Filter>Shape\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Events\MouseEvent.h">
+      <Filter>Shape\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Maths\Maths.h">
       <Filter>Shape\Maths</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h">
       <Filter>Shape\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h">
+      <Filter>Shape\Platform\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\GLFW\GLFWWindow.h">
+      <Filter>Shape\Platform\GLFW</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h">
       <Filter>Shape\Platform\Windows</Filter>
@@ -76,14 +118,7 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
-    <ClInclude Include="Src\Shape\Core\OS\Window.h" />
-    <ClInclude Include="Src\Shape\Events\Event.h" />
-    <ClInclude Include="Src\Shape\Core\OS\KeyCodes.h" />
-    <ClInclude Include="Src\Shape\Events\KeyEvent.h" />
-    <ClInclude Include="Src\Shape\Core\OS\Input.h" />
-    <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
-    <ClInclude Include="Src\Shape\Events\ApplicationEvent.h" />
-    <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h" />
+    <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -101,7 +136,13 @@
     <ClCompile Include="Src\Shape\Core\OS\FileSystem.cpp">
       <Filter>Shape\Core\OS</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\Input.cpp">
+      <Filter>Shape\Core\OS</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Core\OS\OS.cpp">
+      <Filter>Shape\Core\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\Window.cpp">
       <Filter>Shape\Core\OS</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
@@ -110,11 +151,17 @@
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <Filter>Shape\Maths</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp">
       <Filter>Shape\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\GLFW\GLFWWindow.cpp">
+      <Filter>Shape\Platform\GLFW</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
       <Filter>Shape\Platform\Windows</Filter>
@@ -129,7 +176,5 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Core\OS\Window.cpp" />
-    <ClCompile Include="Src\Shape\Core\OS\Input.cpp" />
   </ItemGroup>
 </Project>

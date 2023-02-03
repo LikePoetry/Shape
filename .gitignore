@@ -33,3 +33,5 @@
 /.vs
 /bin
 /bin-int
+/shape/External/obj
+/shape/External/bin

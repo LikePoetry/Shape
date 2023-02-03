@@ -3,6 +3,8 @@
 
 #include "Shape/Core/Application.h"
 
+#include "Shape/Platform/GLFW/GLFWWindow.h"
+
 #include <Windows.h>
 #include <filesystem>
 
@@ -18,6 +20,7 @@ namespace Shape
 	void WindowsOS::Init()
 	{
 		// Use GLFWWindow
+		GLFWWindow::MakeDefault();
 	}
 
 	std::string WindowsOS::GetExecutablePath()

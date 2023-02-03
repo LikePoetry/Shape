@@ -9,6 +9,7 @@ IncludeDir["spdlog"] = "Shape/External/spdlog/include"
 IncludeDir["external"] = "Shape/External"
 IncludeDir["glm"] = "Shape/External/glm"
 IncludeDir["GLFW"] = "Shape/External/glfw/include/"
+IncludeDir["ImGui"] = "Shape/External/imgui/"
 
 workspace "Shape"
     architecture "x64"
@@ -22,9 +23,11 @@ workspace "Shape"
 
 group "External"
 	require("Shape/External/spdlog/premake5")
-	SetRecommendedSettings()
+		SetRecommendedSettings()
 	require("Shape/External/GLFWpremake5")
-	SetRecommendedSettings()
+		SetRecommendedSettings()	
+	require("Shape/External/imguipremake5")
+		SetRecommendedSettings()
 
 
 group ""
@@ -54,6 +57,8 @@ project "Shape"
 		"%{IncludeDir.external}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.ImGui}",
+
 	}
 
 	libdirs 
@@ -85,6 +90,7 @@ project "Shape"
 
 		defines
 		{
+			"IMGUI_USER_CONFIG=\"../Src/Shape/ImGui/ImConfig.h\"",
 			"_CRT_SECURE_NO_WARNINGS",
 			"_DISABLE_EXTENDED_ALIGNED_STORAGE",
 			"SHAPE_ENGINE"
@@ -93,6 +99,8 @@ project "Shape"
 		links
 		{
 			"glfw",
+			"imgui",
+
 		}
 
 		buildoptions
@@ -138,16 +146,21 @@ project "Editor"
 		"%{IncludeDir.external}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.ImGui}",
+
     }
 
     links
     {
         "Shape",
 		"glfw",
+		"imgui",
+
     }
 
 	defines
 	{
+		"IMGUI_USER_CONFIG=\"../../Shape/Src/Shape/ImGui/ImConfig.h\"",
 		"GLM_FORCE_INTRINSICS",
 		"GLM_FORCE_DEPTH_ZERO_TO_ONE",
 		"SHAPE_ENGINE"
