@@ -119,6 +119,8 @@
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
+    <ClInclude Include="Src\Shape\Core\ReferenceCounter.h" />
+    <ClInclude Include="Src\Shape\Core\Reference.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -176,5 +178,6 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
+    <ClCompile Include="Src\Shape\Core\Reference.cpp" />
   </ItemGroup>
 </Project>

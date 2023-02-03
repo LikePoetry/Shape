@@ -14,7 +14,10 @@ namespace Shape
 {
 	void WindowsOS::Run()
 	{
-
+		auto& app = Shape::Application::Get();
+		app.Init();
+		app.Run();
+		app.Release();
 	}
 
 	void WindowsOS::Init()

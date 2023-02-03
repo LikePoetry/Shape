@@ -69,6 +69,8 @@
     <ClInclude Include="Src\Shape\Core\OS\OS.h" />
     <ClInclude Include="Src\Shape\Core\OS\Window.h" />
     <ClInclude Include="Src\Shape\Core\Profiler.h" />
+    <ClInclude Include="Src\Shape\Core\Reference.h" />
+    <ClInclude Include="Src\Shape\Core\ReferenceCounter.h" />
     <ClInclude Include="Src\Shape\Core\StringUtilities.h" />
     <ClInclude Include="Src\Shape\Core\VFS.h" />
     <ClInclude Include="Src\Shape\Core\Version.h" />
@@ -112,6 +114,7 @@
     <ClCompile Include="Src\Shape\Core\OS\Window.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Reference.cpp" />
     <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
