@@ -30,19 +30,57 @@ namespace Shape
 		windowDesc.ShowConsole = m_ProjectSettings.ShowConsole;
 		windowDesc.Title = m_ProjectSettings.Title;
 		windowDesc.VSync = m_ProjectSettings.VSync;
-		
+
 		// 初始化窗口
 		m_Window = UniquePtr<Window>(Window::Create(windowDesc));
+
+		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+
+		m_CurrentState = AppState::Running;
 	}
 
 	void Application::Run()
 	{
-		while (true)
+		while (OnFrame())
 		{
 
 		}
 		//退出循环主体
 	}
 
+	//主循环体
+	bool Application::OnFrame()
+	{
+		m_Window->ProcessInput();
 
+		return m_CurrentState != AppState::Closing;
+	}
+
+	/// <summary>
+	/// 输入事件回调函数
+	/// </summary>
+	/// <param name="e"></param>
+	void Application::OnEvent(Event& e)
+	{
+		SHAPE_PROFILE_FUNCTION();
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(Application::OnWindowClose));
+		dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(Application::OnWindowResize));
+
+		//Imgui事件处理
+		//场景对事件响应
+
+		//输入响应
+	}
+
+	bool Application::OnWindowClose(WindowCloseEvent& e)
+	{
+		m_CurrentState = AppState::Closing;
+		return true;
+	}
+
+	bool Application::OnWindowResize(WindowResizeEvent& e)
+	{
+		return false;
+	}
 }

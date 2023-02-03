@@ -8,6 +8,12 @@ namespace Shape
 	class WindowCloseEvent;
 	class WindowResizeEvent;
 
+	enum class AppState
+	{
+		Running,
+		Loading,
+		Closing
+	};
 
 	class SHAPE_EXPORT Application
 	{
@@ -17,8 +23,12 @@ namespace Shape
 		virtual ~Application();
 
 		void Run();
+		bool OnFrame();
 
 		virtual void Init();
+		virtual void OnEvent(Event& e);
+
+		Window* GetWindow() const { return m_Window.get(); }
 
 		static void Release()
 		{
@@ -28,6 +38,8 @@ namespace Shape
 		}
 
 		static Application& Get() { return *s_Instance; }
+
+		bool OnWindowResize(WindowResizeEvent& e);
 
 		//œÓƒø…Ë÷√
 		struct ProjectSettings
@@ -52,7 +64,11 @@ namespace Shape
 		ProjectSettings m_ProjectSettings;
 		bool m_ProjectLoaded = false;
 	private:
+		bool OnWindowClose(WindowCloseEvent& e);
+
 		UniquePtr<Window> m_Window;
+
+		AppState m_CurrentState = AppState::Loading;
 
 		static Application* s_Instance;
 

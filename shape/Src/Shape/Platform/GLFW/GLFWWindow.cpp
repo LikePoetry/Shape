@@ -59,8 +59,8 @@ namespace Shape
 	{
 		SHAPE_PROFILE_FUNCTION();
 		SHAPE_LOG_INFO("Creating window - Title : {0}, Width : {1}, Height : {2}", properties.Title, properties.Width, properties.Height);
-		
-		if(!s_GLFWInitialized)
+
+		if (!s_GLFWInitialized)
 		{
 			int success = glfwInit();
 			SHAPE_ASSERT(success, "Could not initialize GLFW!");
@@ -117,8 +117,129 @@ namespace Shape
 
 		glfwSetInputMode(m_Handle, GLFW_STICKY_KEYS, true);
 
-		//TODO Set GLFW callbacks
+		//Set GLFW callbacks
+		glfwSetWindowSizeCallback(m_Handle, [](GLFWwindow* window, int width, int height)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
 
+		int w, h;
+		glfwGetFramebufferSize(window, &w, &h);
+
+		data.DPIScale = (float)w / (float)width;
+
+		data.Width = uint32_t(width * data.DPIScale);
+		data.Height = uint32_t(height * data.DPIScale);
+
+		WindowResizeEvent event(data.Width, data.Height, data.DPIScale);
+		data.EventCallback(event); });
+
+		glfwSetWindowCloseCallback(m_Handle, [](GLFWwindow* window)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
+		WindowCloseEvent event;
+		data.EventCallback(event);
+		data.Exit = true; });
+
+		glfwSetWindowFocusCallback(m_Handle, [](GLFWwindow* window, int focused)
+			{
+				Window* lmWindow = Application::Get().GetWindow();
+
+		if (lmWindow)
+			lmWindow->SetWindowFocus(focused); });
+
+		glfwSetWindowIconifyCallback(m_Handle, [](GLFWwindow* window, int32_t state)
+			{
+				switch (state)
+				{
+				case GL_TRUE:
+					Application::Get().GetWindow()->SetWindowFocus(false);
+					break;
+				case GL_FALSE:
+					Application::Get().GetWindow()->SetWindowFocus(true);
+					break;
+				default:
+					SHAPE_LOG_INFO("Unsupported window iconify state from callback");
+				} });
+
+		glfwSetKeyCallback(m_Handle, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
+
+		switch (action)
+		{
+		case GLFW_PRESS:
+		{
+			KeyPressedEvent event(GLFWKeyCodes::GLFWToShapeKeyboardKey(key), 0);
+			data.EventCallback(event);
+			break;
+		}
+		case GLFW_RELEASE:
+		{
+			KeyReleasedEvent event(GLFWKeyCodes::GLFWToShapeKeyboardKey(key));
+			data.EventCallback(event);
+			break;
+		}
+		case GLFW_REPEAT:
+		{
+			KeyPressedEvent event(GLFWKeyCodes::GLFWToShapeKeyboardKey(key), 1);
+			data.EventCallback(event);
+			break;
+		}
+		} });
+
+		glfwSetMouseButtonCallback(m_Handle, [](GLFWwindow* window, int button, int action, int mods)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
+
+		switch (action)
+		{
+		case GLFW_PRESS:
+		{
+			MouseButtonPressedEvent event(GLFWKeyCodes::GLFWToShapeMouseKey(button));
+			data.EventCallback(event);
+			break;
+		}
+		case GLFW_RELEASE:
+		{
+			MouseButtonReleasedEvent event(GLFWKeyCodes::GLFWToShapeMouseKey(button));
+			data.EventCallback(event);
+			break;
+		}
+		} });
+
+		glfwSetScrollCallback(m_Handle, [](GLFWwindow* window, double xOffset, double yOffset)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
+		MouseScrolledEvent event((float)xOffset, (float)yOffset);
+		data.EventCallback(event); });
+
+		glfwSetCursorPosCallback(m_Handle, [](GLFWwindow* window, double xPos, double yPos)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
+		MouseMovedEvent event((float)xPos /* * data.DPIScale*/, (float)yPos /* * data.DPIScale*/);
+		data.EventCallback(event); });
+
+		glfwSetCursorEnterCallback(m_Handle, [](GLFWwindow* window, int enter)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
+
+		MouseEnterEvent event(enter > 0);
+		data.EventCallback(event); });
+
+		glfwSetCharCallback(m_Handle, [](GLFWwindow* window, unsigned int keycode)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
+
+		KeyTypedEvent event(GLFWKeyCodes::GLFWToShapeKeyboardKey(keycode), char(keycode));
+		data.EventCallback(event); });
+
+		glfwSetDropCallback(m_Handle, [](GLFWwindow* window, int numDropped, const char** filenames)
+			{
+				WindowData& data = *static_cast<WindowData*>((glfwGetWindowUserPointer(window)));
+
+		std::string filePath = filenames[0];
+		WindowFileEvent event(filePath);
+		data.EventCallback(event); });
 
 		g_MouseCursors[ImGuiMouseCursor_Arrow] = glfwCreateStandardCursor(GLFW_ARROW_CURSOR);
 		g_MouseCursors[ImGuiMouseCursor_TextInput] = glfwCreateStandardCursor(GLFW_IBEAM_CURSOR);
@@ -191,7 +312,8 @@ namespace Shape
 
 	void GLFWWindow::ProcessInput()
 	{
-
+		SHAPE_PROFILE_SCOPE("GLFW PollEvents");
+		glfwPollEvents();
 	}
 
 	void GLFWWindow::Maximise()
