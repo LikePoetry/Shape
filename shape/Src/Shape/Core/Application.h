@@ -53,7 +53,7 @@ namespace Shape
 			bool Borderless = false;
 			bool ShowConsole = true;
 			std::string Title;
-			int RenderAPI;
+			int RenderAPI = 1;
 			int ProjectVersion;
 			int8_t DesiredGPUIndex = -1;
 		};

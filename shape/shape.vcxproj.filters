@@ -19,6 +19,9 @@
     <Filter Include="Shape\Graphics\RHI">
       <UniqueIdentifier>{08654B2C-F448-0C82-5DA9-06D549ACF603}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape\ImGui">
+      <UniqueIdentifier>{80E2791E-EC97-F213-758C-ECEAE140E917}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Shape\Maths">
       <UniqueIdentifier>{C26DBC1E-2E23-3514-B717-2FEB23CC2B18}</UniqueIdentifier>
     </Filter>
@@ -27,6 +30,9 @@
     </Filter>
     <Filter Include="Shape\Platform\GLFW">
       <UniqueIdentifier>{692FBC7F-D590-998D-5EFE-DF3FCA5ED04C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Platform\Vulkan">
+      <UniqueIdentifier>{2A347E85-96A0-3980-5F94-D1DDCBBF5BE8}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\Platform\Windows">
       <UniqueIdentifier>{24A66166-10A0-8AB8-F90C-21C9E5A5F024}</UniqueIdentifier>
@@ -72,6 +78,12 @@
     <ClInclude Include="Src\Shape\Core\Profiler.h">
       <Filter>Shape\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Core\Reference.h">
+      <Filter>Shape\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Core\ReferenceCounter.h">
+      <Filter>Shape\Core</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Core\StringUtilities.h">
       <Filter>Shape\Core</Filter>
     </ClInclude>
@@ -96,6 +108,9 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\ImGui\ImConfig.h">
+      <Filter>Shape\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Maths\Maths.h">
       <Filter>Shape\Maths</Filter>
     </ClInclude>
@@ -108,6 +123,12 @@
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWWindow.h">
       <Filter>Shape\Platform\GLFW</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKContext.h">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h">
       <Filter>Shape\Platform\Windows</Filter>
     </ClInclude>
@@ -118,9 +139,7 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
-    <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
-    <ClInclude Include="Src\Shape\Core\ReferenceCounter.h" />
-    <ClInclude Include="Src\Shape\Core\Reference.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -147,6 +166,9 @@
     <ClCompile Include="Src\Shape\Core\OS\Window.cpp">
       <Filter>Shape\Core\OS</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Reference.cpp">
+      <Filter>Shape\Core</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
@@ -165,6 +187,12 @@
     <ClCompile Include="Src\Shape\Platform\GLFW\GLFWWindow.cpp">
       <Filter>Shape\Platform\GLFW</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKContext.cpp">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
       <Filter>Shape\Platform\Windows</Filter>
     </ClCompile>
@@ -178,6 +206,6 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Core\Reference.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp" />
   </ItemGroup>
 </Project>

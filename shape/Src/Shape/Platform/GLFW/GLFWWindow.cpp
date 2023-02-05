@@ -43,6 +43,8 @@ namespace Shape
 		m_Init = Init(properties);
 
 		//初始化图形工具和交换链
+		m_GraphicsContext = SharedPtr<Graphics::GraphicsContext>(Graphics::GraphicsContext::Create());
+		m_GraphicsContext->Init();
 	}
 
 	GLFWWindow::~GLFWWindow()

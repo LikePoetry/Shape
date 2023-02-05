@@ -21,6 +21,8 @@ namespace Shape
 
 	void Application::Init()
 	{
+		Graphics::GraphicsContext::SetRenderAPI(static_cast<Graphics::RenderAPI>(m_ProjectSettings.RenderAPI));
+
 		WindowDesc windowDesc;
 		windowDesc.Width = m_ProjectSettings.Width;
 		windowDesc.Height = m_ProjectSettings.Height;

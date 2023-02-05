@@ -40,7 +40,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;USE_VMA_ALLOCATOR;IMGUI_USER_CONFIG="../Src/Shape/ImGui/ImConfig.h";_CRT_SECURE_NO_WARNINGS;_DISABLE_EXTENDED_ALIGNED_STORAGE;SHAPE_ENGINE;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Src;External\spdlog\include;External;External\glm;External\glfw\include;External\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Src;External\spdlog\include;External;External\glm;External\glfw\include;External\imgui;External\vulkan;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -84,6 +84,9 @@
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h" />
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWWindow.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKContext.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
@@ -114,7 +117,9 @@
     <ClCompile Include="Src\Shape\Core\OS\Window.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Core\Reference.cpp" />
+    <ClCompile Include="Src\Shape\Core\Reference.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -131,6 +136,13 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\GLFW\GLFWWindow.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKContext.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">

@@ -273,7 +273,7 @@ namespace Shape
 
         inline void refPointer(T* ptr)
         {
-            LUMOS_ASSERT(ptr, "Creating shared ptr with nullptr");
+            SHAPE_ASSERT(ptr, "Creating shared ptr with nullptr");
 
             m_Ptr = ptr;
             m_Counter = new RefCount();

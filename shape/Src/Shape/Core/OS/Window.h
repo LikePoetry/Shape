@@ -1,5 +1,6 @@
 #pragma once
 #include "Shape/Events/Event.h"
+#include "Shape/Graphics/RHI/GraphicsContext.h"
 
 #include <glm/vec2.hpp>
 #include <glm/fwd.hpp>
@@ -92,5 +93,7 @@ namespace Shape
         bool m_VSync = false;
         bool m_HasResized = false;
         bool m_WindowFocus = true;
+
+        SharedPtr<Shape::Graphics::GraphicsContext> m_GraphicsContext;
     };
 }
