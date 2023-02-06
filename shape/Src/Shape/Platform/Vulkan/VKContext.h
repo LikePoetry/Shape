@@ -1,6 +1,7 @@
 #pragma once
 #include "Shape/Graphics/RHI/GraphicsContext.h"
 #include "VK.h"
+#include "VKDevice.h"
 #include "Shape/Core/Reference.h"
 
 #include <deque>
@@ -25,6 +26,7 @@ namespace Shape
 
 			void Init() override;
 
+			static VkInstance GetVKInstance() { return s_VkInstance; }
 		protected:
 			static GraphicsContext* CreateFuncVulkan();
 

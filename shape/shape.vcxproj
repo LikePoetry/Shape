@@ -78,7 +78,9 @@
     <ClInclude Include="Src\Shape\Events\Event.h" />
     <ClInclude Include="Src\Shape\Events\KeyEvent.h" />
     <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
@@ -86,6 +88,7 @@
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWWindow.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKContext.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKDevice.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
@@ -129,6 +132,7 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp" />
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -142,6 +146,7 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

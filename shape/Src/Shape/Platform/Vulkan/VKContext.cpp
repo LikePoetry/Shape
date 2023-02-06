@@ -1,5 +1,8 @@
 #include "hzpch.h"
 #include "VKContext.h"
+#include "Shape/Core/Version.h"
+#include "Shape/Maths/Maths.h"
+#include "Shape/Core/StringUtilities.h"
 #include <vulkan/vulkan_win32.h>
 
 #define VK_LAYER_LUNARG_STANDARD_VALIDATION_NAME "VK_LAYER_LUNARG_standard_validation"
@@ -60,6 +63,8 @@ namespace Shape
 			SHAPE_PROFILE_FUNCTION();
 			//创建Vulkan 实例
 			CreateInstance();
+
+			VKDevice::Get().Init();
 		}
 
 		/// <summary>
@@ -170,15 +175,87 @@ namespace Shape
 			m_InstanceLayerNames = GetRequiredLayers();
 			m_InstanceExtensionNames = GetRequiredExtensions();
 
-			if(!CheckValidationLayerSupport(m_InstanceLayerNames))
+			//验证层支持
+			if (!CheckValidationLayerSupport(m_InstanceLayerNames))
 			{
 				SHAPE_LOG_CRITICAL("[VULKAN] Validation layers requested, but not available!");
 			}
 
+			//扩展支持
 			if (!CheckExtensionSupport(m_InstanceExtensionNames))
 			{
 				SHAPE_LOG_CRITICAL("[VULKAN] Extensions requested are not available!");
 			}
+
+			//创建实例
+			VkApplicationInfo appInfo = {};
+
+			uint32_t sdkVersion = VK_HEADER_VERSION_COMPLETE;
+			uint32_t driverVersion = 0;
+
+			// if enumerateInstanceVersion  is missing, only vulkan 1.0 supported
+		   // https://www.lunarg.com/wp-content/uploads/2019/02/Vulkan-1.1-Compatibility-Statement_01_19.pdf
+			auto enumerateInstanceVersion = reinterpret_cast<PFN_vkEnumerateInstanceVersion>(vkGetInstanceProcAddr(nullptr, "vkEnumerateInstanceVersion"));
+
+			if (enumerateInstanceVersion)
+			{
+				enumerateInstanceVersion(&driverVersion);
+			}
+			else
+			{
+				driverVersion = VK_API_VERSION_1_0;
+			}
+
+			//选择支持的版本
+			appInfo.apiVersion = Maths::Min(sdkVersion, driverVersion);
+
+			m_VKVersion = appInfo.apiVersion;
+
+			// SDK not supported
+			if (sdkVersion > driverVersion)
+			{
+				// Detect and log version
+				std::string driverVersionStr = StringUtilities::ToString(VK_API_VERSION_MAJOR(driverVersion)) + "." + StringUtilities::ToString(VK_API_VERSION_MINOR(driverVersion)) + "." + StringUtilities::ToString(VK_API_VERSION_PATCH(driverVersion));
+				std::string sdkVersionStr = StringUtilities::ToString(VK_API_VERSION_MAJOR(sdkVersion)) + "." + StringUtilities::ToString(VK_API_VERSION_MINOR(sdkVersion)) + "." + StringUtilities::ToString(VK_API_VERSION_PATCH(sdkVersion));
+				SHAPE_LOG_WARN("Using Vulkan {0}. Please update your graphics drivers to support Vulkan {1}.", driverVersionStr, sdkVersionStr);
+			}
+
+			appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
+			appInfo.pApplicationName = "Runtime";
+			appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
+			appInfo.pEngineName = "Shape";
+			appInfo.engineVersion = VK_MAKE_VERSION(ShapeVersion.major, ShapeVersion.minor, ShapeVersion.patch);
+
+			VkInstanceCreateInfo createInfo = {};
+			createInfo.pApplicationInfo = &appInfo;
+			createInfo.sType = VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO;
+			createInfo.enabledExtensionCount = static_cast<uint32_t>(m_InstanceExtensionNames.size());
+			createInfo.ppEnabledExtensionNames = m_InstanceExtensionNames.data();
+			createInfo.enabledLayerCount = static_cast<uint32_t>(m_InstanceLayerNames.size());
+			createInfo.ppEnabledLayerNames = m_InstanceLayerNames.data();
+			createInfo.flags = VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
+			const std::vector<const char*> validation_layers = { "VK_LAYER_KHRONOS_validation" };
+
+			const bool enableFeatureValidation = false;
+			if (enableFeatureValidation)
+			{
+				std::vector<VkValidationFeatureEnableEXT> validation_extensions = {};
+				validation_extensions.emplace_back(VK_VALIDATION_FEATURE_ENABLE_BEST_PRACTICES_EXT);
+				validation_extensions.emplace_back(VK_VALIDATION_FEATURE_ENABLE_SYNCHRONIZATION_VALIDATION_EXT);
+
+				VkValidationFeaturesEXT validation_features = {};
+				validation_features.sType = VK_STRUCTURE_TYPE_VALIDATION_FEATURES_EXT;
+				validation_features.enabledValidationFeatureCount = static_cast<uint32_t>(validation_extensions.size());
+				validation_features.pEnabledValidationFeatures = validation_extensions.data();
+				createInfo.pNext = &validation_features;
+			}
+
+			VkResult createResult = vkCreateInstance(&createInfo, nullptr, &s_VkInstance);
+			if (createResult != VK_SUCCESS)
+			{
+				SHAPE_LOG_CRITICAL("[VULKAN] Failed to create instance!");
+			}
+			volkLoadInstance(s_VkInstance);
 		}
 
 		void VKContext::MakeDefault()

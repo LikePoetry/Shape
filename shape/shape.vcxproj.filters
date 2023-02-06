@@ -140,6 +140,9 @@
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKDevice.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -207,5 +210,7 @@
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp" />
   </ItemGroup>
 </Project>
