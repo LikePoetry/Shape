@@ -16,7 +16,7 @@ namespace Shape
 {
 	namespace Graphics
 	{
-		class VKContext:public GraphicsContext
+		class VKContext :public GraphicsContext
 		{
 		public:
 			VKContext();
@@ -26,7 +26,19 @@ namespace Shape
 
 			void Init() override;
 
+			static VKAPI_ATTR VkBool32 VKAPI_CALL DebugCallback(VkDebugReportFlagsEXT flags,
+				VkDebugReportObjectTypeEXT objType,
+				uint64_t sourceObj,
+				size_t location,
+				int32_t msgCode,
+				const char* pLayerPrefix,
+				const char* pMsg,
+				void* userData);
+
 			static VkInstance GetVKInstance() { return s_VkInstance; }
+
+			static uint32_t GetVKVersion() { return m_VKVersion; }
+
 		protected:
 			static GraphicsContext* CreateFuncVulkan();
 

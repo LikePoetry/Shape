@@ -1,7 +1,6 @@
 #include "hzpch.h"
 
 #include "VKDevice.h"
-
 #include "Shape/Graphics/RHI/Renderer.h"
 
 namespace Shape
@@ -287,48 +286,136 @@ namespace Shape
 			vkGetDeviceQueue(m_Device, m_PhysicalDevice->m_QueueFamilyIndices.Graphics, 0, &m_PresentQueue);
 			vkGetDeviceQueue(m_Device, m_PhysicalDevice->m_QueueFamilyIndices.Compute, 0, &m_ComputeQueue);
 
-			//#ifdef USE_VMA_ALLOCATOR
-			//			VmaAllocatorCreateInfo allocatorInfo = {};
-			//			allocatorInfo.physicalDevice = m_PhysicalDevice->GetHandle();
-			//			allocatorInfo.device = m_Device;
-			//			allocatorInfo.instance = VKContext::GetVKInstance();
-			//			allocatorInfo.vulkanApiVersion = VKContext::GetVKVersion();
-			//
-			//			VmaVulkanFunctions fn;
-			//			fn.vkAllocateMemory = (PFN_vkAllocateMemory)vkAllocateMemory;
-			//			fn.vkBindBufferMemory = (PFN_vkBindBufferMemory)vkBindBufferMemory;
-			//			fn.vkBindImageMemory = (PFN_vkBindImageMemory)vkBindImageMemory;
-			//			fn.vkCmdCopyBuffer = (PFN_vkCmdCopyBuffer)vkCmdCopyBuffer;
-			//			fn.vkCreateBuffer = (PFN_vkCreateBuffer)vkCreateBuffer;
-			//			fn.vkCreateImage = (PFN_vkCreateImage)vkCreateImage;
-			//			fn.vkDestroyBuffer = (PFN_vkDestroyBuffer)vkDestroyBuffer;
-			//			fn.vkDestroyImage = (PFN_vkDestroyImage)vkDestroyImage;
-			//			fn.vkFlushMappedMemoryRanges = (PFN_vkFlushMappedMemoryRanges)vkFlushMappedMemoryRanges;
-			//			fn.vkFreeMemory = (PFN_vkFreeMemory)vkFreeMemory;
-			//			fn.vkGetBufferMemoryRequirements = (PFN_vkGetBufferMemoryRequirements)vkGetBufferMemoryRequirements;
-			//			fn.vkGetImageMemoryRequirements = (PFN_vkGetImageMemoryRequirements)vkGetImageMemoryRequirements;
-			//			fn.vkGetPhysicalDeviceMemoryProperties = (PFN_vkGetPhysicalDeviceMemoryProperties)vkGetPhysicalDeviceMemoryProperties;
-			//			fn.vkGetPhysicalDeviceProperties = (PFN_vkGetPhysicalDeviceProperties)vkGetPhysicalDeviceProperties;
-			//			fn.vkInvalidateMappedMemoryRanges = (PFN_vkInvalidateMappedMemoryRanges)vkInvalidateMappedMemoryRanges;
-			//			fn.vkMapMemory = (PFN_vkMapMemory)vkMapMemory;
-			//			fn.vkUnmapMemory = (PFN_vkUnmapMemory)vkUnmapMemory;
-			//			fn.vkGetBufferMemoryRequirements2KHR = 0; //(PFN_vkGetBufferMemoryRequirements2KHR)vkGetBufferMemoryRequirements2KHR;
-			//			fn.vkGetImageMemoryRequirements2KHR = 0; //(PFN_vkGetImageMemoryRequirements2KHR)vkGetImageMemoryRequirements2KHR;
-			//			fn.vkBindImageMemory2KHR = 0;
-			//			fn.vkBindBufferMemory2KHR = 0;
-			//			fn.vkGetPhysicalDeviceMemoryProperties2KHR = 0;
-			//			fn.vkGetImageMemoryRequirements2KHR = 0;
-			//			fn.vkGetBufferMemoryRequirements2KHR = 0;
-			//			fn.vkGetInstanceProcAddr = (PFN_vkGetInstanceProcAddr)vkGetInstanceProcAddr;
-			//			fn.vkGetDeviceProcAddr = (PFN_vkGetDeviceProcAddr)vkGetDeviceProcAddr;
-			//			allocatorInfo.pVulkanFunctions = &fn;
-			//
-			//			if (vmaCreateAllocator(&allocatorInfo, &m_Allocator) != VK_SUCCESS)
-			//			{
-			//				LUMOS_LOG_CRITICAL("[VULKAN] Failed to create VMA allocator");
-			//			}
-			//#endif
+#ifdef USE_VMA_ALLOCATOR
+			VmaAllocatorCreateInfo allocatorInfo = {};
+			allocatorInfo.physicalDevice = m_PhysicalDevice->GetHandle();
+			allocatorInfo.device = m_Device;
+			allocatorInfo.instance = VKContext::GetVKInstance();
+			allocatorInfo.vulkanApiVersion = VKContext::GetVKVersion();
+
+			VmaVulkanFunctions fn;
+			fn.vkAllocateMemory = (PFN_vkAllocateMemory)vkAllocateMemory;
+			fn.vkBindBufferMemory = (PFN_vkBindBufferMemory)vkBindBufferMemory;
+			fn.vkBindImageMemory = (PFN_vkBindImageMemory)vkBindImageMemory;
+			fn.vkCmdCopyBuffer = (PFN_vkCmdCopyBuffer)vkCmdCopyBuffer;
+			fn.vkCreateBuffer = (PFN_vkCreateBuffer)vkCreateBuffer;
+			fn.vkCreateImage = (PFN_vkCreateImage)vkCreateImage;
+			fn.vkDestroyBuffer = (PFN_vkDestroyBuffer)vkDestroyBuffer;
+			fn.vkDestroyImage = (PFN_vkDestroyImage)vkDestroyImage;
+			fn.vkFlushMappedMemoryRanges = (PFN_vkFlushMappedMemoryRanges)vkFlushMappedMemoryRanges;
+			fn.vkFreeMemory = (PFN_vkFreeMemory)vkFreeMemory;
+			fn.vkGetBufferMemoryRequirements = (PFN_vkGetBufferMemoryRequirements)vkGetBufferMemoryRequirements;
+			fn.vkGetImageMemoryRequirements = (PFN_vkGetImageMemoryRequirements)vkGetImageMemoryRequirements;
+			fn.vkGetPhysicalDeviceMemoryProperties = (PFN_vkGetPhysicalDeviceMemoryProperties)vkGetPhysicalDeviceMemoryProperties;
+			fn.vkGetPhysicalDeviceProperties = (PFN_vkGetPhysicalDeviceProperties)vkGetPhysicalDeviceProperties;
+			fn.vkInvalidateMappedMemoryRanges = (PFN_vkInvalidateMappedMemoryRanges)vkInvalidateMappedMemoryRanges;
+			fn.vkMapMemory = (PFN_vkMapMemory)vkMapMemory;
+			fn.vkUnmapMemory = (PFN_vkUnmapMemory)vkUnmapMemory;
+			fn.vkGetBufferMemoryRequirements2KHR = 0; //(PFN_vkGetBufferMemoryRequirements2KHR)vkGetBufferMemoryRequirements2KHR;
+			fn.vkGetImageMemoryRequirements2KHR = 0; //(PFN_vkGetImageMemoryRequirements2KHR)vkGetImageMemoryRequirements2KHR;
+			fn.vkBindImageMemory2KHR = 0;
+			fn.vkBindBufferMemory2KHR = 0;
+			fn.vkGetPhysicalDeviceMemoryProperties2KHR = 0;
+			fn.vkGetImageMemoryRequirements2KHR = 0;
+			fn.vkGetBufferMemoryRequirements2KHR = 0;
+			fn.vkGetInstanceProcAddr = (PFN_vkGetInstanceProcAddr)vkGetInstanceProcAddr;
+			fn.vkGetDeviceProcAddr = (PFN_vkGetDeviceProcAddr)vkGetDeviceProcAddr;
+			allocatorInfo.pVulkanFunctions = &fn;
+
+			if (vmaCreateAllocator(&allocatorInfo, &m_Allocator) != VK_SUCCESS)
+			{
+				SHAPE_LOG_CRITICAL("[VULKAN] Failed to create VMA allocator");
+			}
+#endif
+			m_CommandPool = CreateSharedPtr<VKCommandPool>(m_PhysicalDevice->GetGraphicsQueueFamilyIndex(), VK_COMMAND_POOL_CREATE_RESET_COMMAND_BUFFER_BIT);
+
+			CreateTracyContext();
+			CreatePipelineCache();
 			return VK_SUCCESS;
+		}
+
+		void VKDevice::CreateTracyContext()
+		{
+			VkCommandBufferAllocateInfo allocInfo = {};
+			allocInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_ALLOCATE_INFO;
+			allocInfo.level = VK_COMMAND_BUFFER_LEVEL_PRIMARY;
+			allocInfo.commandPool = m_CommandPool->GetHandle();
+			allocInfo.commandBufferCount = 1;
+
+			VkCommandBuffer tracyBuffer;
+			vkAllocateCommandBuffers(m_Device, &allocInfo, &tracyBuffer);
+
+#if defined(SHAPE_PROFILE) && defined(TRACY_ENABLE)
+			m_TracyContext.resize(3);
+			for (int i = 0; i < 3; i++)
+				m_TracyContext[i] = TracyVkContext(m_PhysicalDevice->GetHandle(), m_Device, m_GraphicsQueue, tracyBuffer);
+
+			// m_TracyContext = TracyVkContextCalibrated(m_PhysicalDevice->GetHandle(), m_Device, m_GraphicsQueue, tracyBuffer, vkGetPhysicalDeviceCalibrateableTimeDomainsEXT, vkGetCalibratedTimestampsEXT);
+#endif
+
+			vkQueueWaitIdle(m_GraphicsQueue);
+			vkFreeCommandBuffers(m_Device, m_CommandPool->GetHandle(), 1, &tracyBuffer);
+		}
+
+#if defined(SHAPE_PROFILE) && defined(TRACY_ENABLE)
+		tracy::VkCtx* VKDevice::GetTracyContext()
+		{
+			return nullptr;
+			//return m_TracyContext[VKRenderer::GetMainSwapChain()->GetCurrentBufferIndex()];
+		}
+#endif
+
+		void VKDevice::CreatePipelineCache()
+		{
+			VkPipelineCacheCreateInfo pipelineCacheCI = {};
+			pipelineCacheCI.sType = VK_STRUCTURE_TYPE_PIPELINE_CACHE_CREATE_INFO;
+			pipelineCacheCI.pNext = NULL;
+			vkCreatePipelineCache(m_Device, &pipelineCacheCI, VK_NULL_HANDLE, &m_PipelineCache);
+		}
+
+		VkBool32 VKContext::DebugCallback(VkDebugReportFlagsEXT flags,
+			VkDebugReportObjectTypeEXT objType,
+			uint64_t sourceObj,
+			size_t location,
+			int32_t msgCode,
+			const char* pLayerPrefix,
+			const char* pMsg,
+			void* userData)
+		{
+			// Select prefix depending on flags passed to the callback
+			// Note that multiple flags may be set for a single validation message
+			// Error that may result in undefined behaviour
+
+			if (!flags)
+				return VK_FALSE;
+
+			if (flags & VK_DEBUG_REPORT_ERROR_BIT_EXT)
+			{
+				SHAPE_LOG_WARN("[VULKAN] - ERROR : [{0}] Code {1}  : {2}", pLayerPrefix, msgCode, pMsg);
+			}
+			// Warnings may hint at unexpected / non-spec API usage
+			if (flags & VK_DEBUG_REPORT_WARNING_BIT_EXT)
+			{
+				SHAPE_LOG_WARN("[VULKAN] - WARNING : [{0}] Code {1}  : {2}", pLayerPrefix, msgCode, pMsg);
+			}
+			// May indicate sub-optimal usage of the API
+			if (flags & VK_DEBUG_REPORT_PERFORMANCE_WARNING_BIT_EXT)
+			{
+				SHAPE_LOG_WARN("[VULKAN] - PERFORMANCE : [{0}] Code {1}  : {2}", pLayerPrefix, msgCode, pMsg);
+			}
+			// Informal messages that may become handy during debugging
+			if (flags & VK_DEBUG_REPORT_INFORMATION_BIT_EXT)
+			{
+				SHAPE_LOG_WARN("[VULKAN] - INFO : [{0}] Code {1}  : {2}", pLayerPrefix, msgCode, pMsg);
+			}
+			// Diagnostic info from the Vulkan loader and layers
+			// Usually not helpful in terms of API usage, but may help to debug layer and loader problems
+			if (flags & VK_DEBUG_REPORT_DEBUG_BIT_EXT)
+			{
+				SHAPE_LOG_WARN("[VULKAN] - DEBUG : [{0}] Code {1}  : {2}", pLayerPrefix, msgCode, pMsg);
+			}
+
+			return VK_FALSE;
 		}
 
 		bool VKPhysicalDevice::IsExtensionSupported(const std::string& extensionName) const

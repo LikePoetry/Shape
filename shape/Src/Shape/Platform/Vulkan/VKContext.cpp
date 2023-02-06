@@ -48,6 +48,20 @@ namespace Shape
 			return layers;
 		}
 
+		VkResult CreateDebugReportCallbackEXT(VkInstance instance, const VkDebugReportCallbackCreateInfoEXT* pCreateInfo, const VkAllocationCallbacks* pAllocator, VkDebugReportCallbackEXT* pCallback)
+		{
+			auto func = reinterpret_cast<PFN_vkCreateDebugReportCallbackEXT>(vkGetInstanceProcAddr(instance, "vkCreateDebugReportCallbackEXT"));
+
+			if (func != nullptr)
+			{
+				return func(instance, pCreateInfo, pAllocator, pCallback);
+			}
+			else
+			{
+				return VK_ERROR_EXTENSION_NOT_PRESENT;
+			}
+		}
+		
 		VKContext::VKContext()
 		{
 
@@ -63,8 +77,9 @@ namespace Shape
 			SHAPE_PROFILE_FUNCTION();
 			//创建Vulkan 实例
 			CreateInstance();
-
+			//设备初始化
 			VKDevice::Get().Init();
+			SetupDebugCallback();
 		}
 
 		/// <summary>
@@ -154,6 +169,27 @@ namespace Shape
 				extensions.end());
 
 			return !removedExtension;
+		}
+		
+		/// <summary>
+		/// 设置Vulkan 回调函数
+		/// </summary>
+		void VKContext::SetupDebugCallback()
+		{
+			SHAPE_PROFILE_FUNCTION();
+			if (!EnableValidationLayers)
+				return;
+
+			VkDebugReportCallbackCreateInfoEXT createInfo = {};
+			createInfo.sType = VK_STRUCTURE_TYPE_DEBUG_REPORT_CALLBACK_CREATE_INFO_EXT;
+			createInfo.flags = VK_DEBUG_REPORT_ERROR_BIT_EXT | VK_DEBUG_REPORT_WARNING_BIT_EXT | VK_DEBUG_REPORT_PERFORMANCE_WARNING_BIT_EXT;
+			createInfo.pfnCallback = reinterpret_cast<PFN_vkDebugReportCallbackEXT>(DebugCallback);
+
+			VkResult result = CreateDebugReportCallbackEXT(s_VkInstance, &createInfo, nullptr, &m_DebugCallback);
+			if (result != VK_SUCCESS)
+			{
+				SHAPE_LOG_CRITICAL("[VULKAN] Failed to set up debug callback!");
+			}
 		}
 
 		/// <summary>

@@ -3,6 +3,8 @@
 #include "Shape/Utilities/TSingleton.h"
 #include "VK.h"
 #include "VKContext.h"
+
+#include "VKCommandPool.h"
 #include "Shape/Core/StringUtilities.h"
 #include "Shape/Graphics/RHI/Definitions.h"
 
@@ -116,6 +118,11 @@ namespace Shape
 				return m_Handle;
 			}
 
+			int32_t GetGraphicsQueueFamilyIndex()
+			{
+				return m_QueueFamilyIndices.Graphics;
+			}
+
 		private:
 			struct QueueFamilyIndices
 			{
@@ -159,6 +166,15 @@ namespace Shape
 			void CreatePipelineCache();
 			void CreateTracyContext();
 
+			VkDevice GetDevice() const
+			{
+				return m_Device;
+			}
+
+#if defined(SHAPE_PROFILE) && defined(TRACY_ENABLE)
+			tracy::VkCtx* GetTracyContext();
+#endif
+
 			const VkPhysicalDeviceFeatures& GetEnabledFeatures()
 			{
 				return m_EnabledFeatures;
@@ -170,12 +186,22 @@ namespace Shape
 			VkQueue m_ComputeQueue;
 			VkQueue m_GraphicsQueue;
 			VkQueue m_PresentQueue;
+			VkPipelineCache m_PipelineCache;
 
 			VkPhysicalDeviceFeatures m_EnabledFeatures;
 
+			SharedPtr<VKCommandPool> m_CommandPool;
 			SharedPtr<VKPhysicalDevice> m_PhysicalDevice;
 
 			bool m_EnableDebugMarkers = false;
+
+#if defined(SHAPE_PROFILE) && defined(TRACY_ENABLE)
+			std::vector<tracy::VkCtx*> m_TracyContext;
+#endif
+
+#ifdef USE_VMA_ALLOCATOR
+			VmaAllocator m_Allocator{};
+#endif
 		};
 	}
 }

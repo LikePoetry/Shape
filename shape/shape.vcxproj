@@ -87,6 +87,7 @@
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h" />
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWWindow.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandPool.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKContext.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKDevice.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
@@ -143,6 +144,7 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandPool.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

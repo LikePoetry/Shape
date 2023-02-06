@@ -1,7 +1,7 @@
 #pragma once
 
 #define SHAPE_EXPORT
-
+#define SHAPE_PROFILE
 #define BIT(x) (1 << x)
 
 #ifdef SHAPE_ENABLE_ASSERTS
