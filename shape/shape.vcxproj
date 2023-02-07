@@ -81,6 +81,7 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
@@ -91,6 +92,8 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKContext.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKDevice.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKSwapChain.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKUtilities.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
@@ -134,6 +137,7 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\SwapChain.cpp" />
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -152,6 +156,8 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKSwapChain.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUtilities.cpp" />
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -161,6 +167,7 @@
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp" />
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

@@ -1,7 +1,7 @@
 #pragma once
 #include "Shape/Events/Event.h"
 #include "Shape/Graphics/RHI/GraphicsContext.h"
-
+#include "Shape/Graphics/RHI/SwapChain.h"
 #include <glm/vec2.hpp>
 #include <glm/fwd.hpp>
 
@@ -83,6 +83,9 @@ namespace Shape
         void SetWindowFocus(bool focus) { m_WindowFocus = focus; }
         bool GetWindowFocus() const { return m_WindowFocus; }
 
+        const SharedPtr<Shape::Graphics::SwapChain>& GetSwapChain() const { return m_SwapChain; }
+        const SharedPtr<Shape::Graphics::GraphicsContext>& GetGraphicsContext() const { return m_GraphicsContext; }
+
     protected:
         static Window* (*CreateFunc)(const WindowDesc&);
 
@@ -95,5 +98,6 @@ namespace Shape
         bool m_WindowFocus = true;
 
         SharedPtr<Shape::Graphics::GraphicsContext> m_GraphicsContext;
+        SharedPtr<Shape::Graphics::SwapChain> m_SwapChain;
     };
 }

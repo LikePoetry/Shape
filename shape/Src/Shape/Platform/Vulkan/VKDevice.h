@@ -171,6 +171,16 @@ namespace Shape
 				return m_Device;
 			}
 
+			VkPhysicalDevice GetGPU() const
+			{
+				return m_PhysicalDevice->GetHandle();
+			}
+
+			const SharedPtr<VKPhysicalDevice>& GetPhysicalDevice() const
+			{
+				return m_PhysicalDevice;
+			}
+
 #if defined(SHAPE_PROFILE) && defined(TRACY_ENABLE)
 			tracy::VkCtx* GetTracyContext();
 #endif

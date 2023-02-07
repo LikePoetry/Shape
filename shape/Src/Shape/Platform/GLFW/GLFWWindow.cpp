@@ -45,6 +45,9 @@ namespace Shape
 		//初始化图形工具和交换链
 		m_GraphicsContext = SharedPtr<Graphics::GraphicsContext>(Graphics::GraphicsContext::Create());
 		m_GraphicsContext->Init();
+
+		m_SwapChain = SharedPtr<Graphics::SwapChain>(Graphics::SwapChain::Create(m_Data.Width, m_Data.Height));
+		m_SwapChain->Init(m_VSync, (Window*)this);
 	}
 
 	GLFWWindow::~GLFWWindow()

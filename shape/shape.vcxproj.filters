@@ -144,6 +144,9 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandPool.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKSwapChain.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKUtilities.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -214,5 +217,9 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandPool.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\SwapChain.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKSwapChain.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUtilities.cpp" />
   </ItemGroup>
 </Project>
