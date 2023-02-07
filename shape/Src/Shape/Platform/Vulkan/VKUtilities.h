@@ -18,6 +18,8 @@ namespace Shape
 	{
 		namespace VKUtilities
 		{
+            bool IsPresentModeSupported(const std::vector<VkPresentModeKHR>& supportedModes, VkPresentModeKHR presentMode);
+            VkPresentModeKHR ChoosePresentMode(const std::vector<VkPresentModeKHR>& supportedModes, bool vsync);
 
 			std::string ErrorString(VkResult errorCode);
 		}

@@ -136,8 +136,12 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\RHI\SwapChain.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\SwapChain.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -147,17 +151,27 @@
     <ClCompile Include="Src\Shape\Platform\GLFW\GLFWWindow.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandPool.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandPool.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKSwapChain.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUtilities.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKSwapChain.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -167,7 +181,9 @@
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
