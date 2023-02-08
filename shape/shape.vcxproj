@@ -58,6 +58,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Src\Shape\Core\Application.h" />
+    <ClInclude Include="Src\Shape\Core\Asset.h" />
     <ClInclude Include="Src\Shape\Core\Core.h" />
     <ClInclude Include="Src\Shape\Core\CoreSystem.h" />
     <ClInclude Include="Src\Shape\Core\EntryPoint.h" />
@@ -72,27 +73,35 @@
     <ClInclude Include="Src\Shape\Core\Reference.h" />
     <ClInclude Include="Src\Shape\Core\ReferenceCounter.h" />
     <ClInclude Include="Src\Shape\Core\StringUtilities.h" />
+    <ClInclude Include="Src\Shape\Core\UUID.h" />
     <ClInclude Include="Src\Shape\Core\VFS.h" />
     <ClInclude Include="Src\Shape\Core\Version.h" />
     <ClInclude Include="Src\Shape\Events\ApplicationEvent.h" />
     <ClInclude Include="Src\Shape\Events\Event.h" />
     <ClInclude Include="Src\Shape\Events\KeyEvent.h" />
     <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\CommandBuffer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Texture.h" />
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
+    <ClInclude Include="Src\Shape\Maths\Random.h" />
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h" />
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWWindow.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandPool.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKContext.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKDevice.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKFence.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKInitialisers.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKSwapChain.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKTexture.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKUtilities.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
@@ -130,7 +139,11 @@
     <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Core\UUID.cpp" />
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\CommandBuffer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
@@ -142,16 +155,21 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\SwapChain.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Texture.cpp" />
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Random.cpp" />
     <ClCompile Include="Src\Shape\Platform\GLFW\GLFWWindow.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandPool.cpp">
@@ -163,12 +181,14 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKFence.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKSwapChain.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKTexture.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

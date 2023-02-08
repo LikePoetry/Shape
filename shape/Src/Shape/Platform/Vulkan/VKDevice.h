@@ -176,6 +176,11 @@ namespace Shape
 				return m_PhysicalDevice->GetHandle();
 			}
 
+			const SharedPtr<VKCommandPool>& GetCommandPool() const
+			{
+				return m_CommandPool;
+			}
+
 			const SharedPtr<VKPhysicalDevice>& GetPhysicalDevice() const
 			{
 				return m_PhysicalDevice;

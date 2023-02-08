@@ -105,6 +105,9 @@
     <ClInclude Include="Src\Shape\Events\MouseEvent.h">
       <Filter>Shape\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\CommandBuffer.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
@@ -135,6 +138,9 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.h">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandPool.h">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClInclude>
@@ -163,6 +169,13 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKFence.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKInitialisers.h" />
+    <ClInclude Include="Src\Shape\Core\UUID.h" />
+    <ClInclude Include="Src\Shape\Maths\Random.h" />
+    <ClInclude Include="Src\Shape\Core\Asset.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Texture.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKTexture.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -198,6 +211,9 @@
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\CommandBuffer.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
@@ -217,6 +233,9 @@
       <Filter>Shape\Platform\GLFW</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.cpp">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandPool.cpp">
@@ -253,5 +272,10 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKFence.cpp" />
+    <ClCompile Include="Src\Shape\Core\UUID.cpp" />
+    <ClCompile Include="Src\Shape\Maths\Random.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\Texture.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKTexture.cpp" />
   </ItemGroup>
 </Project>

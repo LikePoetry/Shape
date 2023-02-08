@@ -1,6 +1,8 @@
 #pragma once
+#include "VKCommandBuffer.h"
 #include "VKContext.h"
 #include "Shape/Graphics/RHI/SwapChain.h"
+#include "Shape/Graphics/RHI/Texture.h"
 
 #define MAX_SWAPCHAIN_BUFFERS 3
 
@@ -9,6 +11,15 @@ namespace Shape
     class Window;
     namespace Graphics
     {
+        class VKFence;
+
+        struct FrameData
+        {
+            VkSemaphore PresentSemaphore = VK_NULL_HANDLE;
+            SharedPtr<VKCommandPool> CommandPool;
+            SharedPtr<VKCommandBuffer> MainCommandBuffer;
+        };
+
         class VKSwapChain:public SwapChain
         {
         public:
@@ -27,8 +38,10 @@ namespace Shape
 
         
         private:
-
+            FrameData m_Frames[MAX_SWAPCHAIN_BUFFERS];
             void FindImageFormatAndColourSpace();
+
+            std::vector<Texture2D*> m_SwapChainBuffers;
 
             uint32_t m_CurrentBuffer = 0;
             uint32_t m_AcquireImageIndex = 0;

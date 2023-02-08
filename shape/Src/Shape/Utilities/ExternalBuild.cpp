@@ -6,4 +6,7 @@
 #define VOLK_IMPLEMENTATION
 #include <vulkan/volk/volk.h>
 
+#include <OpenFBX/miniz.h>
+#include <OpenFBX/ofbx.cpp>
+
 #pragma warning(pop)

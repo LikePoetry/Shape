@@ -1,6 +1,7 @@
 #include "hzpch.h"
 #include "VKSwapChain.h"
 #include "VKUtilities.h"
+#include "VKTexture.h"
 
 namespace Shape
 {
@@ -134,25 +135,27 @@ namespace Shape
 			VK_CHECK_RESULT(vkCreateSwapchainKHR(VKDevice::Get().GetDevice(), &swapChainCI, VK_NULL_HANDLE, &m_SwapChain));
 
 			//创建交换链完成
-			//if (m_OldSwapChain != VK_NULL_HANDLE)
-			//{
-			//	for (uint32_t i = 0; i < m_SwapChainBufferCount; i++)
-			//	{
-			//		if (m_Frames[i].MainCommandBuffer->GetState() == CommandBufferState::Submitted)
-			//			m_Frames[i].MainCommandBuffer->Wait();
+			// 
+			// 处理旧的交换链
+			if (m_OldSwapChain != VK_NULL_HANDLE)
+			{
+				for (uint32_t i = 0; i < m_SwapChainBufferCount; i++)
+				{
+					if (m_Frames[i].MainCommandBuffer->GetState() == CommandBufferState::Submitted)
+						m_Frames[i].MainCommandBuffer->Wait();
 
-			//		m_Frames[i].MainCommandBuffer->Reset();
+					m_Frames[i].MainCommandBuffer->Reset();
 
-			//		delete m_SwapChainBuffers[i];
-			//		vkDestroySemaphore(VKDevice::Get().GetDevice(), m_Frames[i].PresentSemaphore, nullptr);
-			//		m_Frames[i].PresentSemaphore = VK_NULL_HANDLE;
-			//	}
+					delete m_SwapChainBuffers[i];
+					vkDestroySemaphore(VKDevice::Get().GetDevice(), m_Frames[i].PresentSemaphore, nullptr);
+					m_Frames[i].PresentSemaphore = VK_NULL_HANDLE;
+				}
 
-			//	m_SwapChainBuffers.clear();
+				m_SwapChainBuffers.clear();
 
-			//	vkDestroySwapchainKHR(VKDevice::Get().GetDevice(), m_OldSwapChain, VK_NULL_HANDLE);
-			//	m_OldSwapChain = VK_NULL_HANDLE;
-			//}
+				vkDestroySwapchainKHR(VKDevice::Get().GetDevice(), m_OldSwapChain, VK_NULL_HANDLE);
+				m_OldSwapChain = VK_NULL_HANDLE;
+			}
 
 			uint32_t swapChainImageCount;
 			VK_CHECK_RESULT(vkGetSwapchainImagesKHR(VKDevice::Get().GetDevice(), m_SwapChain, &swapChainImageCount, VK_NULL_HANDLE));
@@ -180,10 +183,10 @@ namespace Shape
 
 				//创建 ImageView
 
-				//VKTexture2D* swapChainBuffer = new VKTexture2D(pSwapChainImages[i], imageView, m_ColourFormat, m_Width, m_Height);
-				//swapChainBuffer->TransitionImage(VK_IMAGE_LAYOUT_PRESENT_SRC_KHR);
+				VKTexture2D* swapChainBuffer = new VKTexture2D(pSwapChainImages[i], imageView, m_ColourFormat, m_Width, m_Height);
+				swapChainBuffer->TransitionImage(VK_IMAGE_LAYOUT_PRESENT_SRC_KHR);
 
-				//m_SwapChainBuffers.push_back(swapChainBuffer);
+				m_SwapChainBuffers.push_back(swapChainBuffer);
 
 			}
 			delete[] pSwapChainImages;
