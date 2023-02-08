@@ -22,6 +22,8 @@ namespace Shape
             VkPresentModeKHR ChoosePresentMode(const std::vector<VkPresentModeKHR>& supportedModes, bool vsync);
 
 			std::string ErrorString(VkResult errorCode);
+
+            VkFormat FormatToVK(const RHIFormat format, bool srgb = false);
 		}
 	}
 }

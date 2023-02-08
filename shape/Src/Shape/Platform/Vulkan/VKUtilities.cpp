@@ -79,5 +79,79 @@ namespace Shape
             }
             return presentMode;
         }
+
+        VkFormat VKUtilities::FormatToVK(const RHIFormat format, bool srgb)
+        {
+            if (srgb)
+            {
+                switch (format)
+                {
+                case RHIFormat::R8_Unorm:
+                    return VK_FORMAT_R8_SRGB;
+                case RHIFormat::R8G8_Unorm:
+                    return VK_FORMAT_R8G8_SRGB;
+                case RHIFormat::R8G8B8_Unorm:
+                    return VK_FORMAT_R8G8B8_SRGB;
+                case RHIFormat::R8G8B8A8_Unorm:
+                    return VK_FORMAT_R8G8B8A8_SRGB;
+                case RHIFormat::R16G16B16_Float:
+                    return VK_FORMAT_R16G16B16_SFLOAT;
+                case RHIFormat::R16G16B16A16_Float:
+                    return VK_FORMAT_R16G16B16A16_SFLOAT;
+                case RHIFormat::R32G32B32_Float:
+                    return VK_FORMAT_R32G32B32_SFLOAT;
+                case RHIFormat::R32G32B32A32_Float:
+                    return VK_FORMAT_R32G32B32A32_SFLOAT;
+                default:
+                    SHAPE_LOG_CRITICAL("[Texture] Unsupported image bit-depth!");
+                    return VK_FORMAT_R8G8B8A8_SRGB;
+                }
+            }
+            else
+            {
+                switch (format)
+                {
+                case RHIFormat::R8_Unorm:
+                    return VK_FORMAT_R8_UNORM;
+                case RHIFormat::R8G8_Unorm:
+                    return VK_FORMAT_R8G8_UNORM;
+                case RHIFormat::R8G8B8_Unorm:
+                    return VK_FORMAT_R8G8B8A8_UNORM;
+                case RHIFormat::R8G8B8A8_Unorm:
+                    return VK_FORMAT_R8G8B8A8_UNORM;
+                case RHIFormat::R11G11B10_Float:
+                    return VK_FORMAT_B10G11R11_UFLOAT_PACK32;
+                case RHIFormat::R10G10B10A2_Unorm:
+                    return VK_FORMAT_A2R10G10B10_UNORM_PACK32;
+                case RHIFormat::R16_Float:
+                    return VK_FORMAT_R16_SFLOAT;
+                case RHIFormat::R16G16_Float:
+                    return VK_FORMAT_R16G16_SFLOAT;
+                case RHIFormat::R16G16B16_Float:
+                    return VK_FORMAT_R16G16B16_SFLOAT;
+                case RHIFormat::R16G16B16A16_Float:
+                    return VK_FORMAT_R16G16B16A16_SFLOAT;
+                case RHIFormat::R32_Float:
+                    return VK_FORMAT_R32_SFLOAT;
+                case RHIFormat::R32G32_Float:
+                    return VK_FORMAT_R32G32_SFLOAT;
+                case RHIFormat::R32G32B32_Float:
+                    return VK_FORMAT_R32G32B32_SFLOAT;
+                case RHIFormat::R32G32B32A32_Float:
+                    return VK_FORMAT_R32G32B32A32_SFLOAT;
+                case RHIFormat::D16_Unorm:
+                    return VK_FORMAT_D16_UNORM;
+                case RHIFormat::D32_Float:
+                    return VK_FORMAT_D32_SFLOAT;
+                case RHIFormat::D24_Unorm_S8_UInt:
+                    return VK_FORMAT_D24_UNORM_S8_UINT;
+                case RHIFormat::D32_Float_S8_UInt:
+                    return VK_FORMAT_D32_SFLOAT_S8_UINT;
+                default:
+                    SHAPE_LOG_CRITICAL("[Texture] Unsupported image bit-depth!");
+                    return VK_FORMAT_R8G8B8A8_UNORM;
+                }
+            }
+        }
     }
 }

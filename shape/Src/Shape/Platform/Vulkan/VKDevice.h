@@ -195,6 +195,13 @@ namespace Shape
 				return m_EnabledFeatures;
 			}
 
+#ifdef USE_VMA_ALLOCATOR
+			VmaAllocator GetAllocator() const
+			{
+				return m_Allocator;
+			}
+#endif
+
 		private:
 			VkDevice m_Device;
 
