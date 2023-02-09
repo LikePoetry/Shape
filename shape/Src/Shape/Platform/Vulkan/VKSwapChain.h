@@ -28,6 +28,7 @@ namespace Shape
 
             bool Init(bool vsync) override;
             bool Init(bool vsync, Window* windowHandle) override;
+            void CreateFrameData();
 
             VkSurfaceKHR CreatePlatformSurface(VkInstance vkInstance, Window* window);
 
