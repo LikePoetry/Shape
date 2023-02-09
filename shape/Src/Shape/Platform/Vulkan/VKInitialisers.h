@@ -25,5 +25,15 @@ namespace Shape
             semaphoreCreateInfo.sType = VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO;
             return semaphoreCreateInfo;
         }
+
+        /** @brief Initialize an image memory barrier with no image transfer ownership */
+        inline VkImageMemoryBarrier ImageMemoryBarrier()
+        {
+            VkImageMemoryBarrier imageMemoryBarrier = {};
+            imageMemoryBarrier.sType = VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER;
+            imageMemoryBarrier.srcQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
+            imageMemoryBarrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
+            return imageMemoryBarrier;
+        }
 	}
 }

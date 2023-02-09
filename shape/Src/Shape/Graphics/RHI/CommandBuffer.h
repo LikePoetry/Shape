@@ -11,7 +11,7 @@ namespace Shape
 
 			static CommandBuffer* Create();
 
-			virtual bool Init(bool primary = true);
+			virtual bool Init(bool primary = true) = 0;
 
 		protected:
 			static CommandBuffer* (*CreateFunc)();

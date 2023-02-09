@@ -25,10 +25,12 @@ namespace Shape
 			~VKCommandBuffer();
 
 			bool Init(bool primary) override;
+			bool Init(bool primary, VkCommandPool commandPool);
 
 			bool Wait();
 			void Reset();
 
+			VkCommandBuffer GetHandle() const { return m_CommandBuffer; };
 			CommandBufferState GetState() const { return m_State; }
 
 			VkSemaphore GetSemaphore() const { return m_Semaphore; }

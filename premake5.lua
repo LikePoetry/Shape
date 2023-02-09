@@ -11,6 +11,8 @@ IncludeDir["glm"] = "Shape/External/glm"
 IncludeDir["GLFW"] = "Shape/External/glfw/include/"
 IncludeDir["ImGui"] = "Shape/External/imgui/"
 IncludeDir["vulkan"] = "Shape/External/vulkan/"
+IncludeDir["stb"] = "Shape/External/stb"
+
 
 workspace "Shape"
     architecture "x64"
@@ -59,7 +61,8 @@ project "Shape"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.vulkan}"
+		"%{IncludeDir.vulkan}",
+		"%{IncludeDir.stb}"
 	}
 
 	libdirs 
@@ -148,7 +151,8 @@ project "Editor"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.ImGui}",
-		"%{IncludeDir.vulkan}"
+		"%{IncludeDir.vulkan}",
+		"%{IncludeDir.stb}"
     }
 
     links

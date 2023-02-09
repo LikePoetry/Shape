@@ -123,6 +123,11 @@ namespace Shape
 				return m_QueueFamilyIndices.Graphics;
 			}
 
+			VkPhysicalDeviceProperties GetProperties() const
+			{
+				return m_PhysicalDeviceProperties;
+			}
+
 		private:
 			struct QueueFamilyIndices
 			{
@@ -184,6 +189,26 @@ namespace Shape
 			const SharedPtr<VKPhysicalDevice>& GetPhysicalDevice() const
 			{
 				return m_PhysicalDevice;
+			}
+
+			VkQueue GetGraphicsQueue() const
+			{
+				return m_GraphicsQueue;
+			}
+
+			VkQueue GetPresentQueue() const
+			{
+				return m_PresentQueue;
+			}
+
+			VkQueue GetComputeQueue() const
+			{
+				return m_ComputeQueue;
+			}
+
+			VkPipelineCache GetPipelineCache() const
+			{
+				return m_PipelineCache;
 			}
 
 #if defined(SHAPE_PROFILE) && defined(TRACY_ENABLE)
