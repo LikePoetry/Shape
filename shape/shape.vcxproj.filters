@@ -194,6 +194,8 @@
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKBuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\UniformBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -309,5 +311,7 @@
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKBuffer.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\UniformBuffer.cpp" />
   </ItemGroup>
 </Project>

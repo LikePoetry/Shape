@@ -82,10 +82,12 @@
     <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\CommandBuffer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Texture.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\UniformBuffer.h" />
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
@@ -150,6 +152,7 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\CommandBuffer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -162,6 +165,7 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\Texture.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\UniformBuffer.cpp" />
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

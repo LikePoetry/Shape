@@ -177,6 +177,13 @@ namespace Shape
             {
             }
         };
+
+        struct Descriptor
+        {
+            Texture** textures;
+            Texture* texture;
+            UniformBuffer* buffer;
+        };
     }
 }
 
