@@ -3,6 +3,7 @@ namespace Shape
 {
     namespace Graphics
     {
+        class UniformBuffer;
         class GraphicsContext;
         class Texture;
         class Texture2D;
@@ -19,6 +20,17 @@ namespace Shape
             VIRTUAL = 2,
             CPU = 3,
             UNKNOWN = 4
+        };
+
+        enum class ShaderType : int
+        {
+            VERTEX,
+            FRAGMENT,
+            GEOMETRY,
+            TESSELLATION_CONTROL,
+            TESSELLATION_EVALUATION,
+            COMPUTE,
+            UNKNOWN
         };
 
         enum class TextureType
@@ -86,6 +98,14 @@ namespace Shape
             D24_Unorm_S8_UInt,
             D32_Float_S8_UInt,
             SCREEN
+        };
+
+        enum class DescriptorType
+        {
+            UNIFORM_BUFFER,
+            UNIFORM_BUFFER_DYNAMIC,
+            IMAGE_SAMPLER,
+            IMAGE_STORAGE
         };
 
         enum TextureFlags : uint32_t
@@ -178,11 +198,53 @@ namespace Shape
             }
         };
 
+        enum class ShaderDataType
+        {
+            NONE,
+            FLOAT32,
+            VEC2,
+            VEC3,
+            VEC4,
+            IVEC2,
+            IVEC3,
+            IVEC4,
+            MAT3,
+            MAT4,
+            INT32,
+            INT,
+            UINT,
+            BOOL,
+            STRUCT,
+            MAT4ARRAY
+        };
+
+        struct BufferMemberInfo
+        {
+            uint32_t size;
+            uint32_t offset;
+            ShaderDataType type;
+            std::string name;
+            std::string fullName;
+        };
+
         struct Descriptor
         {
             Texture** textures;
             Texture* texture;
             UniformBuffer* buffer;
+
+            uint32_t offset;
+            uint32_t size;
+            uint32_t binding;
+            uint32_t textureCount = 1;
+            uint32_t mipLevel = 0;
+            std::string name;
+
+            TextureType textureType;
+            DescriptorType type = DescriptorType::IMAGE_SAMPLER;
+            ShaderType shaderType;
+
+            std::vector<BufferMemberInfo> m_Members;
         };
     }
 }

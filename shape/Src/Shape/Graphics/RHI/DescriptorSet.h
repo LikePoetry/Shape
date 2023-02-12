@@ -7,7 +7,9 @@ namespace Shape
 	{
 		struct DescriptorSetInfo
 		{
-			std::vector<Descriptor>
+			std::vector<Descriptor> descriptors;
 		};
+
+
 	}
 }
