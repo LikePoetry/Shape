@@ -12,6 +12,8 @@ IncludeDir["GLFW"] = "Shape/External/glfw/include/"
 IncludeDir["ImGui"] = "Shape/External/imgui/"
 IncludeDir["vulkan"] = "Shape/External/vulkan/"
 IncludeDir["stb"] = "Shape/External/stb"
+IncludeDir["SpirvCross"] = "Shape/External/vulkan/SPIRV-Cross"
+
 
 
 workspace "Shape"
@@ -30,6 +32,8 @@ group "External"
 	require("Shape/External/GLFWpremake5")
 		SetRecommendedSettings()	
 	require("Shape/External/imguipremake5")
+		SetRecommendedSettings()
+	require("Shape/External/SPIRVCrosspremake5")
 		SetRecommendedSettings()
 
 
@@ -62,12 +66,15 @@ project "Shape"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.vulkan}",
-		"%{IncludeDir.stb}"
+		"%{IncludeDir.stb}",
+		"%{IncludeDir.SpirvCross}",
+
 	}
 
 	libdirs 
 	{ 
 		"spdlog",
+		"SpirvCross",
 	}
 
 	defines
@@ -152,7 +159,9 @@ project "Editor"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.ImGui}",
 		"%{IncludeDir.vulkan}",
-		"%{IncludeDir.stb}"
+		"%{IncludeDir.stb}",
+		"%{IncludeDir.SpirvCross}",
+
     }
 
     links
@@ -160,6 +169,7 @@ project "Editor"
         "Shape",
 		"glfw",
 		"imgui",
+		"SpirvCross",
 
     }
 

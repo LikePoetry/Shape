@@ -10,6 +10,11 @@ namespace Shape
 			std::vector<Descriptor> descriptors;
 		};
 
-
+		class DescriptorSet
+		{
+		public:
+			virtual ~DescriptorSet() = default;
+			static DescriptorSet* Create(const DescriptorDesc& desc);
+		};
 	}
 }

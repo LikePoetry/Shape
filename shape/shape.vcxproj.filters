@@ -117,16 +117,25 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\Shader.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\Texture.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\UniformBuffer.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h">
@@ -148,6 +157,9 @@
       <Filter>Shape\Platform\GLFW</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKBuffer.h">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.h">
@@ -193,9 +205,6 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
-    <ClInclude Include="Src\Shape\Platform\Vulkan\VKBuffer.h" />
-    <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h" />
-    <ClInclude Include="Src\Shape\Graphics\RHI\UniformBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -237,16 +246,25 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\CommandBuffer.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Shader.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\SwapChain.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Texture.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\UniformBuffer.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
@@ -262,6 +280,9 @@
       <Filter>Shape\Platform\GLFW</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKBuffer.cpp">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.cpp">
@@ -310,8 +331,5 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKBuffer.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\RHI\UniformBuffer.cpp" />
   </ItemGroup>
 </Project>

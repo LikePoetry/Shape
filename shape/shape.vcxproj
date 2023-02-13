@@ -40,7 +40,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;USE_VMA_ALLOCATOR;IMGUI_USER_CONFIG="../Src/Shape/ImGui/ImConfig.h";_CRT_SECURE_NO_WARNINGS;_DISABLE_EXTENDED_ALIGNED_STORAGE;SHAPE_ENGINE;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Src;External\spdlog\include;External;External\glm;External\glfw\include;External\imgui;External\vulkan;External\stb;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Src;External\spdlog\include;External;External\glm;External\glfw\include;External\imgui;External\vulkan;External\stb;External\vulkan\SPIRV-Cross;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -53,7 +53,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
     <Lib>
-      <AdditionalLibraryDirectories>..\spdlog;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\spdlog;..\SpirvCross;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -85,6 +85,7 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Shader.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Texture.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\UniformBuffer.h" />
@@ -152,11 +153,16 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\CommandBuffer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Shader.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\SwapChain.cpp">
@@ -165,7 +171,9 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\Texture.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Graphics\RHI\UniformBuffer.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\UniformBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -181,7 +189,9 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKBuffer.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

@@ -227,6 +227,13 @@ namespace Shape
             std::string fullName;
         };
 
+        struct DescriptorDesc
+        {
+            uint32_t layoutIndex;
+            Shader* shader;
+            uint32_t count = 1;
+        };
+
         struct Descriptor
         {
             Texture** textures;
