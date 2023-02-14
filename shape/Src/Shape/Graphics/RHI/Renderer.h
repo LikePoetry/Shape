@@ -6,6 +6,8 @@ namespace Shape
 {
 	namespace Graphics
 	{
+		class Mesh;
+
 		struct RenderAPICapabilities
 		{
 			std::string Vendor;
@@ -31,6 +33,14 @@ namespace Shape
 				static RenderAPICapabilities capabilities;
 				return capabilities;
 			}
+
+			static GraphicsContext* GetGraphicsContext() { return Application::Get().GetWindow()->GetGraphicsContext(); }
+			static SwapChain* GetMainSwapChain() { return Application::Get().GetWindow()->GetSwapChain(); }
+			static void DrawMesh(CommandBuffer* commandBuffer, Graphics::Pipeline* pipeline, Graphics::Mesh* mesh);
+
+		protected:
+			static Renderer* (*CreateFunc)();
+			static Renderer* s_Instance;
 		};
 	}
 }

@@ -3,6 +3,9 @@ namespace Shape
 {
 	namespace Graphics
 	{
+		class CommandBuffer;
+		class DescriptorSet;
+		class Pipeline;
 		class UniformBuffer;
 		class GraphicsContext;
 		class Texture;

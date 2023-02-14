@@ -59,8 +59,10 @@
   <ItemGroup>
     <ClInclude Include="Src\Shape\Core\Application.h" />
     <ClInclude Include="Src\Shape\Core\Asset.h" />
+    <ClInclude Include="Src\Shape\Core\Buffer.h" />
     <ClInclude Include="Src\Shape\Core\Core.h" />
     <ClInclude Include="Src\Shape\Core\CoreSystem.h" />
+    <ClInclude Include="Src\Shape\Core\Engine.h" />
     <ClInclude Include="Src\Shape\Core\EntryPoint.h" />
     <ClInclude Include="Src\Shape\Core\JobSystem.h" />
     <ClInclude Include="Src\Shape\Core\Log.h" />
@@ -101,6 +103,7 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandPool.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKContext.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKDescriptorSet.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKDevice.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFence.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
@@ -111,9 +114,9 @@
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\LoadImage.h" />
-    <ClInclude Include="Src\Shape\Utilities\Timer.h" />
-    <ClInclude Include="Src\Shape\Utilities\TimeStep.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
+    <ClInclude Include="Src\Shape\Utilities\TimeStep.h" />
+    <ClInclude Include="Src\Shape\Utilities\Timer.h" />
     <ClInclude Include="Src\hzpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +124,9 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Core\CoreSystem.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Engine.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Core\JobSystem.cpp">
@@ -162,7 +168,9 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Graphics\RHI\Pipeline.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\Pipeline.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -205,6 +213,7 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDescriptorSet.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -241,12 +250,16 @@
     <ClCompile Include="Src\Shape\Utilities\LoadImage.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Utilities\TimeStep.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Utilities\Timer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\hzpch.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Utilities\Timer.cpp" />
-    <ClCompile Include="Src\Shape\Utilities\TimeStep.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="External\glfw.vcxproj">
