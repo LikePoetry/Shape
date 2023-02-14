@@ -2,6 +2,7 @@
 #include "DescriptorSet.h"
 #include "Definitions.h"
 #include "Shape/Core/Profiler.h"
+#include "CommandBuffer.h"
 
 namespace spirv_cross
 {
@@ -30,7 +31,22 @@ namespace Shape
 			virtual void* GetHandle() const = 0;
 			virtual bool IsCompiled() const { return true; }
 
+			virtual std::vector<PushConstant>& GetPushConstants() = 0;
+			virtual PushConstant* GetPushConstant(uint32_t index) { return nullptr; }
+			virtual void BindPushConstants(Graphics::CommandBuffer* commandBuffer, Graphics::Pipeline* pipeline) = 0;
+			virtual DescriptorSetInfo GetDescriptorInfo(uint32_t index) { return DescriptorSetInfo(); }
 
+			ShaderDataType SPIRVTypeToShapeDataType(const spirv_cross::SPIRType type);
+
+		public:
+			static Shader* CreateFromFile(const std::string& filepath);
+			static Shader* CreateFromEmbeddedArray(const uint32_t* vertData, uint32_t vertDataSize, const uint32_t* fragData, uint32_t fragDataSize);
+			static Shader* CreateCompFromEmbeddedArray(const uint32_t* compData, uint32_t compDataSize);
+
+		protected:
+			static Shader* (*CreateFunc)(const std::string&);
+			static Shader* (*CreateFuncFromEmbedded)(const uint32_t*, uint32_t, const uint32_t*, uint32_t);
+			static Shader* (*CreateCompFuncFromEmbedded)(const uint32_t*, uint32_t);
 		};
 	}
 }

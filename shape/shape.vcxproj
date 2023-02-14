@@ -84,6 +84,7 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Pipeline.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Shader.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
@@ -110,6 +111,8 @@
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\LoadImage.h" />
+    <ClInclude Include="Src\Shape\Utilities\Timer.h" />
+    <ClInclude Include="Src\Shape\Utilities\TimeStep.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
     <ClInclude Include="Src\hzpch.h" />
   </ItemGroup>
@@ -159,6 +162,7 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Pipeline.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -241,6 +245,8 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Utilities\Timer.cpp" />
+    <ClCompile Include="Src\Shape\Utilities\TimeStep.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="External\glfw.vcxproj">

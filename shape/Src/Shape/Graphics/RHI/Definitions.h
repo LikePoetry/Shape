@@ -1,258 +1,318 @@
 #pragma once
 namespace Shape
 {
-    namespace Graphics
-    {
-        class UniformBuffer;
-        class GraphicsContext;
-        class Texture;
-        class Texture2D;
-        class TextureCube;
-        class TextureDepth;
-        class TextureDepthArray;
+	namespace Graphics
+	{
+		class UniformBuffer;
+		class GraphicsContext;
+		class Texture;
+		class Texture2D;
+		class TextureCube;
+		class TextureDepth;
+		class TextureDepthArray;
 
-        static constexpr uint8_t MAX_MIPS = 32;
+		static constexpr uint8_t MAX_RENDER_TARGETS = 8;
+		static constexpr uint8_t SHADOWMAP_MAX = 16;
+		static constexpr uint8_t MAX_MIPS = 32;
 
-        enum class PhysicalDeviceType
-        {
-            DISCRETE = 0,
-            INTEGRATED = 1,
-            VIRTUAL = 2,
-            CPU = 3,
-            UNKNOWN = 4
-        };
+		enum class CullMode
+		{
+			FRONT,
+			BACK,
+			FRONTANDBACK,
+			NONE
+		};
 
-        enum class ShaderType : int
-        {
-            VERTEX,
-            FRAGMENT,
-            GEOMETRY,
-            TESSELLATION_CONTROL,
-            TESSELLATION_EVALUATION,
-            COMPUTE,
-            UNKNOWN
-        };
+		enum class PolygonMode
+		{
+			FILL,
+			LINE,
+			POINT
+		};
 
-        enum class TextureType
-        {
-            COLOUR,
-            DEPTH,
-            DEPTHARRAY,
-            CUBE,
-            OTHER
-        };
+		enum class BlendMode
+		{
+			None = 0,
+			OneZero,
+			ZeroSrcColor,
+			SrcAlphaOneMinusSrcAlpha,
+		};
 
-        enum class TextureWrap
-        {
-            NONE,
-            REPEAT,
-            CLAMP,
-            MIRRORED_REPEAT,
-            CLAMP_TO_EDGE,
-            CLAMP_TO_BORDER
-        };
+		enum class DrawType
+		{
+			POINT,
+			TRIANGLE,
+			LINES
+		};
 
-        enum class TextureFilter
-        {
-            NONE,
-            LINEAR,
-            NEAREST
-        };
+		enum class PhysicalDeviceType
+		{
+			DISCRETE = 0,
+			INTEGRATED = 1,
+			VIRTUAL = 2,
+			CPU = 3,
+			UNKNOWN = 4
+		};
 
-        enum class RHIFormat : uint32_t
-        {
-            NONE = 0,
-            R8_Unorm,
-            R8G8_Unorm,
-            R8G8B8_Unorm,
-            R8G8B8A8_Unorm,
+		enum class ShaderType : int
+		{
+			VERTEX,
+			FRAGMENT,
+			GEOMETRY,
+			TESSELLATION_CONTROL,
+			TESSELLATION_EVALUATION,
+			COMPUTE,
+			UNKNOWN
+		};
 
-            R8_UInt,
+		enum class TextureType
+		{
+			COLOUR,
+			DEPTH,
+			DEPTHARRAY,
+			CUBE,
+			OTHER
+		};
 
-            R11G11B10_Float,
-            R10G10B10A2_Unorm,
+		enum class TextureWrap
+		{
+			NONE,
+			REPEAT,
+			CLAMP,
+			MIRRORED_REPEAT,
+			CLAMP_TO_EDGE,
+			CLAMP_TO_BORDER
+		};
 
-            R32_Int,
-            R32G32_Int,
-            R32G32B32_Int,
-            R32G32B32A32_Int,
+		enum class TextureFilter
+		{
+			NONE,
+			LINEAR,
+			NEAREST
+		};
 
-            R32_UInt,
-            R32G32_UInt,
-            R32G32B32_UInt,
-            R32G32B32A32_UInt,
+		enum class RHIFormat : uint32_t
+		{
+			NONE = 0,
+			R8_Unorm,
+			R8G8_Unorm,
+			R8G8B8_Unorm,
+			R8G8B8A8_Unorm,
 
-            R16_Float,
-            R16G16_Float,
-            R16G16B16_Float,
-            R16G16B16A16_Float,
+			R8_UInt,
 
-            R32_Float,
-            R32G32_Float,
-            R32G32B32_Float,
-            R32G32B32A32_Float,
+			R11G11B10_Float,
+			R10G10B10A2_Unorm,
 
-            D16_Unorm,
-            D32_Float,
-            D16_Unorm_S8_UInt,
-            D24_Unorm_S8_UInt,
-            D32_Float_S8_UInt,
-            SCREEN
-        };
+			R32_Int,
+			R32G32_Int,
+			R32G32B32_Int,
+			R32G32B32A32_Int,
 
-        enum class DescriptorType
-        {
-            UNIFORM_BUFFER,
-            UNIFORM_BUFFER_DYNAMIC,
-            IMAGE_SAMPLER,
-            IMAGE_STORAGE
-        };
+			R32_UInt,
+			R32G32_UInt,
+			R32G32B32_UInt,
+			R32G32B32A32_UInt,
 
-        enum TextureFlags : uint32_t
-        {
-            Texture_Sampled = BIT(0),
-            Texture_Storage = BIT(1),
-            Texture_RenderTarget = BIT(2),
-            Texture_DepthStencil = BIT(3),
-            Texture_DepthStencilReadOnly = BIT(4),
-            Texture_CreateMips = BIT(5),
-            Texture_MipViews = BIT(6)
-        };
+			R16_Float,
+			R16G16_Float,
+			R16G16B16_Float,
+			R16G16B16A16_Float,
 
-        struct TextureDesc
-        {
-            RHIFormat format;
-            TextureFilter minFilter;
-            TextureFilter magFilter;
-            TextureWrap wrap;
-            uint16_t msaaLevel = 1;
-            uint16_t flags = TextureFlags::Texture_CreateMips;
-            bool srgb = false;
-            bool generateMipMaps = true;
+			R32_Float,
+			R32G32_Float,
+			R32G32B32_Float,
+			R32G32B32A32_Float,
 
-            TextureDesc()
-            {
-                format = RHIFormat::R8G8B8A8_Unorm;
-                minFilter = TextureFilter::NEAREST;
-                magFilter = TextureFilter::NEAREST;
-                wrap = TextureWrap::REPEAT;
-                msaaLevel = 1;
-            }
+			D16_Unorm,
+			D32_Float,
+			D16_Unorm_S8_UInt,
+			D24_Unorm_S8_UInt,
+			D32_Float_S8_UInt,
+			SCREEN
+		};
 
-            TextureDesc(RHIFormat format, TextureFilter minFilter, TextureFilter magFilter, TextureWrap wrap)
-                : format(format)
-                , minFilter(minFilter)
-                , magFilter(magFilter)
-                , wrap(wrap)
-            {
-            }
+		enum class DescriptorType
+		{
+			UNIFORM_BUFFER,
+			UNIFORM_BUFFER_DYNAMIC,
+			IMAGE_SAMPLER,
+			IMAGE_STORAGE
+		};
 
-            TextureDesc(TextureFilter minFilter, TextureFilter magFilter)
-                : format(RHIFormat::R8G8B8A8_Unorm)
-                , minFilter(minFilter)
-                , magFilter(magFilter)
-                , wrap(TextureWrap::CLAMP)
-            {
-            }
+		enum TextureFlags : uint32_t
+		{
+			Texture_Sampled = BIT(0),
+			Texture_Storage = BIT(1),
+			Texture_RenderTarget = BIT(2),
+			Texture_DepthStencil = BIT(3),
+			Texture_DepthStencilReadOnly = BIT(4),
+			Texture_CreateMips = BIT(5),
+			Texture_MipViews = BIT(6)
+		};
 
-            TextureDesc(TextureFilter minFilter, TextureFilter magFilter, TextureWrap wrap)
-                : format(RHIFormat::R8G8B8A8_Unorm)
-                , minFilter(minFilter)
-                , magFilter(magFilter)
-                , wrap(wrap)
-            {
-            }
+		struct TextureDesc
+		{
+			RHIFormat format;
+			TextureFilter minFilter;
+			TextureFilter magFilter;
+			TextureWrap wrap;
+			uint16_t msaaLevel = 1;
+			uint16_t flags = TextureFlags::Texture_CreateMips;
+			bool srgb = false;
+			bool generateMipMaps = true;
 
-            TextureDesc(TextureWrap wrap)
-                : format(RHIFormat::R8G8B8A8_Unorm)
-                , minFilter(TextureFilter::LINEAR)
-                , magFilter(TextureFilter::LINEAR)
-                , wrap(wrap)
-            {
-            }
+			TextureDesc()
+			{
+				format = RHIFormat::R8G8B8A8_Unorm;
+				minFilter = TextureFilter::NEAREST;
+				magFilter = TextureFilter::NEAREST;
+				wrap = TextureWrap::REPEAT;
+				msaaLevel = 1;
+			}
 
-            TextureDesc(RHIFormat format)
-                : format(format)
-                , minFilter(TextureFilter::LINEAR)
-                , magFilter(TextureFilter::LINEAR)
-                , wrap(TextureWrap::CLAMP)
-            {
-            }
-        };
+			TextureDesc(RHIFormat format, TextureFilter minFilter, TextureFilter magFilter, TextureWrap wrap)
+				: format(format)
+				, minFilter(minFilter)
+				, magFilter(magFilter)
+				, wrap(wrap)
+			{
+			}
 
-        struct TextureLoadOptions
-        {
-            bool flipX;
-            bool flipY;
+			TextureDesc(TextureFilter minFilter, TextureFilter magFilter)
+				: format(RHIFormat::R8G8B8A8_Unorm)
+				, minFilter(minFilter)
+				, magFilter(magFilter)
+				, wrap(TextureWrap::CLAMP)
+			{
+			}
 
-            TextureLoadOptions()
-            {
-                flipX = false;
-                flipY = false;
-            }
+			TextureDesc(TextureFilter minFilter, TextureFilter magFilter, TextureWrap wrap)
+				: format(RHIFormat::R8G8B8A8_Unorm)
+				, minFilter(minFilter)
+				, magFilter(magFilter)
+				, wrap(wrap)
+			{
+			}
 
-            TextureLoadOptions(bool flipX, bool flipY)
-                : flipX(flipX)
-                , flipY(flipY)
-            {
-            }
-        };
+			TextureDesc(TextureWrap wrap)
+				: format(RHIFormat::R8G8B8A8_Unorm)
+				, minFilter(TextureFilter::LINEAR)
+				, magFilter(TextureFilter::LINEAR)
+				, wrap(wrap)
+			{
+			}
 
-        enum class ShaderDataType
-        {
-            NONE,
-            FLOAT32,
-            VEC2,
-            VEC3,
-            VEC4,
-            IVEC2,
-            IVEC3,
-            IVEC4,
-            MAT3,
-            MAT4,
-            INT32,
-            INT,
-            UINT,
-            BOOL,
-            STRUCT,
-            MAT4ARRAY
-        };
+			TextureDesc(RHIFormat format)
+				: format(format)
+				, minFilter(TextureFilter::LINEAR)
+				, magFilter(TextureFilter::LINEAR)
+				, wrap(TextureWrap::CLAMP)
+			{
+			}
+		};
 
-        struct BufferMemberInfo
-        {
-            uint32_t size;
-            uint32_t offset;
-            ShaderDataType type;
-            std::string name;
-            std::string fullName;
-        };
+		struct TextureLoadOptions
+		{
+			bool flipX;
+			bool flipY;
 
-        struct DescriptorDesc
-        {
-            uint32_t layoutIndex;
-            Shader* shader;
-            uint32_t count = 1;
-        };
+			TextureLoadOptions()
+			{
+				flipX = false;
+				flipY = false;
+			}
 
-        struct Descriptor
-        {
-            Texture** textures;
-            Texture* texture;
-            UniformBuffer* buffer;
+			TextureLoadOptions(bool flipX, bool flipY)
+				: flipX(flipX)
+				, flipY(flipY)
+			{
+			}
+		};
 
-            uint32_t offset;
-            uint32_t size;
-            uint32_t binding;
-            uint32_t textureCount = 1;
-            uint32_t mipLevel = 0;
-            std::string name;
+		enum class ShaderDataType
+		{
+			NONE,
+			FLOAT32,
+			VEC2,
+			VEC3,
+			VEC4,
+			IVEC2,
+			IVEC3,
+			IVEC4,
+			MAT3,
+			MAT4,
+			INT32,
+			INT,
+			UINT,
+			BOOL,
+			STRUCT,
+			MAT4ARRAY
+		};
 
-            TextureType textureType;
-            DescriptorType type = DescriptorType::IMAGE_SAMPLER;
-            ShaderType shaderType;
+		struct BufferMemberInfo
+		{
+			uint32_t size;
+			uint32_t offset;
+			ShaderDataType type;
+			std::string name;
+			std::string fullName;
+		};
 
-            std::vector<BufferMemberInfo> m_Members;
-        };
-    }
+		struct DescriptorDesc
+		{
+			uint32_t layoutIndex;
+			Shader* shader;
+			uint32_t count = 1;
+		};
+
+		struct Descriptor
+		{
+			Texture** textures;
+			Texture* texture;
+			UniformBuffer* buffer;
+
+			uint32_t offset;
+			uint32_t size;
+			uint32_t binding;
+			uint32_t textureCount = 1;
+			uint32_t mipLevel = 0;
+			std::string name;
+
+			TextureType textureType;
+			DescriptorType type = DescriptorType::IMAGE_SAMPLER;
+			ShaderType shaderType;
+
+			std::vector<BufferMemberInfo> m_Members;
+		};
+
+		struct PushConstant
+		{
+			uint32_t size;
+			ShaderType shaderStage;
+			uint8_t* data;
+			uint32_t offset = 0;
+			std::string name;
+
+			std::vector<BufferMemberInfo> m_Members;
+
+			void SetValue(const std::string& name, void* value)
+			{
+				for (auto& member : m_Members)
+				{
+					if (member.name == name)
+					{
+						memcpy(&data[member.offset], value, member.size);
+						break;
+					}
+				}
+			}
+
+			void SetData(void* value)
+			{
+				memcpy(data, value, size);
+			}
+		};
+	}
 }
 
