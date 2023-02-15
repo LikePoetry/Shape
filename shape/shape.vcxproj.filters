@@ -126,10 +126,16 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\Framebuffer.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\Pipeline.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderPass.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h">
@@ -210,6 +216,9 @@
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h">
       <Filter>Shape\Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Utilities\CombineHash.h">
+      <Filter>Shape\Utilities</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Utilities\LoadImage.h">
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
@@ -270,10 +279,16 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Framebuffer.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Pipeline.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderPass.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp">

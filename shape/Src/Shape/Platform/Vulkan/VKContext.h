@@ -22,7 +22,7 @@ namespace Shape
 			VKContext();
 			~VKContext();
 
-			static void MakeDefault();
+			
 
 			void Init() override;
 
@@ -38,6 +38,30 @@ namespace Shape
 			static VkInstance GetVKInstance() { return s_VkInstance; }
 
 			static uint32_t GetVKVersion() { return m_VKVersion; }
+
+			static void MakeDefault();
+
+			struct DeletionQueue
+			{
+				std::deque<std::function<void()>> m_Deletors;
+
+				template <typename F>
+				void PushFunction(F&& function)
+				{
+					SHAPE_ASSERT(sizeof(F) < 200, "Lambda too large");
+					m_Deletors.push_back(function);
+				}
+
+				void Flush()
+				{
+					for (auto it = m_Deletors.rbegin(); it != m_Deletors.rend(); it++)
+					{
+						(*it)();
+					}
+
+					m_Deletors.clear();
+				}
+			};
 
 		protected:
 			static GraphicsContext* CreateFuncVulkan();

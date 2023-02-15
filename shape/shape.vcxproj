@@ -85,8 +85,10 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\CommandBuffer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Framebuffer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Pipeline.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderPass.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Shader.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
@@ -113,6 +115,7 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKUtilities.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
+    <ClInclude Include="Src\Shape\Utilities\CombineHash.h" />
     <ClInclude Include="Src\Shape\Utilities\LoadImage.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
     <ClInclude Include="Src\Shape\Utilities\TimeStep.h" />
@@ -165,10 +168,16 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Framebuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Pipeline.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderPass.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp">

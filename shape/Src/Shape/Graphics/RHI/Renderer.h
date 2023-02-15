@@ -1,6 +1,9 @@
 #pragma once
 #include "Shape/Core/Application.h"
 #include "Shape/Core/OS/Window.h"
+#include "CommandBuffer.h"
+#include "Pipeline.h"
+
 
 namespace Shape
 {

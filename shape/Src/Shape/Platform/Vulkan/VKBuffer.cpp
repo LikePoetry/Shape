@@ -20,12 +20,61 @@ namespace Shape
 
 		VKBuffer::~VKBuffer()
 		{
+			SHAPE_PROFILE_FUNCTION();
+			if (m_Buffer)
+			{
+				VKContext::DeletionQueue& deletionQueue = VKRenderer::GetCurrentDeletionQueue();
+				auto buffer = m_Buffer;
 
+#ifdef USE_VMA_ALLOCATOR
+				auto alloc = m_Allocation;
+				deletionQueue.PushFunction([buffer, alloc]
+					{ vmaDestroyBuffer(VKDevice::Get().GetAllocator(), buffer, alloc); });
+#else
+				auto memory = m_Memory;
+				deletionQueue.PushFunction([buffer, memory]
+					{
+						vkDestroyBuffer(VKDevice::Device(), buffer, nullptr);
+				vkFreeMemory(VKDevice::Device(), memory, nullptr); });
+#endif
+			}
 		}
 
 		void VKBuffer::Destroy(bool deletionQueue)
 		{
+			SHAPE_PROFILE_FUNCTION();
+			if (m_Buffer)
+			{
+				VKContext::DeletionQueue& currentDeletionQueue = VKRenderer::GetCurrentDeletionQueue();
 
+				auto buffer = m_Buffer;
+
+				if (deletionQueue)
+				{
+#ifdef USE_VMA_ALLOCATOR
+					auto alloc = m_Allocation;
+					currentDeletionQueue.PushFunction([buffer, alloc]
+						{ vmaDestroyBuffer(VKDevice::Get().GetAllocator(), buffer, alloc); });
+#else
+					auto memory = m_Memory;
+					currentDeletionQueue.PushFunction([buffer, memory]
+						{
+							vkDestroyBuffer(VKDevice::Device(), buffer, nullptr);
+					vkFreeMemory(VKDevice::Device(), memory, nullptr); });
+#endif
+				}
+				else
+				{
+#ifdef USE_VMA_ALLOCATOR
+					vmaDestroyBuffer(VKDevice::Get().GetAllocator(), buffer, m_Allocation);
+#else
+					vkDestroyBuffer(VKDevice::Device(), buffer, nullptr);
+					vkFreeMemory(VKDevice::Device(), memory, nullptr);
+#endif
+				}
+			}
+
+			m_Buffer = VK_NULL_HANDLE;
 		}
 
 		void VKBuffer::Init(VkBufferUsageFlags usage, VkMemoryPropertyFlags memoryProperyFlags, uint32_t size, const void* data)
@@ -95,12 +144,12 @@ namespace Shape
 					if (m_Memory)
 					{
 						vkFreeMemory(VKDevice::Device(), m_Memory, nullptr);
-					}
-#endif
 				}
+#endif
 			}
-			Init(usage, m_MemoryProperyFlags, size, data);
 		}
+			Init(usage, m_MemoryProperyFlags, size, data);
+	}
 
 		void VKBuffer::Map(VkDeviceSize size, VkDeviceSize offset)
 		{
@@ -156,5 +205,5 @@ namespace Shape
 			vkInvalidateMappedMemoryRanges(VKDevice::Device(), 1, &mappedRange);
 #endif
 		}
-	}
+}
 }

@@ -144,6 +144,13 @@ namespace Shape
 			SCREEN
 		};
 
+		enum class BufferUsage
+		{
+			STATIC,
+			DYNAMIC,
+			STREAM
+		};
+
 		enum class DescriptorType
 		{
 			UNIFORM_BUFFER,
