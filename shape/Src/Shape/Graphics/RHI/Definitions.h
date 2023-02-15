@@ -3,6 +3,9 @@ namespace Shape
 {
 	namespace Graphics
 	{
+		class Shader;
+		class RenderPass;
+		class Framebuffer;
 		class CommandBuffer;
 		class DescriptorSet;
 		class Pipeline;
@@ -75,6 +78,12 @@ namespace Shape
 			DEPTHARRAY,
 			CUBE,
 			OTHER
+		};
+
+		enum SubPassContents
+		{
+			INLINE,
+			SECONDARY
 		};
 
 		enum class TextureWrap
@@ -287,6 +296,17 @@ namespace Shape
 			ShaderType shaderType;
 
 			std::vector<BufferMemberInfo> m_Members;
+		};
+
+		struct RenderPassDesc
+		{
+			Texture** attachments;
+			TextureType* attachmentTypes;
+			uint32_t attachmentCount;
+			bool clear = true;
+			bool swapchainTarget = false;
+			int cubeMapIndex = -1;
+			int mipIndex = -1;
 		};
 
 		struct PushConstant

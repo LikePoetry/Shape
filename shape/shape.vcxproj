@@ -213,7 +213,9 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDescriptorSet.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDescriptorSet.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
