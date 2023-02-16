@@ -227,6 +227,11 @@ namespace Shape
 			}
 #endif
 
+			static VkDevice GetHandle()
+			{
+				return VKDevice::Get().GetDevice();
+			}
+
 		private:
 			VkDevice m_Device;
 

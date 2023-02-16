@@ -31,10 +31,14 @@ namespace Shape
 
 			std::string ErrorString(VkResult errorCode);
 
+            VkDescriptorType DescriptorTypeToVK(DescriptorType type);
             VkFormat FormatToVK(const RHIFormat format, bool srgb = false);
 
             VkSamplerAddressMode TextureWrapToVK(const TextureWrap format);
             VkFilter TextureFilterToVK(const TextureFilter filter);
+            VkShaderStageFlagBits ShaderTypeToVK(const ShaderType& shaderName);
+
+            void WaitIdle();
 		}
 	}
 }

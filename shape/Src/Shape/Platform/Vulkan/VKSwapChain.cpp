@@ -22,7 +22,24 @@ namespace Shape
 
 		VKSwapChain::~VKSwapChain()
 		{
+			vkDeviceWaitIdle(VKDevice::Get().GetDevice());
 
+			for (uint32_t i = 0; i < m_SwapChainBufferCount; i++)
+			{
+				vkDestroySemaphore(VKDevice::Get().GetDevice(), m_Frames[i].PresentSemaphore, nullptr);
+				m_Frames[i].MainCommandBuffer->Flush();
+
+				m_Frames[i].MainCommandBuffer = nullptr;
+				m_Frames[i].CommandPool = nullptr;
+
+				delete m_SwapChainBuffers[i];
+			}
+			vkDestroySwapchainKHR(VKDevice::Get().GetDevice(), m_SwapChain, VK_NULL_HANDLE);
+
+			if (m_Surface != VK_NULL_HANDLE)
+			{
+				vkDestroySurfaceKHR(VKContext::GetVKInstance(), m_Surface, nullptr);
+			}
 		}
 
 		/// <summary>
@@ -82,7 +99,7 @@ namespace Shape
 				m_SwapChainBufferCount = 3;
 
 			VkSurfaceTransformFlagBitsKHR preTransform;
-			if(surfaceCapabilities.supportedTransforms&VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR)
+			if (surfaceCapabilities.supportedTransforms & VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR)
 				preTransform = VK_SURFACE_TRANSFORM_IDENTITY_BIT_KHR;
 			else
 				preTransform = surfaceCapabilities.currentTransform;
@@ -195,6 +212,12 @@ namespace Shape
 			return true;
 		}
 
+		FrameData& VKSwapChain::GetCurrentFrameData()
+		{
+			SHAPE_ASSERT(m_CurrentBuffer < m_SwapChainBufferCount, "Incorrect swapchain buffer index");
+			return m_Frames[m_CurrentBuffer];
+		}
+
 		void VKSwapChain::CreateFrameData()
 		{
 			for (uint32_t i = 0; i < m_SwapChainBufferCount; i++)
@@ -214,6 +237,128 @@ namespace Shape
 					m_Frames[i].MainCommandBuffer = CreateSharedPtr<VKCommandBuffer>();
 					m_Frames[i].MainCommandBuffer->Init(true, m_Frames[i].CommandPool->GetHandle());
 				}
+			}
+		}
+
+		void VKSwapChain::AcquireNextImage()
+		{
+			SHAPE_PROFILE_FUNCTION();
+
+			if (m_SwapChainBufferCount == 1 && m_AcquireImageIndex != std::numeric_limits<uint32_t>::max())
+			{
+				return;
+			}
+
+			{
+				SHAPE_PROFILE_FUNCTION("vkAcquireNextImageKHR");
+				auto result = vkAcquireNextImageKHR(VKDevice::Get().GetDevice(), m_SwapChain, UINT64_MAX, m_Frames[m_CurrentBuffer].PresentSemaphore, VK_NULL_HANDLE, &m_AcquireImageIndex);
+
+				if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR)
+				{
+					SHAPE_LOG_INFO("Acquire Image result : {0}", result == VK_ERROR_OUT_OF_DATE_KHR ? "Out of Date" : "SubOptimal");
+
+					if (result == VK_ERROR_OUT_OF_DATE_KHR)
+					{
+						OnResize(m_Width, m_Height, true);
+					}
+				}
+				else if (result != VK_SUCCESS)
+				{
+					SHAPE_LOG_CRITICAL("[VULKAN] Failed to acquire swap chain image! - {0}", VKUtilities::ErrorString(result));
+				}
+			}
+		}
+
+		void VKSwapChain::OnResize(uint32_t width, uint32_t height, bool forceResize, Window* windowHandle)
+		{
+			SHAPE_PROFILE_FUNCTION();
+
+			if (!forceResize && m_Width == width && m_Height == height)
+			{
+				return;
+			}
+
+			VKRenderer::GetGraphicsContext()->WaitIdle();
+			m_Width = width;
+			m_Height = height;
+
+			m_OldSwapChain = m_SwapChain;
+			m_SwapChain = VK_NULL_HANDLE;
+
+			if (windowHandle)
+				Init(m_VSyncEnabled, windowHandle);
+			else
+			{
+				Init(m_VSyncEnabled);
+			}
+
+			VKRenderer::GetGraphicsContext()->WaitIdle();
+		}
+
+		void VKSwapChain::QueueSubmit()
+		{
+			SHAPE_PROFILE_FUNCTION();
+			auto& frameData = GetCurrentFrameData();
+			frameData.MainCommandBuffer->Execute(VK_PIPELINE_STAGE_COLOR_ATTACHMENT_OUTPUT_BIT, frameData.PresentSemaphore, true);
+		}
+
+		CommandBuffer* VKSwapChain::GetCurrentCommandBuffer()
+		{
+			return GetCurrentFrameData().MainCommandBuffer.get();
+		}
+
+		void VKSwapChain::Begin()
+		{
+			SHAPE_PROFILE_FUNCTION();
+			m_CurrentBuffer = (m_CurrentBuffer + 1) % m_SwapChainBufferCount;
+
+			auto commandBuffer = GetCurrentFrameData().MainCommandBuffer;
+			if (commandBuffer->GetState() == CommandBufferState::Submitted)
+			{
+				if (!commandBuffer->Wait())
+				{
+					return;
+				}
+			}
+			commandBuffer->Reset();
+			VKRenderer::GetDeletionQueue(m_CurrentBuffer).Flush();
+			AcquireNextImage();
+			commandBuffer->BeginRecording();
+		}
+
+		void VKSwapChain::End()
+		{
+			SHAPE_PROFILE_FUNCTION();
+			GetCurrentCommandBuffer()->EndRecording();
+		}
+
+		void VKSwapChain::Present(VkSemaphore semaphore)
+		{
+			SHAPE_PROFILE_FUNCTION();
+
+			VkPresentInfoKHR present;
+			present.sType = VK_STRUCTURE_TYPE_PRESENT_INFO_KHR;
+			present.pNext = VK_NULL_HANDLE;
+			present.swapchainCount = 1;
+			present.pSwapchains = &m_SwapChain;
+			present.pImageIndices = &m_AcquireImageIndex;
+			present.waitSemaphoreCount = 1;
+			present.pWaitSemaphores = &semaphore;
+			present.pResults = VK_NULL_HANDLE;
+
+			auto error = vkQueuePresentKHR(VKDevice::Get().GetPresentQueue(), &present);
+
+			if (error == VK_ERROR_OUT_OF_DATE_KHR)
+			{
+				SHAPE_LOG_ERROR("[Vulkan] SwapChain out of date");
+			}
+			else if (error == VK_SUBOPTIMAL_KHR)
+			{
+				SHAPE_LOG_ERROR("[Vulkan] SwapChain suboptimal");
+			}
+			else
+			{
+				VK_CHECK_RESULT(error);
 			}
 		}
 

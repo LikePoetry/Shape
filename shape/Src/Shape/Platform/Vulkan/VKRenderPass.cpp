@@ -2,6 +2,8 @@
 #include "VKRenderPass.h"
 #include "VKTexture.h"
 #include "VKUtilities.h"
+#include "VKInitialisers.h"
+#include "VKFramebuffer.h"
 
 namespace Shape
 {

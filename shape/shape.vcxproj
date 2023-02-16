@@ -94,6 +94,7 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Texture.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\UniformBuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\VertexBuffer.h" />
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
     <ClInclude Include="Src\Shape\Maths\Maths.h" />
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
@@ -108,11 +109,17 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKDescriptorSet.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKDevice.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFence.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKFramebuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKInitialisers.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKPipeline.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderPass.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKShader.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKSwapChain.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKTexture.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKUniformBuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKUtilities.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKVertexBuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
     <ClInclude Include="Src\Shape\Utilities\CombineHash.h" />
@@ -195,6 +202,9 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\UniformBuffer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\VertexBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -231,16 +241,28 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFence.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKFramebuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKPipeline.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderPass.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKShader.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKSwapChain.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKTexture.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUniformBuffer.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKVertexBuffer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">

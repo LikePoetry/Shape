@@ -278,6 +278,27 @@ namespace Shape
 			std::string fullName;
 		};
 
+		struct DescriptorPoolInfo
+		{
+			DescriptorType type;
+			uint32_t size;
+		};
+
+		struct DescriptorLayoutInfo
+		{
+			DescriptorType type;
+			ShaderType stage;
+			uint32_t binding = 0;
+			uint32_t setID = 0;
+			uint32_t count = 1;
+		};
+
+		struct DescriptorLayout
+		{
+			uint32_t count;
+			DescriptorLayoutInfo* layoutInfo;
+		};
+
 		struct DescriptorDesc
 		{
 			uint32_t layoutIndex;

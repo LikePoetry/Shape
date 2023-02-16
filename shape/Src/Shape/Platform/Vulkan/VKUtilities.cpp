@@ -412,6 +412,24 @@ namespace Shape
 			return presentMode;
 		}
 
+		VkDescriptorType VKUtilities::DescriptorTypeToVK(DescriptorType type)
+		{
+			switch (type)
+			{
+			case DescriptorType::UNIFORM_BUFFER:
+				return VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+			case DescriptorType::UNIFORM_BUFFER_DYNAMIC:
+				return VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC;
+			case DescriptorType::IMAGE_SAMPLER:
+				return VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+			case DescriptorType::IMAGE_STORAGE:
+				return VK_DESCRIPTOR_TYPE_STORAGE_IMAGE;
+			}
+
+			SHAPE_LOG_INFO("Unsupported Descriptor Type");
+			return VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+		}
+
 		VkFormat VKUtilities::FormatToVK(const RHIFormat format, bool srgb)
 		{
 			if (srgb)
@@ -520,6 +538,34 @@ namespace Shape
 				SHAPE_LOG_CRITICAL("[Texture] Unsupported TextureFilter type!");
 				return VK_FILTER_LINEAR;
 			}
+		}
+
+		VkShaderStageFlagBits VKUtilities::ShaderTypeToVK(const ShaderType& shaderName)
+		{
+			switch (shaderName)
+			{
+			case ShaderType::VERTEX:
+				return VK_SHADER_STAGE_VERTEX_BIT;
+			case ShaderType::GEOMETRY:
+				return VK_SHADER_STAGE_GEOMETRY_BIT;
+			case ShaderType::FRAGMENT:
+				return VK_SHADER_STAGE_FRAGMENT_BIT;
+			case ShaderType::TESSELLATION_CONTROL:
+				return VK_SHADER_STAGE_TESSELLATION_CONTROL_BIT;
+			case ShaderType::TESSELLATION_EVALUATION:
+				return VK_SHADER_STAGE_TESSELLATION_EVALUATION_BIT;
+			case ShaderType::COMPUTE:
+				return VK_SHADER_STAGE_COMPUTE_BIT;
+			default:
+				SHAPE_LOG_CRITICAL("Unknown Shader Type");
+				return VK_SHADER_STAGE_VERTEX_BIT;
+			}
+		}
+
+		void VKUtilities::WaitIdle()
+		{
+			SHAPE_PROFILE_FUNCTION();
+			vkDeviceWaitIdle(VKDevice::GetHandle());
 		}
 	}
 }

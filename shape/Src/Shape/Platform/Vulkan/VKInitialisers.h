@@ -35,5 +35,53 @@ namespace Shape
             imageMemoryBarrier.dstQueueFamilyIndex = VK_QUEUE_FAMILY_IGNORED;
             return imageMemoryBarrier;
         }
+
+        inline VkFramebufferCreateInfo FramebufferCreateInfo()
+        {
+            VkFramebufferCreateInfo framebufferCreateInfo = {};
+            framebufferCreateInfo.sType = VK_STRUCTURE_TYPE_FRAMEBUFFER_CREATE_INFO;
+            return framebufferCreateInfo;
+        }
+
+        inline VkRenderPassCreateInfo RenderPassCreateInfo()
+        {
+            VkRenderPassCreateInfo renderPassCreateInfo = {};
+            renderPassCreateInfo.sType = VK_STRUCTURE_TYPE_RENDER_PASS_CREATE_INFO;
+            return renderPassCreateInfo;
+        }
+
+        inline VkCommandBufferBeginInfo CommandBufferBeginInfo()
+        {
+            VkCommandBufferBeginInfo cmdBufferBeginInfo = {};
+            cmdBufferBeginInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO;
+            return cmdBufferBeginInfo;
+        }
+
+        inline VkCommandBufferInheritanceInfo CommandBufferInheritanceInfo()
+        {
+            VkCommandBufferInheritanceInfo cmdBufferInheritanceInfo = {};
+            cmdBufferInheritanceInfo.sType = VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_INFO;
+            return cmdBufferInheritanceInfo;
+        }
+
+        inline VkSubmitInfo SubmitInfo()
+        {
+            VkSubmitInfo submitInfo = {};
+            submitInfo.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO;
+            submitInfo.pNext = VK_NULL_HANDLE;
+            return submitInfo;
+        }
+
+        inline VkPushConstantRange PushConstantRange(
+            VkShaderStageFlags stageFlags,
+            uint32_t size,
+            uint32_t offset)
+        {
+            VkPushConstantRange pushConstantRange = {};
+            pushConstantRange.stageFlags = stageFlags;
+            pushConstantRange.offset = offset;
+            pushConstantRange.size = size;
+            return pushConstantRange;
+        }
 	}
 }

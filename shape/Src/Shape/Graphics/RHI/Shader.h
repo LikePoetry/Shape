@@ -24,7 +24,7 @@ namespace Shape
 
 			virtual ~Shader() = default;
 
-			virtual const std::vector<ShaderType> GetShaderType() const = 0;
+			virtual const std::vector<ShaderType> GetShaderTypes() const = 0;
 			virtual const std::string& GetName() const = 0;
 			virtual const std::string& GetFilePath() const = 0;
 
