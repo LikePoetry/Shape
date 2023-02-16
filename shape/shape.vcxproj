@@ -82,12 +82,18 @@
     <ClInclude Include="Src\Shape\Events\Event.h" />
     <ClInclude Include="Src\Shape\Events\KeyEvent.h" />
     <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\BufferLayout.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\CommandBuffer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Framebuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\GPUProfile.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\IMGUIRenderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\IndexBuffer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Pipeline.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderDevice.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderDoc.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\RenderPass.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Shader.h" />
@@ -169,6 +175,7 @@
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\BufferLayout.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\CommandBuffer.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -181,9 +188,13 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\IMGUIRenderer.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\IndexBuffer.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\Pipeline.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderDevice.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderDoc.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\RenderPass.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -247,18 +258,24 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKPipeline.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKPipeline.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderPass.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKShader.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKShader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKSwapChain.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKTexture.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUniformBuffer.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUniformBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

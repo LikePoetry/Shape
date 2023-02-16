@@ -43,7 +43,7 @@ namespace Shape
 			static void ClearCache();
 			static void DeleteUnusedCache();
 
-			virtual ~Pipeline();
+			virtual ~Pipeline() = default;
 
 			virtual void Bind(CommandBuffer* commandBuffer, uint32_t layer = 0) = 0;
 			virtual void End(CommandBuffer* commandBuffer) { }

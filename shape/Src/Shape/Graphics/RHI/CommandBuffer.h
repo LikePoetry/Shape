@@ -4,6 +4,10 @@ namespace Shape
 {
 	namespace Graphics
 	{
+		class RenderPass;
+		class Framebuffer;
+		class Pipeline;
+
 		class CommandBuffer
 		{
 		public:
