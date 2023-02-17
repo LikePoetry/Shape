@@ -117,6 +117,15 @@
     <ClInclude Include="Src\Shape\Events\MouseEvent.h">
       <Filter>Shape\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Material.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Mesh.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\BufferLayout.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\CommandBuffer.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
@@ -129,10 +138,25 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\Framebuffer.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\GPUProfile.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\IMGUIRenderer.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\IndexBuffer.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\Pipeline.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderDevice.h">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderDoc.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\RenderPass.h">
@@ -159,13 +183,34 @@
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h">
       <Filter>Shape\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Maths\BoundingBox.h">
+      <Filter>Shape\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Maths\BoundingSphere.h">
+      <Filter>Shape\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Maths\Frustum.h">
+      <Filter>Shape\Maths</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Maths\Maths.h">
       <Filter>Shape\Maths</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Maths\MathsUtilities.h">
       <Filter>Shape\Maths</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Maths\Plane.h">
+      <Filter>Shape\Maths</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Maths\Random.h">
+      <Filter>Shape\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Maths\Ray.h">
+      <Filter>Shape\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Maths\Rect.h">
+      <Filter>Shape\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Maths\Transform.h">
       <Filter>Shape\Maths</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h">
@@ -204,13 +249,25 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.h">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.h">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKInitialisers.h">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKPipeline.h">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderDevice.h">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderPass.h">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderer.h">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKShader.h">
@@ -253,16 +310,6 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
-    <ClInclude Include="Src\Shape\Graphics\RHI\BufferLayout.h" />
-    <ClInclude Include="Src\Shape\Graphics\RHI\GPUProfile.h" />
-    <ClInclude Include="Src\Shape\Graphics\RHI\IndexBuffer.h" />
-    <ClInclude Include="Src\Shape\Graphics\RHI\IMGUIRenderer.h" />
-    <ClInclude Include="Src\Shape\Graphics\RHI\RenderDevice.h" />
-    <ClInclude Include="Src\Shape\Graphics\RHI\RenderDoc.h" />
-    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.h" />
-    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderDevice.h" />
-    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.h" />
-    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -304,6 +351,15 @@
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Material.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Mesh.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\BufferLayout.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\CommandBuffer.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
@@ -316,7 +372,19 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\IMGUIRenderer.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\IndexBuffer.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\Pipeline.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderDevice.cpp">
+      <Filter>Shape\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderDoc.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\RenderPass.cpp">
@@ -340,13 +408,34 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\VertexBuffer.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\BoundingBox.cpp">
+      <Filter>Shape\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\BoundingSphere.cpp">
+      <Filter>Shape\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Frustum.cpp">
+      <Filter>Shape\Maths</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Maths\Maths.cpp">
       <Filter>Shape\Maths</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp">
       <Filter>Shape\Maths</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Plane.cpp">
+      <Filter>Shape\Maths</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Maths\Random.cpp">
+      <Filter>Shape\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Ray.cpp">
+      <Filter>Shape\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Rect.cpp">
+      <Filter>Shape\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Transform.cpp">
       <Filter>Shape\Maths</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\GLFW\GLFWWindow.cpp">
@@ -382,10 +471,22 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.cpp">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.cpp">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKPipeline.cpp">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderDevice.cpp">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderPass.cpp">
+      <Filter>Shape\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderer.cpp">
       <Filter>Shape\Platform\Vulkan</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKShader.cpp">
@@ -431,14 +532,5 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\RHI\BufferLayout.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\RHI\IndexBuffer.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\RHI\IMGUIRenderer.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\RHI\RenderDevice.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\RHI\RenderDoc.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderDevice.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderer.cpp" />
   </ItemGroup>
 </Project>

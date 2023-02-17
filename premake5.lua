@@ -13,6 +13,8 @@ IncludeDir["ImGui"] = "Shape/External/imgui/"
 IncludeDir["vulkan"] = "Shape/External/vulkan/"
 IncludeDir["stb"] = "Shape/External/stb"
 IncludeDir["SpirvCross"] = "Shape/External/vulkan/SPIRV-Cross"
+IncludeDir["cereal"] = "Shape/External/cereal/include"
+
 
 
 
@@ -34,6 +36,8 @@ group "External"
 	require("Shape/External/imguipremake5")
 		SetRecommendedSettings()
 	require("Shape/External/SPIRVCrosspremake5")
+		SetRecommendedSettings()
+	require("Shape/External/ModelLoaders/meshoptimizer/premake5")
 		SetRecommendedSettings()
 
 
@@ -111,7 +115,7 @@ project "Shape"
 		{
 			"glfw",
 			"imgui",
-
+			"meshoptimizer",
 		}
 
 		buildoptions
@@ -170,7 +174,7 @@ project "Editor"
 		"glfw",
 		"imgui",
 		"SpirvCross",
-
+		"meshoptimizer",
     }
 
 	defines

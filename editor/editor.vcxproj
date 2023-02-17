@@ -71,6 +71,9 @@
     <ProjectReference Include="..\Shape\External\SpirvCross.vcxproj">
       <Project>{434A39C2-2F02-7B0F-9809-546B84E01500}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\Shape\External\ModelLoaders\meshoptimizer\meshoptimizer.vcxproj">
+      <Project>{75046AD2-E1C4-E508-AAFF-2E86167F2AE5}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
