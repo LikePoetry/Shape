@@ -556,5 +556,6 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsTimer.cpp" />
   </ItemGroup>
 </Project>
