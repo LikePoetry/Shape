@@ -1,5 +1,6 @@
 #pragma once
 #include "Reference.h"
+#include "Shape/Utilities/AssetManager.h"
 
 namespace Shape
 {
@@ -30,7 +31,7 @@ namespace Shape
 
 		Window* GetWindow() const { return m_Window.get(); }
 
-		//SharedPtr<ShaderLibrary>& GetShaderLibrary();
+		SharedPtr<ShaderLibrary>& GetShaderLibrary() { return m_ShaderLibrary; }
 
 		static Application& Get() { return *s_Instance; }
 
@@ -73,6 +74,10 @@ namespace Shape
 		AppState m_CurrentState = AppState::Loading;
 
 		static Application* s_Instance;
+
+		SharedPtr<ShaderLibrary> m_ShaderLibrary;
+		SharedPtr<ModelLibrary> m_ModelLibrary;
+		SharedPtr<FontLibrary> m_FontLibrary;
 
 	};
 

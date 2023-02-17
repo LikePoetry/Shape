@@ -40,7 +40,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;USE_VMA_ALLOCATOR;IMGUI_USER_CONFIG="../Src/Shape/ImGui/ImConfig.h";_CRT_SECURE_NO_WARNINGS;_DISABLE_EXTENDED_ALIGNED_STORAGE;SHAPE_ENGINE;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>Src;External\spdlog\include;External;External\glm;External\glfw\include;External\imgui;External\vulkan;External\stb;External\vulkan\SPIRV-Cross;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>Src;External\spdlog\include;External;External\glm;External\glfw\include;External\imgui;External\vulkan;External\stb;External\vulkan\SPIRV-Cross;External\msdf-atlas-gen\msdfgen;External\msdf-atlas-gen\msdf-atlas-gen;External\freetype\include;External\cereal\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -82,8 +82,12 @@
     <ClInclude Include="Src\Shape\Events\Event.h" />
     <ClInclude Include="Src\Shape\Events\KeyEvent.h" />
     <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
+    <ClInclude Include="Src\Shape\Graphics\Font.h" />
+    <ClInclude Include="Src\Shape\Graphics\MSDFData.h" />
     <ClInclude Include="Src\Shape\Graphics\Material.h" />
     <ClInclude Include="Src\Shape\Graphics\Mesh.h" />
+    <ClInclude Include="Src\Shape\Graphics\MeshFactory.h" />
+    <ClInclude Include="Src\Shape\Graphics\Model.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\BufferLayout.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\CommandBuffer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
@@ -141,6 +145,7 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKVertexBuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
+    <ClInclude Include="Src\Shape\Utilities\AssetManager.h" />
     <ClInclude Include="Src\Shape\Utilities\CombineHash.h" />
     <ClInclude Include="Src\Shape\Utilities\LoadImage.h" />
     <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
@@ -188,10 +193,19 @@
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Font.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\Material.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\Mesh.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\MeshFactory.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Model.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\BufferLayout.cpp">
@@ -382,6 +396,12 @@
     </ProjectReference>
     <ProjectReference Include="External\ModelLoaders\meshoptimizer\meshoptimizer.vcxproj">
       <Project>{75046AD2-E1C4-E508-AAFF-2E86167F2AE5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\msdf-atlas-gen\msdf-atlas-gen.vcxproj">
+      <Project>{38BD587B-248B-4C81-0D1F-BDA7F98B28E6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\freetype\freetype.vcxproj">
+      <Project>{89895BD8-7556-B6E3-9E6F-A48B8A9BEB71}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

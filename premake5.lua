@@ -14,6 +14,15 @@ IncludeDir["vulkan"] = "Shape/External/vulkan/"
 IncludeDir["stb"] = "Shape/External/stb"
 IncludeDir["SpirvCross"] = "Shape/External/vulkan/SPIRV-Cross"
 IncludeDir["cereal"] = "Shape/External/cereal/include"
+--字体相关的库
+IncludeDir["msdf_atlas_gen"] = "Shape/External/msdf-atlas-gen/msdf-atlas-gen"
+IncludeDir["msdfgen"] = "Shape/External/msdf-atlas-gen/msdfgen"
+--IMGui 相关
+IncludeDir["freetype"] = "Shape/External/freetype/include"
+
+IncludeDir["cereal"] = "Shape/External/cereal/include"
+
+
 
 
 
@@ -39,6 +48,11 @@ group "External"
 		SetRecommendedSettings()
 	require("Shape/External/ModelLoaders/meshoptimizer/premake5")
 		SetRecommendedSettings()
+	require("Shape/External/msdf-atlas-gen/premake5")
+		SetRecommendedSettings()
+	require("Shape/External/freetype/premake5")
+		SetRecommendedSettings()
+
 
 
 group ""
@@ -72,7 +86,10 @@ project "Shape"
 		"%{IncludeDir.vulkan}",
 		"%{IncludeDir.stb}",
 		"%{IncludeDir.SpirvCross}",
-
+		"%{IncludeDir.msdfgen}",
+		"%{IncludeDir.msdf_atlas_gen}",
+		"%{IncludeDir.freetype}",
+		"%{IncludeDir.cereal}",
 	}
 
 	libdirs 
@@ -116,6 +133,9 @@ project "Shape"
 			"glfw",
 			"imgui",
 			"meshoptimizer",
+			"msdf-atlas-gen",
+			"freetype",
+
 		}
 
 		buildoptions
@@ -165,7 +185,10 @@ project "Editor"
 		"%{IncludeDir.vulkan}",
 		"%{IncludeDir.stb}",
 		"%{IncludeDir.SpirvCross}",
-
+		"%{IncludeDir.msdfgen}",
+		"%{IncludeDir.msdf_atlas_gen}",
+		"%{IncludeDir.freetype}",
+		"%{IncludeDir.cereal}",
     }
 
     links
@@ -175,6 +198,8 @@ project "Editor"
 		"imgui",
 		"SpirvCross",
 		"meshoptimizer",
+		"msdf-atlas-gen",
+		"freetype",
     }
 
 	defines

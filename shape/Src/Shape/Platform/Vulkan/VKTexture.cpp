@@ -478,5 +478,7 @@ namespace Shape
 			}
 			return m_MipImageViews.at(mip);
 		}
+
+
 	}
 }

@@ -6,6 +6,7 @@
 #include "VKUtilities.h"
 #include "VKPipeline.h"
 #include "VKCommandBuffer.h"
+#include "VKTexture.h"
 
 #include "Shape/Core/Engine.h"
 #include "Shape/Core/Application.h"

@@ -117,10 +117,22 @@
     <ClInclude Include="Src\Shape\Events\MouseEvent.h">
       <Filter>Shape\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Font.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\MSDFData.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\Material.h">
       <Filter>Shape\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\Mesh.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\MeshFactory.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Model.h">
       <Filter>Shape\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\RHI\BufferLayout.h">
@@ -294,6 +306,9 @@
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h">
       <Filter>Shape\Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Utilities\AssetManager.h">
+      <Filter>Shape\Utilities</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Utilities\CombineHash.h">
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
@@ -351,10 +366,19 @@
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Font.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\Material.cpp">
       <Filter>Shape\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\Mesh.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\MeshFactory.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Model.cpp">
       <Filter>Shape\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\BufferLayout.cpp">
