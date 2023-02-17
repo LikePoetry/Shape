@@ -2,6 +2,8 @@
 #include "Application.h"
 #include "OS/Window.h"
 #include "Shape/Events/ApplicationEvent.h"
+#include "OS/FileSystem.h"
+#include "Shape/Graphics/RHI/Renderer.h"
 
 namespace Shape
 {
@@ -15,6 +17,14 @@ namespace Shape
 	}
 
 	Application::~Application()
+	{
+
+	}
+
+	/// <summary>
+	/// 退出是流程!
+	/// </summary>
+	void Application::OnQuit()
 	{
 
 	}
@@ -35,8 +45,25 @@ namespace Shape
 
 		// 初始化窗口
 		m_Window = UniquePtr<Window>(Window::Create(windowDesc));
+		if (!m_Window->HasInitialised())
+			OnQuit();
+
 
 		m_Window->SetEventCallback(BIND_EVENT_FN(Application::OnEvent));
+
+		m_EditorState = EditorState::Play;
+
+		m_ShaderLibrary = CreateSharedPtr<ShaderLibrary>();
+		//m_ModelLibrary = CreateSharedPtr<ModelLibrary>();
+		//m_FontLibrary = CreateSharedPtr<FontLibrary>();
+
+		// 载入嵌入式Shader
+		bool loadEmbeddedShaders = true;
+		if (FileSystem::FolderExists(m_ProjectSettings.m_EngineAssetPath + "Shaders"))
+			loadEmbeddedShaders = false;
+
+		Graphics::Renderer::Init(loadEmbeddedShaders);
+		
 
 		m_CurrentState = AppState::Running;
 	}

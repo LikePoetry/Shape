@@ -68,6 +68,11 @@ namespace Shape
 		
 		VKContext::VKContext()
 		{
+
+		}
+
+		VKContext::~VKContext()
+		{
 			VKRenderer::FlushDeletionQueues();
 
 			vkDestroyDescriptorPool(VKDevice::Get().GetDevice(), VKRenderer::GetDescriptorPool(), VK_NULL_HANDLE);
@@ -77,11 +82,6 @@ namespace Shape
 
 			VKDevice::Release();
 			vkDestroyInstance(s_VkInstance, nullptr);
-		}
-
-		VKContext::~VKContext()
-		{
-
 		}
 
 		void VKContext::Init()

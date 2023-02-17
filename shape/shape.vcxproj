@@ -364,7 +364,9 @@
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsOS.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\Shape\Platform\Windows\WindowsTimer.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsTimer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

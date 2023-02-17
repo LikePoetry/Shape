@@ -537,6 +537,9 @@
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsOS.cpp">
       <Filter>Shape\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsTimer.cpp">
+      <Filter>Shape\Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
       <Filter>Shape\Platform\Windows</Filter>
     </ClCompile>
@@ -556,6 +559,5 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Platform\Windows\WindowsTimer.cpp" />
   </ItemGroup>
 </Project>
