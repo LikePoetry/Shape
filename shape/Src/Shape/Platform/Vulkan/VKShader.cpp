@@ -697,7 +697,7 @@ namespace Shape
 				descriptor.binding = binding;
 				descriptor.textureCount = 1;
 				descriptor.name = u.name;
-				descriptor.texture = Graphics::Material::GetDefaultTexture().get(); // TODO: Move
+				//descriptor.texture = Graphics::Material::GetDefaultTexture().get(); // TODO: Move
 			}
 
 			for (auto& u : resources.storage_images)
@@ -722,7 +722,7 @@ namespace Shape
 				descriptor.binding = binding;
 				descriptor.textureCount = 1;
 				descriptor.name = u.name;
-				descriptor.texture = Graphics::Material::GetDefaultTexture().get(); // TODO: Move
+				//descriptor.texture = Graphics::Material::GetDefaultTexture().get(); // TODO: Move
 			}
 
 			m_ShaderStages[currentShaderStage].sType = VK_STRUCTURE_TYPE_PIPELINE_SHADER_STAGE_CREATE_INFO;

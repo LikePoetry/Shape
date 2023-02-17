@@ -4,6 +4,7 @@
 #include "VKUtilities.h"
 #include "VKInitialisers.h"
 #include "VKFramebuffer.h"
+#include "VKRenderer.h"
 
 namespace Shape
 {

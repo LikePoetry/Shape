@@ -30,14 +30,16 @@ namespace Shape
 
 		Window* GetWindow() const { return m_Window.get(); }
 
+		//SharedPtr<ShaderLibrary>& GetShaderLibrary();
+
+		static Application& Get() { return *s_Instance; }
+
 		static void Release()
 		{
 			if (s_Instance)
 				delete s_Instance;
 			s_Instance = nullptr;
 		}
-
-		static Application& Get() { return *s_Instance; }
 
 		bool OnWindowResize(WindowResizeEvent& e);
 

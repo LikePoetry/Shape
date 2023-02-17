@@ -1,5 +1,9 @@
 #include "hzpch.h"
 #include "VKContext.h"
+#include "VKDevice.h"
+#include "VKCommandPool.h"
+#include "VKCommandBuffer.h"
+#include "VKRenderer.h"
 #include "Shape/Core/Version.h"
 #include "Shape/Maths/Maths.h"
 #include "Shape/Core/StringUtilities.h"
@@ -64,7 +68,15 @@ namespace Shape
 		
 		VKContext::VKContext()
 		{
+			VKRenderer::FlushDeletionQueues();
 
+			vkDestroyDescriptorPool(VKDevice::Get().GetDevice(), VKRenderer::GetDescriptorPool(), VK_NULL_HANDLE);
+
+			if (m_DebugCallback)
+				vkDestroyDebugReportCallbackEXT(s_VkInstance, m_DebugCallback, VK_NULL_HANDLE);
+
+			VKDevice::Release();
+			vkDestroyInstance(s_VkInstance, nullptr);
 		}
 
 		VKContext::~VKContext()
@@ -80,6 +92,15 @@ namespace Shape
 			//设备初始化
 			VKDevice::Get().Init();
 			SetupDebugCallback();
+		}
+
+		void VKContext::Present()
+		{
+		}
+
+		size_t VKContext::GetMinUniformBufferOffsetAlignment() const
+		{
+			return Graphics::VKDevice::Get().GetPhysicalDevice()->GetProperties().limits.minUniformBufferOffsetAlignment;
 		}
 
 		/// <summary>
@@ -302,6 +323,11 @@ namespace Shape
 		GraphicsContext* VKContext::CreateFuncVulkan()
 		{
 			return new VKContext();
+		}
+
+		void VKContext::WaitIdle() const
+		{
+			vkDeviceWaitIdle(VKDevice::Get().GetDevice());
 		}
 	}
 }

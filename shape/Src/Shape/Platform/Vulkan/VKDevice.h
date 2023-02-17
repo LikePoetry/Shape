@@ -232,6 +232,11 @@ namespace Shape
 				return VKDevice::Get().GetDevice();
 			}
 
+			uint32_t GetGPUCount() const
+			{
+				return m_PhysicalDevice->GetGPUCount();
+			}
+
 		private:
 			VkDevice m_Device;
 

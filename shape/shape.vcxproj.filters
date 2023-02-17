@@ -259,6 +259,10 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\IMGUIRenderer.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\RenderDevice.h" />
     <ClInclude Include="Src\Shape\Graphics\RHI\RenderDoc.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderDevice.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -432,5 +436,9 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\IMGUIRenderer.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\RenderDevice.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\RenderDoc.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderDevice.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderer.cpp" />
   </ItemGroup>
 </Project>

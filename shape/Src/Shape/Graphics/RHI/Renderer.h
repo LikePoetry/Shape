@@ -2,6 +2,7 @@
 #include "Shape/Core/Application.h"
 #include "Shape/Core/OS/Window.h"
 #include "CommandBuffer.h"
+#include "DescriptorSet.h"
 #include "Pipeline.h"
 #include <glm/vec4.hpp>
 
@@ -10,7 +11,7 @@ namespace Shape
 {
 	namespace Graphics
 	{
-        class Mesh;
+        /*class Mesh;*/
 
         struct RenderAPICapabilities
         {
@@ -89,7 +90,7 @@ namespace Shape
 
             static GraphicsContext* GetGraphicsContext() { return Application::Get().GetWindow()->GetGraphicsContext(); }
             static SwapChain* GetMainSwapChain() { return Application::Get().GetWindow()->GetSwapChain(); }
-            static void DrawMesh(CommandBuffer* commandBuffer, Graphics::Pipeline* pipeline, Graphics::Mesh* mesh);
+           // static void DrawMesh(CommandBuffer* commandBuffer, Graphics::Pipeline* pipeline, Graphics::Mesh* mesh);
 
         protected:
             static Renderer* (*CreateFunc)();

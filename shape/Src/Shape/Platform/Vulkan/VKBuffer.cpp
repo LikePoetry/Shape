@@ -2,6 +2,7 @@
 #include "VKBuffer.h"
 #include "VKDevice.h"
 #include "VKUtilities.h"
+#include "VKRenderer.h"
 
 namespace Shape
 {

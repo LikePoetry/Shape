@@ -95,7 +95,7 @@ namespace Shape
             }
             else
             {
-                LUMOS_LOG_ERROR("Failed to cast Reference");
+                SHAPE_LOG_ERROR("Failed to cast Reference");
             }
         }
 

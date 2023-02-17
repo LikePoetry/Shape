@@ -16,15 +16,16 @@ namespace Shape
 {
 	namespace Graphics
 	{
+		class VKCommandPool;
+
 		class VKContext :public GraphicsContext
 		{
 		public:
 			VKContext();
 			~VKContext();
 
-			
-
 			void Init() override;
+			void Present() override;
 
 			static VKAPI_ATTR VkBool32 VKAPI_CALL DebugCallback(VkDebugReportFlagsEXT flags,
 				VkDebugReportObjectTypeEXT objType,
@@ -38,6 +39,18 @@ namespace Shape
 			static VkInstance GetVKInstance() { return s_VkInstance; }
 
 			static uint32_t GetVKVersion() { return m_VKVersion; }
+
+			size_t GetMinUniformBufferOffsetAlignment() const override;
+
+			bool FlipImGUITexture() const override { return true; }
+			void WaitIdle() const override;
+			void OnImGui() override {};
+
+			float GetGPUMemoryUsed() override { return 0.0f; };
+			float GetTotalGPUMemory() override { return 0.0f; };
+
+			const std::vector<const char*>& GetLayerNames() const { return m_InstanceLayerNames; }
+			const std::vector<const char*>& GetExtensionNames() const { return m_InstanceExtensionNames; }
 
 			static void MakeDefault();
 

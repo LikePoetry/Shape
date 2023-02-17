@@ -2,6 +2,7 @@
 #include "VKSwapChain.h"
 #include "VKUtilities.h"
 #include "VKTexture.h"
+#include "VKRenderer.h"
 
 namespace Shape
 {
@@ -250,7 +251,7 @@ namespace Shape
 			}
 
 			{
-				SHAPE_PROFILE_FUNCTION("vkAcquireNextImageKHR");
+				SHAPE_PROFILE_FUNCTION();
 				auto result = vkAcquireNextImageKHR(VKDevice::Get().GetDevice(), m_SwapChain, UINT64_MAX, m_Frames[m_CurrentBuffer].PresentSemaphore, VK_NULL_HANDLE, &m_AcquireImageIndex);
 
 				if (result == VK_ERROR_OUT_OF_DATE_KHR || result == VK_SUBOPTIMAL_KHR)

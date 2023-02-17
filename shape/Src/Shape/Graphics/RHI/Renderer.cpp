@@ -27,7 +27,7 @@ namespace Shape
 
         void Renderer::LoadEngineShaders(bool loadEmbeddedShaders)
         {
-            auto shaderLibrary = Application::Get().GetShaderLibrary();
+            //auto shaderLibrary = Application::Get().GetShaderLibrary();
             if (loadEmbeddedShaders)
             {
                 SHAPE_LOG_INFO("Loading shaders - embedded");
@@ -85,13 +85,13 @@ namespace Shape
             }
         }
 
-        void Renderer::DrawMesh(CommandBuffer* commandBuffer, Graphics::Pipeline* pipeline, Graphics::Mesh* mesh)
-        {
-            mesh->GetVertexBuffer()->Bind(commandBuffer, pipeline);
-            mesh->GetIndexBuffer()->Bind(commandBuffer);
-            Renderer::DrawIndexed(commandBuffer, DrawType::TRIANGLE, mesh->GetIndexBuffer()->GetCount());
-            mesh->GetVertexBuffer()->Unbind();
-            mesh->GetIndexBuffer()->Unbind();
-        }
+        //void Renderer::DrawMesh(CommandBuffer* commandBuffer, Graphics::Pipeline* pipeline, Graphics::Mesh* mesh)
+        //{
+        //    //mesh->GetVertexBuffer()->Bind(commandBuffer, pipeline);
+        //    //mesh->GetIndexBuffer()->Bind(commandBuffer);
+        //    //Renderer::DrawIndexed(commandBuffer, DrawType::TRIANGLE, mesh->GetIndexBuffer()->GetCount());
+        //    //mesh->GetVertexBuffer()->Unbind();
+        //    //mesh->GetIndexBuffer()->Unbind();
+        //}
     }
 }

@@ -117,8 +117,12 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFence.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFramebuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKInitialisers.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKPipeline.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderDevice.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderer.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderPass.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKShader.h" />
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKSwapChain.h" />
@@ -258,9 +262,13 @@
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKPipeline.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderDevice.cpp" />
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderer.cpp" />
     <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderPass.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
