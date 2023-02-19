@@ -145,6 +145,9 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKVertexBuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
+    <ClInclude Include="Src\Shape\Scene\Scene.h" />
+    <ClInclude Include="Src\Shape\Scene\SceneManager.h" />
+    <ClInclude Include="Src\Shape\Scene\Serialisation.h" />
     <ClInclude Include="Src\Shape\Utilities\AssetManager.h" />
     <ClInclude Include="Src\Shape\Utilities\CombineHash.h" />
     <ClInclude Include="Src\Shape\Utilities\LoadImage.h" />
@@ -371,6 +374,12 @@
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Scene.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\SceneManager.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">

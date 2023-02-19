@@ -37,6 +37,9 @@
     <Filter Include="Shape\Platform\Windows">
       <UniqueIdentifier>{24A66166-10A0-8AB8-F90C-21C9E5A5F024}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape\Scene">
+      <UniqueIdentifier>{73DA291F-DF8F-A214-6884-9CEBD4389918}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Shape\Utilities">
       <UniqueIdentifier>{C14CC8C5-2DD8-358A-36E9-B87EA2F3918A}</UniqueIdentifier>
     </Filter>
@@ -306,6 +309,15 @@
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h">
       <Filter>Shape\Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Scene.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\SceneManager.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Serialisation.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Utilities\AssetManager.h">
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
@@ -545,6 +557,12 @@
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp">
       <Filter>Shape\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Scene.cpp">
+      <Filter>Shape\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\SceneManager.cpp">
+      <Filter>Shape\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">
       <Filter>Shape\Utilities</Filter>
