@@ -82,6 +82,9 @@
     <ClInclude Include="Src\Shape\Events\Event.h" />
     <ClInclude Include="Src\Shape\Events\KeyEvent.h" />
     <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\Camera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\Camera2D.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\CameraController.h" />
     <ClInclude Include="Src\Shape\Graphics\Font.h" />
     <ClInclude Include="Src\Shape\Graphics\MSDFData.h" />
     <ClInclude Include="Src\Shape\Graphics\Material.h" />
@@ -196,6 +199,8 @@
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\Camera.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\Camera\Camera2D.cpp" />
     <ClCompile Include="Src\Shape\Graphics\Font.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
