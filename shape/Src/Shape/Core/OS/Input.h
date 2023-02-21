@@ -40,7 +40,7 @@ namespace Shape
 
 		bool GetKeyPressed(Shape::InputCode::Key key)const { return m_KeyPressed[int(key)]; }
 		bool GetKeyHeld(Shape::InputCode::Key key) const { return m_KeyHeld[int(key)]; }
-		bool GetMouseCicked(Shape::InputCode::MouseKey key) const { return m_MouseClicked[int(key)]; }
+		bool GetMouseClicked(Shape::InputCode::MouseKey key) const { return m_MouseClicked[int(key)]; }
 		bool GetMouseHeld(Shape::InputCode::MouseKey key) const { return m_MouseHeld[int(key)]; }
 
 		void SetKeyPressed(Shape::InputCode::Key key, bool a) { m_KeyPressed[int(key)] = a; }

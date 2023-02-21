@@ -24,7 +24,7 @@ namespace Shape
 
 	protected:
 		glm::vec3 m_Velocity;
-		glm::vec3 m_RotateVelocity;
+		glm::vec2 m_RotateVelocity;
 		glm::vec3 m_FocalPoint;
 
 		float m_ZoomVelocity = 0.0f;
