@@ -340,6 +340,14 @@
     <ClInclude Include="Src\Shape\Graphics\Camera\CameraController.h" />
     <ClInclude Include="Src\Shape\Graphics\Camera\Camera.h" />
     <ClInclude Include="Src\Shape\Graphics\Camera\Camera2D.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\EditorCamera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\FPSCamera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.h" />
+    <ClInclude Include="Src\Shape\Scene\Entity.h" />
+    <ClInclude Include="Src\Shape\Scene\SceneGraph.h" />
+    <ClInclude Include="Src\Shape\Scene\ISystem.h" />
+    <ClInclude Include="Src\Shape\Scene\SystemManager.h" />
+    <ClInclude Include="Src\Shape\Scene\EntityManager.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
@@ -582,5 +590,13 @@
     <ClCompile Include="Src\hzpch.cpp" />
     <ClCompile Include="Src\Shape\Graphics\Camera\Camera.cpp" />
     <ClCompile Include="Src\Shape\Graphics\Camera\Camera2D.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\Camera\EditorCamera.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\Camera\FPSCamera.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\OBJLoader.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\GLTFLoader.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\FBXLoader.cpp" />
+    <ClCompile Include="Src\Shape\Scene\SceneGraph.cpp" />
+    <ClCompile Include="Src\Shape\Scene\EntityManager.cpp" />
   </ItemGroup>
 </Project>

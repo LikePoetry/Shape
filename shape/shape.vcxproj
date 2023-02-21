@@ -85,6 +85,9 @@
     <ClInclude Include="Src\Shape\Graphics\Camera\Camera.h" />
     <ClInclude Include="Src\Shape\Graphics\Camera\Camera2D.h" />
     <ClInclude Include="Src\Shape\Graphics\Camera\CameraController.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\EditorCamera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\FPSCamera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.h" />
     <ClInclude Include="Src\Shape\Graphics\Font.h" />
     <ClInclude Include="Src\Shape\Graphics\MSDFData.h" />
     <ClInclude Include="Src\Shape\Graphics\Material.h" />
@@ -148,9 +151,14 @@
     <ClInclude Include="Src\Shape\Platform\Vulkan\VKVertexBuffer.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
+    <ClInclude Include="Src\Shape\Scene\Entity.h" />
+    <ClInclude Include="Src\Shape\Scene\EntityManager.h" />
+    <ClInclude Include="Src\Shape\Scene\ISystem.h" />
     <ClInclude Include="Src\Shape\Scene\Scene.h" />
+    <ClInclude Include="Src\Shape\Scene\SceneGraph.h" />
     <ClInclude Include="Src\Shape\Scene\SceneManager.h" />
     <ClInclude Include="Src\Shape\Scene\Serialisation.h" />
+    <ClInclude Include="Src\Shape\Scene\SystemManager.h" />
     <ClInclude Include="Src\Shape\Utilities\AssetManager.h" />
     <ClInclude Include="Src\Shape\Utilities\CombineHash.h" />
     <ClInclude Include="Src\Shape\Utilities\LoadImage.h" />
@@ -201,6 +209,9 @@
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\Camera\Camera.cpp" />
     <ClCompile Include="Src\Shape\Graphics\Camera\Camera2D.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\Camera\EditorCamera.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\Camera\FPSCamera.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.cpp" />
     <ClCompile Include="Src\Shape\Graphics\Font.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -216,6 +227,9 @@
     <ClCompile Include="Src\Shape\Graphics\Model.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\FBXLoader.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\GLTFLoader.cpp" />
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\OBJLoader.cpp" />
     <ClCompile Include="Src\Shape\Graphics\RHI\BufferLayout.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
@@ -381,9 +395,11 @@
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\EntityManager.cpp" />
     <ClCompile Include="Src\Shape\Scene\Scene.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\SceneGraph.cpp" />
     <ClCompile Include="Src\Shape\Scene\SceneManager.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
