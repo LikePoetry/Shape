@@ -1,9 +1,9 @@
 #include "hzpch.h"
 #include "ThirdPersonCamera.h"
-#include "Shape/Core/OS/Input.h"
+#include "Core/OS/Input.h"
 #include "Camera.h"
-#include "Shape/Core/Application.h"
-#include "Shape/Core/OS/Window.h"
+#include "Core/Application.h"
+#include "Core/OS/Window.h"
 namespace Shape
 {
 

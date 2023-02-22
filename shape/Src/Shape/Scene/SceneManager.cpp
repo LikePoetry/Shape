@@ -1,9 +1,9 @@
 #include "hzpch.h"
 #include "SceneManager.h"
 
-#include "Shape/Core/Application.h"
-#include "Shape/Core/VFS.h"
-#include "Shape/Core/StringUtilities.h"
+#include "Core/Application.h"
+#include "Core/VFS.h"
+#include "Core/StringUtilities.h"
 
 namespace Shape
 {
@@ -88,7 +88,7 @@ namespace Shape
         if (m_CurrentScene)
         {
             SHAPE_LOG_INFO("[SceneManager] - Exiting scene : {0}", m_CurrentScene->GetSceneName());
-            app.GetSystem<LumosPhysicsEngine>()->SetPaused(true);
+            app.GetSystem<ShapePhysicsEngine>()->SetPaused(true);
 
             m_CurrentScene->OnCleanupScene();
             app.OnExitScene();
@@ -98,9 +98,9 @@ namespace Shape
         m_CurrentScene = m_vpAllScenes[m_QueuedSceneIndex].get();
 
         // Initialise new scene
-        app.GetSystem<LumosPhysicsEngine>()->SetDefaults();
+        app.GetSystem<ShapePhysicsEngine>()->SetDefaults();
         app.GetSystem<B2PhysicsEngine>()->SetDefaults();
-        app.GetSystem<LumosPhysicsEngine>()->SetPaused(false);
+        app.GetSystem<ShapePhysicsEngine>()->SetPaused(false);
 
         std::string physicalPath;
         if (Shape::VFS::Get().ResolvePhysicalPath("//Scenes/" + m_CurrentScene->GetSceneName() + ".lsn", physicalPath))

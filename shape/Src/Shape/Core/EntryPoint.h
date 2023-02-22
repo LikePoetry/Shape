@@ -1,7 +1,7 @@
 #pragma once
 #include "CoreSystem.h"
 /// Windows ϵͳ
-#include "Shape/Platform/Windows/WindowsOS.h"
+#include "Platform/Windows/WindowsOS.h"
 
 extern Shape::Application* Shape::CreateApplication();
 

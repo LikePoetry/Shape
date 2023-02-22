@@ -1,8 +1,8 @@
 #include "hzpch.h"
 #include "Model.h"
 #include "Mesh.h"
-#include "Shape/Core/StringUtilities.h"
-#include "Shape/Core/VFS.h"
+#include "Core/StringUtilities.h"
+#include "Core/VFS.h"
 
 namespace Shape::Graphics
 {

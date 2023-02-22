@@ -1,9 +1,9 @@
 #pragma once
-#include "Shape/Graphics/RHI/DescriptorSet.h"
+#include "Graphics/RHI/DescriptorSet.h"
 #include "VK.h"
-#include "Shape/Graphics/RHI/Renderer.h"
-#include "Shape/Graphics/RHI/SwapChain.h"
-#include "Shape/Core/Buffer.h"
+#include "Graphics/RHI/Renderer.h"
+#include "Graphics/RHI/SwapChain.h"
+#include "Core/Buffer.h"
 
 #define MAX_BUFFER_INFOS 32
 #define MAX_IMAGE_INFOS 32

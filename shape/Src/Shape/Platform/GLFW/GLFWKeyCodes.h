@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Shape/Core/OS/KeyCodes.h"
+#include "Core/OS/KeyCodes.h"
 
 #include <GLFW/glfw3.h>
 

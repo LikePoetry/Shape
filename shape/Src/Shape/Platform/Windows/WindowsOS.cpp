@@ -1,9 +1,9 @@
 #include "hzpch.h"
 #include "WindowsOS.h"
 
-#include "Shape/Core/Application.h"
+#include "Core/Application.h"
 
-#include "Shape/Platform/GLFW/GLFWWindow.h"
+#include "Platform/GLFW/GLFWWindow.h"
 
 #include <Windows.h>
 #include <filesystem>

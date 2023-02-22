@@ -1,8 +1,8 @@
 #pragma once
-#include "Shape/Graphics/RHI/GraphicsContext.h"
+#include "Graphics/RHI/GraphicsContext.h"
 #include "VK.h"
 #include "VKDevice.h"
-#include "Shape/Core/Reference.h"
+#include "Core/Reference.h"
 
 #include <deque>
 

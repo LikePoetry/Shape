@@ -1,5 +1,5 @@
 #pragma once
-#include "Shape/Core/Core.h"
+#include "Core/Core.h"
 
 namespace Shape
 {

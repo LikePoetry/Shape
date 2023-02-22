@@ -1,6 +1,6 @@
 #include "hzpch.h"
 #include "Mesh.h"
-#include "Shape/Graphics/RHI/Renderer.h"
+#include "Graphics/RHI/Renderer.h"
 
 #include <ModelLoaders/meshoptimizer/src/meshoptimizer.h>
 
@@ -61,7 +61,7 @@ namespace Shape
                 sizeof(Graphics::Vertex)   // vertex stride
             );
 
-            // LUMOS_LOG_INFO("Mesh Optimizer - Before : {0} indices {1} vertices , After : {2} indices , {3} vertices", indexCount, m_Vertices.size(), newIndexCount, newVertexCount);
+            // SHAPE_LOG_INFO("Mesh Optimizer - Before : {0} indices {1} vertices , After : {2} indices , {3} vertices", indexCount, m_Vertices.size(), newIndexCount, newVertexCount);
 
             m_BoundingBox = CreateSharedPtr<Maths::BoundingBox>();
 

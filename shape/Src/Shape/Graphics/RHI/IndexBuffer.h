@@ -1,5 +1,5 @@
 #pragma once
-#include "Shape/Graphics/RHI/Definitions.h"
+#include "Graphics/RHI/Definitions.h"
 
 namespace Shape
 {

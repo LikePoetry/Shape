@@ -2,8 +2,8 @@
 #include "MeshFactory.h"
 #include "Mesh.h"
 #include "Material.h"
-#include "Shape/Core/VFS.h"
-#include "Shape/Core/Asset.h"
+#include "Core/VFS.h"
+#include "Core/Asset.h"
 #include <cereal/cereal.hpp>
 
 namespace Shape

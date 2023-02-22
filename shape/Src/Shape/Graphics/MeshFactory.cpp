@@ -2,10 +2,10 @@
 #include "MeshFactory.h"
 #include "Mesh.h"
 #include "Material.h"
-#include "Shape/Maths/Maths.h"
+#include "Maths/Maths.h"
 //#include "Terrain.h"
 
-#include "Shape/Graphics/RHI/GraphicsContext.h"
+#include "Graphics/RHI/GraphicsContext.h"
 
 namespace Shape
 {

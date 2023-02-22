@@ -4,9 +4,9 @@
 #include "VKCommandPool.h"
 #include "VKCommandBuffer.h"
 #include "VKRenderer.h"
-#include "Shape/Core/Version.h"
-#include "Shape/Maths/Maths.h"
-#include "Shape/Core/StringUtilities.h"
+#include "Core/Version.h"
+#include "Maths/Maths.h"
+#include "Core/StringUtilities.h"
 #include <vulkan/vulkan_win32.h>
 
 #define VK_LAYER_LUNARG_STANDARD_VALIDATION_NAME "VK_LAYER_LUNARG_standard_validation"

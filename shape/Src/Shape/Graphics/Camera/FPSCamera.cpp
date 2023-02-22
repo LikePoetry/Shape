@@ -1,9 +1,9 @@
 #include "hzpch.h"
 #include "FPSCamera.h"
 
-#include "Shape/Core/Application.h"
-#include "Shape/Core/OS/Input.h"
-#include "Shape/Core/OS/Window.h"
+#include "Core/Application.h"
+#include "Core/OS/Input.h"
+#include "Core/OS/Window.h"
 #include "Camera.h"
 
 namespace Shape

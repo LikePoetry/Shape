@@ -1,8 +1,8 @@
 #include "hzpch.h"
 #include "GraphicsContext.h"
 
-#include "Shape/Platform/Vulkan/VKContext.h"
-#include "Shape/Platform/Vulkan/VKFunctions.h"
+#include "Platform/Vulkan/VKContext.h"
+#include "Platform/Vulkan/VKFunctions.h"
 
 namespace Shape
 {

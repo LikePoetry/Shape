@@ -8,9 +8,9 @@
 #include "VKInitialisers.h"
 #include "VKUniformBuffer.h"
 
-#include "Shape/Core/OS/FileSystem.h"
-#include "Shape/Core/VFS.h"
-#include "Shape/Core/StringUtilities.h"
+#include "Core/OS/FileSystem.h"
+#include "Core/VFS.h"
+#include "Core/StringUtilities.h"
 
 #include <spirv_cross.hpp>
 

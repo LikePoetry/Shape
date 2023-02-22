@@ -1,7 +1,7 @@
 #include "hzpch.h"
 
 #include "VKDevice.h"
-#include "Shape/Graphics/RHI/Renderer.h"
+#include "Graphics/RHI/Renderer.h"
 
 namespace Shape
 {

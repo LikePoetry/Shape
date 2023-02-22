@@ -1,9 +1,9 @@
 #pragma once
-#include "Shape/Maths/Maths.h"
+#include "Maths/Maths.h"
 #include "RHI/Texture.h"
 #include "RHI/Shader.h"
-#include "Shape/Core/VFS.h"
-//#include "Shape/Scene/Serialisation.h"
+#include "Core/VFS.h"
+//#include "Scene/Serialisation.h"
 
 namespace Shape
 {

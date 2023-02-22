@@ -1,6 +1,6 @@
 #pragma once
-#include "Shape/Core/Application.h"
-#include "Shape/Core/OS/Window.h"
+#include "Core/Application.h"
+#include "Core/OS/Window.h"
 #include "CommandBuffer.h"
 #include "DescriptorSet.h"
 #include "Pipeline.h"

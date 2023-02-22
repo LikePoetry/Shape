@@ -3,7 +3,7 @@
 
 #include "GraphicsContext.h"
 
-#include "Shape/Platform/Vulkan/VK.h"
+#include "Platform/Vulkan/VK.h"
 
 namespace Shape
 {

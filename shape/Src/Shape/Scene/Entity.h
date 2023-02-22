@@ -1,10 +1,10 @@
 #pragma once
-#include "Shape/Maths/Transform.h"
-#include "Shape/Scene/Scene.h"
-#include "Shape/Scene/SceneGraph.h"
-#include "Shape/Core/Profiler.h"
-#include "Shape/Core/StringUtilities.h"
-#include "Shape/Core/UUID.h"
+#include "Maths/Transform.h"
+#include "Scene/Scene.h"
+#include "Scene/SceneGraph.h"
+#include "Core/Profiler.h"
+#include "Core/StringUtilities.h"
+#include "Core/UUID.h"
 
 DISABLE_WARNING_PUSH
 DISABLE_WARNING_CONVERSION_TO_SMALLER_TYPE
@@ -81,35 +81,35 @@ namespace Shape
         template <typename T>
         T& GetComponent()
         {
-            LUMOS_PROFILE_FUNCTION();
+            SHAPE_PROFILE_FUNCTION();
             return m_Scene->GetRegistry().get<T>(m_EntityHandle);
         }
 
         template <typename T>
         T* TryGetComponent()
         {
-            LUMOS_PROFILE_FUNCTION();
+            SHAPE_PROFILE_FUNCTION();
             return m_Scene->GetRegistry().try_get<T>(m_EntityHandle);
         }
 
         template <typename T>
         bool HasComponent()
         {
-            LUMOS_PROFILE_FUNCTION();
+            SHAPE_PROFILE_FUNCTION();
             return m_Scene->GetRegistry().has<T>(m_EntityHandle);
         }
 
         template <typename T>
         void RemoveComponent()
         {
-            LUMOS_PROFILE_FUNCTION();
+            SHAPE_PROFILE_FUNCTION();
             m_Scene->GetRegistry().remove<T>(m_EntityHandle);
         }
 
         template <typename T>
         void TryRemoveComponent()
         {
-            LUMOS_PROFILE_FUNCTION();
+            SHAPE_PROFILE_FUNCTION();
             if (HasComponent<T>())
                 RemoveComponent<T>();
         }

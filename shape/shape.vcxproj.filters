@@ -4,11 +4,20 @@
     <Filter Include="Shape">
       <UniqueIdentifier>{D6A4170E-42B9-3FBF-0B3B-E31E770E3CF0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape\AI">
+      <UniqueIdentifier>{AF4D1B45-9B1A-7650-C433-64F8B05FABDE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Audio">
+      <UniqueIdentifier>{57FBED1D-C3B0-6613-4CA5-60EAB8595D17}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Shape\Core">
       <UniqueIdentifier>{EE3E27F9-DAF6-6846-43FE-41A22FD50337}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\Core\OS">
       <UniqueIdentifier>{9FD249DE-0B93-C514-D4CD-0E92404D0AF1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Embedded">
+      <UniqueIdentifier>{CF38DEC0-BB06-D2C6-A49A-42ED9007AE2B}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\Events">
       <UniqueIdentifier>{FAC314E5-E626-A489-8FAC-DC3F7BEE6F0C}</UniqueIdentifier>
@@ -16,8 +25,17 @@
     <Filter Include="Shape\Graphics">
       <UniqueIdentifier>{D63DB918-C20B-AD1E-AB9F-1D45970C8983}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape\Graphics\Camera">
+      <UniqueIdentifier>{8E25AEE2-FA91-69DD-C385-013B2FB18B45}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Graphics\ModelLoader">
+      <UniqueIdentifier>{6D9F92B8-59AF-3E89-C268-A3A7AE972D22}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Shape\Graphics\RHI">
       <UniqueIdentifier>{08654B2C-F448-0C82-5DA9-06D549ACF603}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Graphics\Renderers">
+      <UniqueIdentifier>{2FBA9CEE-1BDF-EB6E-442A-D1FE30AEEA8C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\ImGui">
       <UniqueIdentifier>{80E2791E-EC97-F213-758C-ECEAE140E917}</UniqueIdentifier>
@@ -25,11 +43,35 @@
     <Filter Include="Shape\Maths">
       <UniqueIdentifier>{C26DBC1E-2E23-3514-B717-2FEB23CC2B18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape\Physics">
+      <UniqueIdentifier>{481E32B7-B4DE-ADED-7D19-F76AE998F2C9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Physics\B2PhysicsEngine">
+      <UniqueIdentifier>{44AFAC85-B0C7-93AF-7974-2349E54B2849}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Physics\ShapePhysicsEngine">
+      <UniqueIdentifier>{01ABE915-EDFB-D457-1660-C319021068C1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Physics\ShapePhysicsEngine\Broadphase">
+      <UniqueIdentifier>{89C98AA5-F52E-1E2C-7E07-C004EA6B139B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Physics\ShapePhysicsEngine\CollisionShapes">
+      <UniqueIdentifier>{A025D849-8CCE-3F79-B564-5BF8A16C5ABA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Physics\ShapePhysicsEngine\Constraints">
+      <UniqueIdentifier>{484519CC-3458-1925-DD41-F611C933B672}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Physics\ShapePhysicsEngine\Narrowphase">
+      <UniqueIdentifier>{7A5506C0-6668-0619-0F52-E305FB43A366}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Shape\Platform">
       <UniqueIdentifier>{EAB17399-D67F-679F-BF13-D8C5AB804304}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\Platform\GLFW">
       <UniqueIdentifier>{692FBC7F-D590-998D-5EFE-DF3FCA5ED04C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Platform\OpenAL">
+      <UniqueIdentifier>{18CFCB74-843B-876F-4D2F-1FCDB95AA9D7}</UniqueIdentifier>
     </Filter>
     <Filter Include="Shape\Platform\Vulkan">
       <UniqueIdentifier>{2A347E85-96A0-3980-5F94-D1DDCBBF5BE8}</UniqueIdentifier>
@@ -40,11 +82,56 @@
     <Filter Include="Shape\Scene">
       <UniqueIdentifier>{73DA291F-DF8F-A214-6884-9CEBD4389918}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shape\Scene\Component">
+      <UniqueIdentifier>{959E5940-010B-153B-CAFE-AC98362A37A3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Scripting">
+      <UniqueIdentifier>{589DBBDA-C428-299F-CD39-AC933944859F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shape\Scripting\Lua">
+      <UniqueIdentifier>{E9A195DF-5503-73ED-DE70-B99F4AD1A9AC}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Shape\Utilities">
       <UniqueIdentifier>{C14CC8C5-2DD8-358A-36E9-B87EA2F3918A}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Src\Shape\AI\AINode.h">
+      <Filter>Shape\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\AI\AStar.h">
+      <Filter>Shape\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\AI\PathEdge.h">
+      <Filter>Shape\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\AI\PathNode.h">
+      <Filter>Shape\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\AI\PathNodePriorityQueue.h">
+      <Filter>Shape\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\AI\QueueablePathNode.h">
+      <Filter>Shape\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Audio\AudioData.h">
+      <Filter>Shape\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Audio\AudioManager.h">
+      <Filter>Shape\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Audio\OggLoader.h">
+      <Filter>Shape\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Audio\Sound.h">
+      <Filter>Shape\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Audio\SoundNode.h">
+      <Filter>Shape\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Audio\WavLoader.h">
+      <Filter>Shape\Audio</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Core\Application.h">
       <Filter>Shape\Core</Filter>
     </ClInclude>
@@ -108,6 +195,9 @@
     <ClInclude Include="Src\Shape\Core\Version.h">
       <Filter>Shape\Core</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Embedded\EmbedAsset.h">
+      <Filter>Shape\Embedded</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Events\ApplicationEvent.h">
       <Filter>Shape\Events</Filter>
     </ClInclude>
@@ -120,7 +210,37 @@
     <ClInclude Include="Src\Shape\Events\MouseEvent.h">
       <Filter>Shape\Events</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\AnimatedSprite.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Camera\Camera.h">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Camera\Camera2D.h">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Camera\CameraController.h">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Camera\EditorCamera.h">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Camera\FPSCamera.h">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.h">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Environment.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\Font.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\GBuffer.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Light.h">
       <Filter>Shape\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Graphics\MSDFData.h">
@@ -195,7 +315,40 @@
     <ClInclude Include="Src\Shape\Graphics\RHI\VertexBuffer.h">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Renderable2D.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Renderers\DebugRenderer.h">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Renderers\GridRenderer.h">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Renderers\IRenderer.h">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Renderers\RenderCommand.h">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Renderers\SceneRenderer.h">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Sprite.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Graphics\Terrain.h">
+      <Filter>Shape\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\ImGui\IconsMaterialDesignIcons.h">
+      <Filter>Shape\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\ImGui\ImConfig.h">
+      <Filter>Shape\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\ImGui\ImGuiManager.h">
+      <Filter>Shape\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\ImGui\ImGuiUtilities.h">
       <Filter>Shape\ImGui</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Maths\BoundingBox.h">
@@ -228,11 +381,95 @@
     <ClInclude Include="Src\Shape\Maths\Transform.h">
       <Filter>Shape\Maths</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\B2PhysicsEngine\B2DebugDraw.h">
+      <Filter>Shape\Physics\B2PhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\B2PhysicsEngine\B2PhysicsEngine.h">
+      <Filter>Shape\Physics\B2PhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\B2PhysicsEngine\RigidBody2D.h">
+      <Filter>Shape\Physics\B2PhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\RigidBody.h">
+      <Filter>Shape\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Broadphase\Broadphase.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Broadphase\BruteForceBroadphase.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Broadphase\OctreeBroadphase.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Broadphase\SortAndSweepBroadphase.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\CapsuleCollisionShape.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\CollisionShape.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\CuboidCollisionShape.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\Hull.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\HullCollisionShape.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\PyramidCollisionShape.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\SphereCollisionShape.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\AxisConstraint.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\Constraint.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\DistanceConstraint.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\SpringConstraint.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\WeldConstraint.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Integration.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Narrowphase\CollisionDetection.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Narrowphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\Narrowphase\Manifold.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Narrowphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\RigidBody3D.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Physics\ShapePhysicsEngine\ShapePhysicsEngine.h">
+      <Filter>Shape\Physics\ShapePhysicsEngine</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h">
       <Filter>Shape\Platform\GLFW</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Platform\GLFW\GLFWWindow.h">
       <Filter>Shape\Platform\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\OpenAL\ALManager.h">
+      <Filter>Shape\Platform\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\OpenAL\ALSound.h">
+      <Filter>Shape\Platform\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Platform\OpenAL\ALSoundNode.h">
+      <Filter>Shape\Platform\OpenAL</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h">
       <Filter>Shape\Platform\Vulkan</Filter>
@@ -309,7 +546,43 @@
     <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h">
       <Filter>Shape\Platform\Windows</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Component\AIComponent.h">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Component\Components.h">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Component\ModelComponent.h">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Component\RigidBody2DComponent.h">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Component\RigidBody3DComponent.h">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Component\SoundComponent.h">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Component\TextureMatrixComponent.h">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\Entity.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\EntityFactory.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\EntityManager.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\ISystem.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
     <ClInclude Include="Src\Shape\Scene\Scene.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\SceneGraph.h">
       <Filter>Shape\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Scene\SceneManager.h">
@@ -317,6 +590,24 @@
     </ClInclude>
     <ClInclude Include="Src\Shape\Scene\Serialisation.h">
       <Filter>Shape\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scene\SystemManager.h">
+      <Filter>Shape\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scripting\Lua\ImGuiLua.h">
+      <Filter>Shape\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scripting\Lua\LuaManager.h">
+      <Filter>Shape\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scripting\Lua\LuaScriptComponent.h">
+      <Filter>Shape\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scripting\Lua\MathsLua.h">
+      <Filter>Shape\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shape\Scripting\Lua\PhysicsLua.h">
+      <Filter>Shape\Scripting\Lua</Filter>
     </ClInclude>
     <ClInclude Include="Src\Shape\Utilities\AssetManager.h">
       <Filter>Shape\Utilities</Filter>
@@ -337,19 +628,32 @@
       <Filter>Shape\Utilities</Filter>
     </ClInclude>
     <ClInclude Include="Src\hzpch.h" />
-    <ClInclude Include="Src\Shape\Graphics\Camera\CameraController.h" />
-    <ClInclude Include="Src\Shape\Graphics\Camera\Camera.h" />
-    <ClInclude Include="Src\Shape\Graphics\Camera\Camera2D.h" />
-    <ClInclude Include="Src\Shape\Graphics\Camera\EditorCamera.h" />
-    <ClInclude Include="Src\Shape\Graphics\Camera\FPSCamera.h" />
-    <ClInclude Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.h" />
-    <ClInclude Include="Src\Shape\Scene\Entity.h" />
-    <ClInclude Include="Src\Shape\Scene\SceneGraph.h" />
-    <ClInclude Include="Src\Shape\Scene\ISystem.h" />
-    <ClInclude Include="Src\Shape\Scene\SystemManager.h" />
-    <ClInclude Include="Src\Shape\Scene\EntityManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Shape\AI\AStar.cpp">
+      <Filter>Shape\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\AI\PathEdge.cpp">
+      <Filter>Shape\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\AI\PathNode.cpp">
+      <Filter>Shape\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\AudioManager.cpp">
+      <Filter>Shape\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\OggLoader.cpp">
+      <Filter>Shape\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\Sound.cpp">
+      <Filter>Shape\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\SoundNode.cpp">
+      <Filter>Shape\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\WavLoader.cpp">
+      <Filter>Shape\Audio</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Core\Application.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
@@ -389,7 +693,37 @@
     <ClCompile Include="Src\Shape\Core\VFS.cpp">
       <Filter>Shape\Core</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Embedded\EmbedAsset.cpp">
+      <Filter>Shape\Embedded</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\AnimatedSprite.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\Camera.cpp">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\Camera2D.cpp">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\EditorCamera.cpp">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\FPSCamera.cpp">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.cpp">
+      <Filter>Shape\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Environment.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\Font.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\GBuffer.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Light.cpp">
       <Filter>Shape\Graphics</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\Material.cpp">
@@ -403,6 +737,15 @@
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\Model.cpp">
       <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\FBXLoader.cpp">
+      <Filter>Shape\Graphics\ModelLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\GLTFLoader.cpp">
+      <Filter>Shape\Graphics\ModelLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\OBJLoader.cpp">
+      <Filter>Shape\Graphics\ModelLoader</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Graphics\RHI\BufferLayout.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
@@ -455,6 +798,33 @@
     <ClCompile Include="Src\Shape\Graphics\RHI\VertexBuffer.cpp">
       <Filter>Shape\Graphics\RHI</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderable2D.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderers\DebugRenderer.cpp">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderers\GridRenderer.cpp">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderers\IRenderer.cpp">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderers\SceneRenderer.cpp">
+      <Filter>Shape\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Sprite.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Terrain.cpp">
+      <Filter>Shape\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\ImGui\ImGuiManager.cpp">
+      <Filter>Shape\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\ImGui\ImGuiUtilities.cpp">
+      <Filter>Shape\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Maths\BoundingBox.cpp">
       <Filter>Shape\Maths</Filter>
     </ClCompile>
@@ -485,8 +855,83 @@
     <ClCompile Include="Src\Shape\Maths\Transform.cpp">
       <Filter>Shape\Maths</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\B2PhysicsEngine\B2DebugDraw.cpp">
+      <Filter>Shape\Physics\B2PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\B2PhysicsEngine\B2PhysicsEngine.cpp">
+      <Filter>Shape\Physics\B2PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\B2PhysicsEngine\RigidBody2D.cpp">
+      <Filter>Shape\Physics\B2PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\RigidBody.cpp">
+      <Filter>Shape\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Broadphase\BruteForceBroadphase.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Broadphase\OctreeBroadphase.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Broadphase\SortAndSweepBroadphase.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\CapsuleCollisionShape.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\CuboidCollisionShape.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\Hull.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\HullCollisionShape.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\PyramidCollisionShape.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\CollisionShapes\SphereCollisionShape.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\AxisConstraint.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\DistanceConstraint.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\SpringConstraint.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Constraints\WeldConstraint.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Integration.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Narrowphase\CollisionDetection.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Narrowphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\Narrowphase\Manifold.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine\Narrowphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\RigidBody3D.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\ShapePhysicsEngine\ShapePhysicsEngine.cpp">
+      <Filter>Shape\Physics\ShapePhysicsEngine</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Platform\GLFW\GLFWWindow.cpp">
       <Filter>Shape\Platform\GLFW</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenAL\ALManager.cpp">
+      <Filter>Shape\Platform\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenAL\ALSound.cpp">
+      <Filter>Shape\Platform\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenAL\ALSoundNode.cpp">
+      <Filter>Shape\Platform\OpenAL</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp">
       <Filter>Shape\Platform\Vulkan</Filter>
@@ -569,11 +1014,53 @@
     <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp">
       <Filter>Shape\Platform\Windows</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\AIComponent.cpp">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\ModelComponent.cpp">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\RigidBody2DComponent.cpp">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\RigidBody3DComponent.cpp">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\SoundComponent.cpp">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\TextureMatrixComponent.cpp">
+      <Filter>Shape\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\EntityFactory.cpp">
+      <Filter>Shape\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\EntityManager.cpp">
+      <Filter>Shape\Scene</Filter>
+    </ClCompile>
     <ClCompile Include="Src\Shape\Scene\Scene.cpp">
+      <Filter>Shape\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\SceneGraph.cpp">
       <Filter>Shape\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Scene\SceneManager.cpp">
       <Filter>Shape\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\ImGuiLua.cpp">
+      <Filter>Shape\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\LuaManager.cpp">
+      <Filter>Shape\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\LuaScriptComponent.cpp">
+      <Filter>Shape\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\MathsLua.cpp">
+      <Filter>Shape\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\PhysicsLua.cpp">
+      <Filter>Shape\Scripting\Lua</Filter>
     </ClCompile>
     <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">
       <Filter>Shape\Utilities</Filter>
@@ -588,15 +1075,5 @@
       <Filter>Shape\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="Src\hzpch.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\Camera\Camera.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\Camera\Camera2D.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\Camera\EditorCamera.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\Camera\FPSCamera.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\ModelLoader\OBJLoader.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\ModelLoader\GLTFLoader.cpp" />
-    <ClCompile Include="Src\Shape\Graphics\ModelLoader\FBXLoader.cpp" />
-    <ClCompile Include="Src\Shape\Scene\SceneGraph.cpp" />
-    <ClCompile Include="Src\Shape\Scene\EntityManager.cpp" />
   </ItemGroup>
 </Project>

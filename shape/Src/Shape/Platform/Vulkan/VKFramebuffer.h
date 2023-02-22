@@ -1,6 +1,6 @@
 #pragma once
-#include "Shape/Core/Core.h"
-#include "Shape/Graphics/RHI/Framebuffer.h"
+#include "Core/Core.h"
+#include "Graphics/RHI/Framebuffer.h"
 #include "VK.h"
 #include "VKTexture.h"
 #include "VKRenderPass.h"

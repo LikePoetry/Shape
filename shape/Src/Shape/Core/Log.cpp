@@ -15,7 +15,7 @@ namespace Shape::Debug
 		// sinks.emplace_back(std::make_shared<ImGuiConsoleSink_mt>()); // ImGuiConsole
 	
 #ifdef LOG_TO_TEXT_FILE
-		auto logFileSink = std::make_shared<spdlog::sinks::rotating_file_sink_mt>("LumosLog.txt", 1048576 * 5, 3);
+		auto logFileSink = std::make_shared<spdlog::sinks::rotating_file_sink_mt>("ShapeLog.txt", 1048576 * 5, 3);
 		sinks.emplace_back(logFileSink); // Log file
 #endif
 

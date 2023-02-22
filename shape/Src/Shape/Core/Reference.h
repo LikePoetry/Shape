@@ -181,7 +181,7 @@ namespace Shape
             }
             else
             {
-                LUMOS_LOG_ERROR("Failed to cast Reference");
+                SHAPE_LOG_ERROR("Failed to cast Reference");
             }
 
             return *this;
@@ -329,7 +329,7 @@ namespace Shape
         explicit WeakReference(T* ptr) noexcept
             : m_Ptr(ptr)
         {
-            LUMOS_ASSERT(ptr, "Creating weak ptr with nullptr");
+            SHAPE_ASSERT(ptr, "Creating weak ptr with nullptr");
 
             m_Counter = new RefCount();
             m_Counter->weakReference();

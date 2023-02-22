@@ -8,8 +8,8 @@
 #include "VKCommandBuffer.h"
 #include "VKTexture.h"
 
-#include "Shape/Core/Engine.h"
-#include "Shape/Core/Application.h"
+#include "Core/Engine.h"
+#include "Core/Application.h"
 
 namespace Shape
 {

@@ -1,5 +1,5 @@
 #include "hzpch.h"
-#include "Shape/Utilities/Timer.h"
+#include "Utilities/Timer.h"
 
 namespace Shape
 {

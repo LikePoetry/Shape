@@ -1,7 +1,7 @@
 #pragma once
-#include "Shape/Graphics/RHI/Texture.h"
+#include "Graphics/RHI/Texture.h"
 #include "VK.h"
-#include "Shape/Graphics/RHI/GraphicsContext.h"
+#include "Graphics/RHI/GraphicsContext.h"
 #include "VKContext.h"
 #include "VKCommandBuffer.h"
 

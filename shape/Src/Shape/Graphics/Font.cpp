@@ -1,11 +1,11 @@
 #include "hzpch.h"
 #include "Font.h"
 #include "MSDFData.h"
-#include "Shape/Core/OS/FileSystem.h"
-#include "Shape/Core/Buffer.h"
-#include "Shape/Graphics/RHI/Texture.h"
-#include "Shape/Core/VFS.h"
-#include "Shape/Core/Application.h"
+#include "Core/OS/FileSystem.h"
+#include "Core/Buffer.h"
+#include "Graphics/RHI/Texture.h"
+#include "Core/VFS.h"
+#include "Core/Application.h"
 
 #if __has_include(<filesystem>)
 #include <filesystem>

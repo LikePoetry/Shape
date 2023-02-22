@@ -1,12 +1,12 @@
 #include "hzpch.h"
-#include "Shape/Graphics/Model.h"
-#include "Shape/Graphics/Mesh.h"
-#include "Shape/Graphics/Material.h"
-#include "Shape/Maths/Transform.h"
-#include "Shape/Graphics/RHI/Texture.h"
-#include "Shape/Maths/Maths.h"
-#include "Shape/Core/StringUtilities.h"
-#include "Shape/Core/Application.h"
+#include "Graphics/Model.h"
+#include "Graphics/Mesh.h"
+#include "Graphics/Material.h"
+#include "Maths/Transform.h"
+#include "Graphics/RHI/Texture.h"
+#include "Maths/Maths.h"
+#include "Core/StringUtilities.h"
+#include "Core/Application.h"
 
 #define TINYOBJLOADER_IMPLEMENTATION
 #include <ModelLoaders/tinyobjloader/tiny_obj_loader.h>

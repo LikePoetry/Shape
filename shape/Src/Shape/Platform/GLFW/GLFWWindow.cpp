@@ -1,17 +1,17 @@
 #include "hzpch.h"
 #include "GLFWWindow.h"
 
-#include "Shape/Graphics/RHI/GraphicsContext.h"
+#include "Graphics/RHI/GraphicsContext.h"
 
 #include "GLFWKeyCodes.h"
 
-#include "Shape/Core/OS/OS.h"
-#include "Shape/Core/OS/Input.h"
-#include "Shape/Core/Application.h"
+#include "Core/OS/OS.h"
+#include "Core/OS/Input.h"
+#include "Core/Application.h"
 
-#include "Shape/Events/ApplicationEvent.h"
-#include "Shape/Events/MouseEvent.h"
-#include "Shape/Events/KeyEvent.h"
+#include "Events/ApplicationEvent.h"
+#include "Events/MouseEvent.h"
+#include "Events/KeyEvent.h"
 
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>

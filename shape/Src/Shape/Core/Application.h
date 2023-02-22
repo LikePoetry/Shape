@@ -1,6 +1,6 @@
 #pragma once
 #include "Reference.h"
-#include "Shape/Utilities/AssetManager.h"
+#include "Utilities/AssetManager.h"
 
 namespace Shape
 {

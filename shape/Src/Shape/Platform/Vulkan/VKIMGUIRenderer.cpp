@@ -12,7 +12,7 @@
 #include "VKRenderer.h"
 #include "VKRenderPass.h"
 #include "VKTexture.h"
-#include "Shape/Graphics/RHI/GPUProfile.h"
+#include "Graphics/RHI/GPUProfile.h"
 
 static ImGui_ImplVulkanH_Window g_WindowData;
 static VkAllocationCallbacks* g_Allocator = nullptr;

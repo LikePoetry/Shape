@@ -21,11 +21,12 @@ IncludeDir["msdfgen"] = "Shape/External/msdf-atlas-gen/msdfgen"
 IncludeDir["freetype"] = "Shape/External/freetype/include"
 
 IncludeDir["cereal"] = "Shape/External/cereal/include"
-
-
-
-
-
+-- 物理引擎相关
+IncludeDir["Box2D"] = "Shape/External/box2d/include/"
+-- 脚本控制相关
+IncludeDir["lua"] = "Shape/External/lua/src/"
+-- Audio 相关库
+IncludeDir["OpenAL"] = "Shape/External/OpenAL/include/"
 
 workspace "Shape"
     architecture "x64"
@@ -52,6 +53,10 @@ group "External"
 		SetRecommendedSettings()
 	require("Shape/External/freetype/premake5")
 		SetRecommendedSettings()
+	require("Shape/External/box2dpremake5")
+			SetRecommendedSettings()
+	require("Shape/External/lua/premake5")
+			SetRecommendedSettings()
 
 
 
@@ -78,6 +83,7 @@ project "Shape"
 	includedirs
 	{
 		"%{prj.name}/Src",
+		"%{prj.name}/Src/Shape",
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.external}",
 		"%{IncludeDir.glm}",
@@ -90,6 +96,10 @@ project "Shape"
 		"%{IncludeDir.msdf_atlas_gen}",
 		"%{IncludeDir.freetype}",
 		"%{IncludeDir.cereal}",
+		"%{IncludeDir.Box2D}",
+		"%{IncludeDir.lua}",
+		"%{IncludeDir.OpenAL}",
+
 	}
 
 	libdirs 
@@ -125,7 +135,8 @@ project "Shape"
 			"IMGUI_USER_CONFIG=\"../Src/Shape/ImGui/ImConfig.h\"",
 			"_CRT_SECURE_NO_WARNINGS",
 			"_DISABLE_EXTENDED_ALIGNED_STORAGE",
-			"SHAPE_ENGINE"
+			"SHAPE_ENGINE",
+			"SHAPE_OPENAL"
 		}
 		
 		links
@@ -135,6 +146,8 @@ project "Shape"
 			"meshoptimizer",
 			"msdf-atlas-gen",
 			"freetype",
+			"box2d",
+			"lua",
 
 		}
 
@@ -176,7 +189,9 @@ project "Editor"
 
     includedirs
 	{
+        "Shape/Src/Shape",
         "Shape/Src",
+
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.external}",
 		"%{IncludeDir.glm}",
@@ -189,6 +204,9 @@ project "Editor"
 		"%{IncludeDir.msdf_atlas_gen}",
 		"%{IncludeDir.freetype}",
 		"%{IncludeDir.cereal}",
+		"%{IncludeDir.Box2D}",
+		"%{IncludeDir.lua}",
+		"%{IncludeDir.OpenAL}",
     }
 
     links
@@ -200,6 +218,8 @@ project "Editor"
 		"meshoptimizer",
 		"msdf-atlas-gen",
 		"freetype",
+		"box2d",
+		"lua",
     }
 
 	defines

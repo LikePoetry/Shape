@@ -1,7 +1,7 @@
 #pragma once
 #include "Core.h"
-#include "Shape/Utilities/TimeStep.h"
-#include "Shape/Utilities/TSingleton.h"
+#include "Utilities/TimeStep.h"
+#include "Utilities/TSingleton.h"
 
 namespace Shape
 {

@@ -1,6 +1,6 @@
 #pragma once
 #include "Definitions.h"
-#include "Shape/Core/Asset.h"
+#include "Core/Asset.h"
 
 namespace Shape
 {

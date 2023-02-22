@@ -40,7 +40,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>IMGUI_USER_CONFIG="../../Shape/Src/Shape/ImGui/ImConfig.h";GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;SHAPE_ENGINE;USE_VMA_ALLOCATOR;WIN32_LEAN_AND_MEAN;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Shape\Src;..\Shape\External\spdlog\include;..\Shape\External;..\Shape\External\glm;..\Shape\External\glfw\include;..\Shape\External\imgui;..\Shape\External\vulkan;..\Shape\External\stb;..\Shape\External\vulkan\SPIRV-Cross;..\Shape\External\msdf-atlas-gen\msdfgen;..\Shape\External\msdf-atlas-gen\msdf-atlas-gen;..\Shape\External\freetype\include;..\Shape\External\cereal\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Shape\Src\Shape;..\Shape\Src;..\Shape\External\spdlog\include;..\Shape\External;..\Shape\External\glm;..\Shape\External\glfw\include;..\Shape\External\imgui;..\Shape\External\vulkan;..\Shape\External\stb;..\Shape\External\vulkan\SPIRV-Cross;..\Shape\External\msdf-atlas-gen\msdfgen;..\Shape\External\msdf-atlas-gen\msdf-atlas-gen;..\Shape\External\freetype\include;..\Shape\External\cereal\include;..\Shape\External\box2d\include;..\Shape\External\lua\src;..\Shape\External\OpenAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -79,6 +79,12 @@
     </ProjectReference>
     <ProjectReference Include="..\Shape\External\freetype\freetype.vcxproj">
       <Project>{89895BD8-7556-B6E3-9E6F-A48B8A9BEB71}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Shape\External\box2d.vcxproj">
+      <Project>{E4442B0F-5059-53C0-19DB-F61F85AE4FF1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Shape\External\lua\lua.vcxproj">
+      <Project>{C78D880B-3397-887C-BC12-9F7C281B947C}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

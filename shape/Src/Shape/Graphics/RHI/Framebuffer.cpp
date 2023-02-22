@@ -2,11 +2,11 @@
 #include "Framebuffer.h"
 
 #include "Texture.h"
-#include "Shape/Graphics/RHI/GraphicsContext.h"
+#include "Graphics/RHI/GraphicsContext.h"
 
-#include "Shape/Utilities/CombineHash.h"
+#include "Utilities/CombineHash.h"
 
-#include "Shape/Platform/Vulkan/VK.h"
+#include "Platform/Vulkan/VK.h"
 
 namespace Shape
 {

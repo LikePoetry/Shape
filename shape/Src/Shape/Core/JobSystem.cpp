@@ -2,7 +2,7 @@
 #include "JobSystem.h"
 #include "Log.h"
 #include "Profiler.h"
-#include "Shape/Maths/Maths.h"
+#include "Maths/Maths.h"
 
 #include <atomic>
 #include <thread>
@@ -186,7 +186,7 @@ namespace Shape
 
                     // Increase thread priority:
                     // BOOL priority_result = SetThreadPriority(handle, THREAD_PRIORITY_HIGHEST);
-                    // LUMOS_ASSERT(priority_result != 0, "");
+                    // SHAPE_ASSERT(priority_result != 0, "");
 
                     // Name the thread:
                     std::wstringstream wss;

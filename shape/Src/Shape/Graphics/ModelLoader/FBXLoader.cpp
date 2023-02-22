@@ -1,15 +1,15 @@
 #include "hzpch.h"
-#include "Shape/Graphics/Model.h"
-#include "Shape/Graphics/Mesh.h"
-#include "Shape/Graphics/Material.h"
-#include "Shape/Core/OS/FileSystem.h"
+#include "Graphics/Model.h"
+#include "Graphics/Mesh.h"
+#include "Graphics/Material.h"
+#include "Core/OS/FileSystem.h"
 
-#include "Shape/Graphics/RHI/Texture.h"
-#include "Shape/Maths/Maths.h"
+#include "Graphics/RHI/Texture.h"
+#include "Maths/Maths.h"
 
-#include "Shape/Maths/Transform.h"
-#include "Shape/Core/Application.h"
-#include "Shape/Core/StringUtilities.h"
+#include "Maths/Transform.h"
+#include "Core/Application.h"
+#include "Core/StringUtilities.h"
 
 #include <OpenFBX/ofbx.h>
 
@@ -113,27 +113,27 @@ namespace Shape::Graphics
         }
     }
 
-    glm::vec2 ToLumosVector(const ofbx::Vec2& vec)
+    glm::vec2 ToShapeVector(const ofbx::Vec2& vec)
     {
         return glm::vec2(float(vec.x), float(vec.y));
     }
 
-    glm::vec3 ToLumosVector(const ofbx::Vec3& vec)
+    glm::vec3 ToShapeVector(const ofbx::Vec3& vec)
     {
         return glm::vec3(float(vec.x), float(vec.y), float(vec.z));
     }
 
-    glm::vec4 ToLumosVector(const ofbx::Vec4& vec)
+    glm::vec4 ToShapeVector(const ofbx::Vec4& vec)
     {
         return glm::vec4(float(vec.x), float(vec.y), float(vec.z), float(vec.w));
     }
 
-    glm::vec4 ToLumosVector(const ofbx::Color& vec)
+    glm::vec4 ToShapeVector(const ofbx::Color& vec)
     {
         return glm::vec4(float(vec.r), float(vec.g), float(vec.b), 1.0f);
     }
 
-    glm::quat ToLumosQuat(const ofbx::Quat& quat)
+    glm::quat ToShapeQuat(const ofbx::Quat& quat)
     {
         return glm::quat(float(quat.x), float(quat.y), float(quat.z), float(quat.w));
     }
@@ -197,7 +197,7 @@ namespace Shape::Graphics
         PBRMataterialTextures textures;
         Graphics::MaterialProperties properties;
 
-        properties.albedoColour = ToLumosVector(material->getDiffuseColor());
+        properties.albedoColour = ToShapeVector(material->getDiffuseColor());
         properties.metallic = material->getSpecularColor().r;
 
         float roughness = 1.0f - Maths::Sqrt(float(material->getShininess()) / 100.0f);

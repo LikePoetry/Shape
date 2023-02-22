@@ -1,10 +1,10 @@
 #pragma once
-#include "Shape/Graphics/Camera/Camera.h"
-#include "Shape/Graphics/Camera/CameraController.h"
-#include "Shape/Graphics/Camera/ThirdPersonCamera.h"
-#include "Shape/Graphics/Camera/Camera2D.h"
-#include "Shape/Graphics/Camera/FPSCamera.h"
-#include "Shape/Graphics/Camera/EditorCamera.h"
+#include "Graphics/Camera/Camera.h"
+#include "Graphics/Camera/CameraController.h"
+#include "Graphics/Camera/ThirdPersonCamera.h"
+#include "Graphics/Camera/Camera2D.h"
+#include "Graphics/Camera/FPSCamera.h"
+#include "Graphics/Camera/EditorCamera.h"
 
 #include <entt/entity/fwd.hpp>
 #include <cereal/cereal.hpp>

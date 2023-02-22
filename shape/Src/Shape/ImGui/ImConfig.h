@@ -13,8 +13,8 @@
 
 #pragma once
 
-#include "Shape/Core/Log.h"
-#include "Shape/Core/Core.h"
+#include "Core/Log.h"
+#include "Core/Core.h"
 #include <glm/vec2.hpp>
 #include <glm/vec4.hpp>
 

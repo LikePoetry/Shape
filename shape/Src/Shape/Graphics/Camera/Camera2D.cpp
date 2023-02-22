@@ -1,8 +1,8 @@
 #include "hzpch.h"
 #include "Camera2D.h"
 
-#include "Shape/Core/OS/Input.h"
-#include "Shape/Maths/Maths.h"
+#include "Core/OS/Input.h"
+#include "Maths/Maths.h"
 #include "Camera.h"
 
 namespace Shape

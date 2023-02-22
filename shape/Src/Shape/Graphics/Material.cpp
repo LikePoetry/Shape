@@ -1,14 +1,14 @@
 #include "hzpch.h"
 #include "Material.h"
-#include "Shape/Graphics/RHI/Shader.h"
-#include "Shape/Graphics/RHI/Texture.h"
-#include "Shape/Graphics/RHI/DescriptorSet.h"
-#include "Shape/Graphics/RHI/Pipeline.h"
-#include "Shape/Graphics/RHI/UniformBuffer.h"
-#include "Shape/Graphics/RHI/GraphicsContext.h"
-#include "Shape/Core/OS/FileSystem.h"
-#include "Shape/Core/VFS.h"
-#include "Shape/Core/Application.h"
+#include "Graphics/RHI/Shader.h"
+#include "Graphics/RHI/Texture.h"
+#include "Graphics/RHI/DescriptorSet.h"
+#include "Graphics/RHI/Pipeline.h"
+#include "Graphics/RHI/UniformBuffer.h"
+#include "Graphics/RHI/GraphicsContext.h"
+#include "Core/OS/FileSystem.h"
+#include "Core/VFS.h"
+#include "Core/Application.h"
 
 #include <imgui/imgui.h>
 

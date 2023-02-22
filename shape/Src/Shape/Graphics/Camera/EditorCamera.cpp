@@ -1,10 +1,10 @@
 #include "hzpch.h"
 #include "EditorCamera.h"
 
-#include "Shape/Graphics/Camera/Camera.h"
-#include "Shape/Core/Application.h"
-#include "Shape/Core/OS/Input.h"
-#include "Shape/Core/OS/Window.h"
+#include "Graphics/Camera/Camera.h"
+#include "Core/Application.h"
+#include "Core/OS/Input.h"
+#include "Core/OS/Window.h"
 
 namespace Shape
 {

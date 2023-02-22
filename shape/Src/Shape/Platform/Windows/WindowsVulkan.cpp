@@ -1,6 +1,6 @@
 #include "hzpch.h"
-#include "Shape/Platform/Vulkan/VKSwapChain.h"
-#include "Shape/Platform/GLFW/GLFWWindow.h"
+#include "Platform/Vulkan/VKSwapChain.h"
+#include "Platform/GLFW/GLFWWindow.h"
 #include <GLFW/glfw3.h>
 #include <GLFW/glfw3native.h>
 

@@ -7,7 +7,7 @@
 #include "VKSwapChain.h"
 #include "VKShader.h"
 #include "VKUtilities.h"
-#include "Shape/Graphics/RHI/DescriptorSet.h"
+#include "Graphics/RHI/DescriptorSet.h"
 #include "VKInitialisers.h"
 
 namespace Shape

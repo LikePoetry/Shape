@@ -1,6 +1,6 @@
 #include "hzpch.h"
 #include "SceneGraph.h"
-#include "Shape/Maths/Transform.h"
+#include "Maths/Transform.h"
 
 DISABLE_WARNING_PUSH
 DISABLE_WARNING_CONVERSION_TO_SMALLER_TYPE

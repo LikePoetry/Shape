@@ -1,7 +1,7 @@
 #pragma once
 
 #include "VK.h"
-#include "Shape/Graphics/RHI/Definitions.h"
+#include "Graphics/RHI/Definitions.h"
 #include <vulkan/vk_mem_alloc.h>
 #define VK_CHECK_RESULT(f)                                                                                                                        \
     {                                                                                                                                             \

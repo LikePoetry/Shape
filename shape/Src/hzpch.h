@@ -22,7 +22,7 @@
 #include <stdio.h>
 #include <math.h>
 
-#include "Shape/Core/Reference.h"
-#include "Shape/Core/Log.h"
-#include "Shape/Core/Core.h"
-#include "Shape/Core/Profiler.h"
+#include "Core/Reference.h"
+#include "Core/Log.h"
+#include "Core/Core.h"
+#include "Core/Profiler.h"

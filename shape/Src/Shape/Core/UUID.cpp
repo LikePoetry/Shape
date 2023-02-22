@@ -1,7 +1,7 @@
 #include "hzpch.h"
 #include "UUID.h"
 
-#include "Shape/Maths/Random.h"
+#include "Maths/Random.h"
 
 namespace Shape
 {

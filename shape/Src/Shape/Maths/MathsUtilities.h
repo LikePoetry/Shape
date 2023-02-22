@@ -7,7 +7,7 @@
 #endif
 
 #include "Random.h"
-#include "Shape/Core/Core.h"
+#include "Core/Core.h"
 
 #include <cstdlib>
 #include <cmath>

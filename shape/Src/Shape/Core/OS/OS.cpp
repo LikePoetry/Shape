@@ -1,7 +1,7 @@
 #include "hzpch.h"
 #include "OS.h"
 
-#include "Shape/Platform/Windows/WindowsOS.h"
+#include "Platform/Windows/WindowsOS.h"
 
 namespace Shape
 {

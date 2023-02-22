@@ -1,7 +1,7 @@
 #include "hzpch.h"
 #include "LoadImage.h"
 
-#include "Shape/Core/VFS.h"
+#include "Core/VFS.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"

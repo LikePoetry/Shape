@@ -1,8 +1,8 @@
 #pragma once
 #include "VKCommandBuffer.h"
 #include "VKContext.h"
-#include "Shape/Graphics/RHI/SwapChain.h"
-#include "Shape/Graphics/RHI/Texture.h"
+#include "Graphics/RHI/SwapChain.h"
+#include "Graphics/RHI/Texture.h"
 
 #define MAX_SWAPCHAIN_BUFFERS 3
 

@@ -1,7 +1,7 @@
 #pragma once
 #include "VK.h"
 #include "VKBuffer.h"
-#include "Shape/Graphics/RHI/UniformBuffer.h"
+#include "Graphics/RHI/UniformBuffer.h"
 
 #ifdef USE_VMA_ALLOCATOR
 #include <vulkan/vk_mem_alloc.h>

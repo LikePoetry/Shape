@@ -4,10 +4,10 @@
 #include "VKShader.h"
 #include "VKSwapChain.h"
 #include "VKCommandPool.h"
-#include "Shape/Graphics/RHI/Texture.h"
-#include "Shape/Graphics/RHI/DescriptorSet.h"
-#include "Shape/Graphics/RHI/Pipeline.h"
-#include "Shape/Core/Application.h"
+#include "Graphics/RHI/Texture.h"
+#include "Graphics/RHI/DescriptorSet.h"
+#include "Graphics/RHI/Pipeline.h"
+#include "Core/Application.h"
 #include "VKInitialisers.h"
 
 namespace Shape

@@ -1,6 +1,6 @@
 #pragma once
 #include "VKBuffer.h"
-#include "Shape/Graphics/RHI/VertexBuffer.h"
+#include "Graphics/RHI/VertexBuffer.h"
 
 namespace Shape
 {

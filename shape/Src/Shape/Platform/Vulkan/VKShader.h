@@ -1,7 +1,7 @@
 #pragma once
 #include "VK.h"
-#include "Shape/Graphics/RHI/Shader.h"
-#include "Shape/Graphics/RHI/DescriptorSet.h"
+#include "Graphics/RHI/Shader.h"
+#include "Graphics/RHI/DescriptorSet.h"
 
 namespace Shape
 {

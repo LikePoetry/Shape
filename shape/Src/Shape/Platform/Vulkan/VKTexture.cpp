@@ -1,7 +1,7 @@
 #include "hzpch.h"
 #include "VKTexture.h"
 #include "VKDevice.h"
-#include "Shape/Utilities/LoadImage.h"
+#include "Utilities/LoadImage.h"
 #include "VKUtilities.h"
 #include "VKBuffer.h"
 #include "VKRenderer.h"

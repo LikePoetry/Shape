@@ -59,7 +59,7 @@ namespace Shape
         template <typename... TArgs>
         static void Init(TArgs... args)
         {
-            LUMOS_ASSERT(m_pInstance == nullptr, "Calling Init twice");
+            SHAPE_ASSERT(m_pInstance == nullptr, "Calling Init twice");
             m_pInstance = new T(std::forward<TArgs>(args)...);
         }
 

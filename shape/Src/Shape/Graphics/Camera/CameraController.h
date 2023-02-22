@@ -1,6 +1,6 @@
 #pragma once
-#include "Shape/Maths/Maths.h"
-#include "Shape/Maths/Transform.h"
+#include "Maths/Maths.h"
+#include "Maths/Transform.h"
 
 namespace Shape
 {

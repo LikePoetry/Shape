@@ -1,12 +1,12 @@
 #pragma once
 
-#include "Shape/Utilities/TSingleton.h"
+#include "Utilities/TSingleton.h"
 #include "VK.h"
 #include "VKContext.h"
 
 #include "VKCommandPool.h"
-#include "Shape/Core/StringUtilities.h"
-#include "Shape/Graphics/RHI/Definitions.h"
+#include "Core/StringUtilities.h"
+#include "Graphics/RHI/Definitions.h"
 
 #ifdef USE_VMA_ALLOCATOR
 #ifdef SHAPE_DEBUG

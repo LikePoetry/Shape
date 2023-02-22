@@ -1,7 +1,7 @@
 #pragma once
 
 #include "VKDevice.h"
-#include "Shape/Graphics/RHI/RenderPass.h"
+#include "Graphics/RHI/RenderPass.h"
 
 namespace Shape
 {

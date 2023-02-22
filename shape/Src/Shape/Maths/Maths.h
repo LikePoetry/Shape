@@ -13,8 +13,8 @@
 #include "Frustum.h"
 #include "Plane.h"
 #include "MathsUtilities.h"
-#include "Shape/Core/Log.h"
-#include "Shape/Core/Core.h"
+#include "Core/Log.h"
+#include "Core/Core.h"
 
 namespace Shape
 {

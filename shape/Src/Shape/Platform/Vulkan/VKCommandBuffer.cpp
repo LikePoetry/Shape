@@ -6,7 +6,7 @@
 #include "VKUtilities.h"
 #include "VKPipeline.h"
 #include "VKInitialisers.h"
-#include "Shape/Core/JobSystem.h"
+#include "Core/JobSystem.h"
 
 #include <Tracy/TracyVulkan.hpp>
 

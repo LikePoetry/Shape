@@ -1,8 +1,8 @@
 #pragma once
-#include "Shape/Events/Event.h"
-#include "Shape/Events/KeyEvent.h"
-#include "Shape/Events/MouseEvent.h"
-#include "Shape/Utilities/TSingleton.h"
+#include "Events/Event.h"
+#include "Events/KeyEvent.h"
+#include "Events/MouseEvent.h"
+#include "Utilities/TSingleton.h"
 #include "KeyCodes.h"
 
 #include <glm/vec2.hpp>

@@ -1,11 +1,11 @@
 #pragma once
-#include "Shape/Core/VFS.h"
-#include "Shape/Core/Engine.h"
-#include "Shape/Core/Reference.h"
-#include "Shape/Graphics/RHI/Shader.h"
-#include "Shape/Graphics/Model.h"
-#include "Shape/Graphics/Font.h"
-#include "Shape/Utilities/TSingleton.h"
+#include "Core/VFS.h"
+#include "Core/Engine.h"
+#include "Core/Reference.h"
+#include "Graphics/RHI/Shader.h"
+#include "Graphics/Model.h"
+#include "Graphics/Font.h"
+#include "Utilities/TSingleton.h"
 
 
 namespace Shape

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "VK.h"
-#include "Shape/Graphics/RHI/CommandBuffer.h"
+#include "Graphics/RHI/CommandBuffer.h"
 #include "VKFence.h"
 #include "VKDevice.h"
 

@@ -1,6 +1,6 @@
 #pragma once
-#include "Shape/Maths/Maths.h"
-#include "Shape/Utilities/AssetManager.h"
+#include "Maths/Maths.h"
+#include "Utilities/AssetManager.h"
 #include "Serialisation.h"
 #include <sol/forward.hpp>
 

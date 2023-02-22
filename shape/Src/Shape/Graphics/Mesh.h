@@ -2,9 +2,9 @@
 
 #include "RHI/IndexBuffer.h"
 #include "RHI/VertexBuffer.h"
-#include "Shape/Graphics/RHI/CommandBuffer.h"
-#include "Shape/Graphics/RHI/DescriptorSet.h"
-#include "Shape/Maths/Maths.h"
+#include "Graphics/RHI/CommandBuffer.h"
+#include "Graphics/RHI/DescriptorSet.h"
+#include "Maths/Maths.h"
 #include "Material.h"
 
 #include <glm/gtx/hash.hpp>

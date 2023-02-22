@@ -1,7 +1,7 @@
 #pragma once
 #include "DescriptorSet.h"
 #include "Definitions.h"
-#include "Shape/Core/Profiler.h"
+#include "Core/Profiler.h"
 #include "CommandBuffer.h"
 
 namespace spirv_cross

@@ -1,7 +1,7 @@
 #pragma once
-#include "Shape/Events/Event.h"
-#include "Shape/Graphics/RHI/GraphicsContext.h"
-#include "Shape/Graphics/RHI/SwapChain.h"
+#include "Events/Event.h"
+#include "Graphics/RHI/GraphicsContext.h"
+#include "Graphics/RHI/SwapChain.h"
 #include <glm/vec2.hpp>
 #include <glm/fwd.hpp>
 
@@ -9,7 +9,7 @@ namespace Shape
 {
 	struct SHAPE_EXPORT WindowDesc
 	{
-        WindowDesc(uint32_t width = 1280, uint32_t height = 720, int renderAPI = 0, const std::string& title = "Lumos", bool fullscreen = false, bool vSync = true, bool borderless = false, const std::string& filepath = "")
+        WindowDesc(uint32_t width = 1280, uint32_t height = 720, int renderAPI = 0, const std::string& title = "Shape", bool fullscreen = false, bool vSync = true, bool borderless = false, const std::string& filepath = "")
             : Width(width)
             , Height(height)
             , Title(title)

@@ -2,7 +2,7 @@
 #include "IMGUIRenderer.h"
 #include "GraphicsContext.h"
 
-#include "Shape/Platform/Vulkan/VKIMGUIRenderer.h"
+#include "Platform/Vulkan/VKIMGUIRenderer.h"
 
 
 namespace Shape

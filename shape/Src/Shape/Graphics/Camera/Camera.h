@@ -1,9 +1,9 @@
 #pragma once
 #include "CameraController.h"
-#include "Shape/Maths/Maths.h"
-#include "Shape/Maths/Ray.h"
+#include "Maths/Maths.h"
+#include "Maths/Ray.h"
 
-#include "Shape/Scene/Serialisation.h"
+#include "Scene/Serialisation.h"
 
 namespace Shape
 {

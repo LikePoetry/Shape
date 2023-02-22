@@ -1,15 +1,15 @@
 #include "hzpch.h"
 #include "Pipeline.h"
 
-#include "Shape/Core/Engine.h"
+#include "Core/Engine.h"
 #include "SwapChain.h"
 #include "Texture.h"
 #include "Renderer.h"
 
-#include "Shape/Utilities/CombineHash.h"
-#include "Shape/Graphics/RHI/GraphicsContext.h"
+#include "Utilities/CombineHash.h"
+#include "Graphics/RHI/GraphicsContext.h"
 
-#include "Shape/Platform/Vulkan/VK.h"
+#include "Platform/Vulkan/VK.h"
 
 namespace Shape
 {

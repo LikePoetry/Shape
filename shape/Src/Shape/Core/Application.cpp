@@ -1,9 +1,9 @@
 #include "hzpch.h"
 #include "Application.h"
 #include "OS/Window.h"
-#include "Shape/Events/ApplicationEvent.h"
+#include "Events/ApplicationEvent.h"
 #include "OS/FileSystem.h"
-#include "Shape/Graphics/RHI/Renderer.h"
+#include "Graphics/RHI/Renderer.h"
 
 namespace Shape
 {

@@ -1,5 +1,5 @@
 #pragma once
-#include "Shape/Maths/Maths.h"
+#include "Maths/Maths.h"
 #include "DescriptorSet.h"
 
 #include <glm/vec2.hpp>
