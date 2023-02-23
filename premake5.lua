@@ -5,30 +5,30 @@ function SetRecommendedSettings()
 end
 
 IncludeDir = {}
-IncludeDir["spdlog"] = "Shape/External/spdlog/include"
-IncludeDir["external"] = "Shape/External"
-IncludeDir["glm"] = "Shape/External/glm"
-IncludeDir["GLFW"] = "Shape/External/glfw/include/"
-IncludeDir["ImGui"] = "Shape/External/imgui/"
-IncludeDir["vulkan"] = "Shape/External/vulkan/"
-IncludeDir["stb"] = "Shape/External/stb"
-IncludeDir["SpirvCross"] = "Shape/External/vulkan/SPIRV-Cross"
-IncludeDir["cereal"] = "Shape/External/cereal/include"
+IncludeDir["spdlog"] = "Shapes/External/spdlog/include"
+IncludeDir["external"] = "Shapes/External"
+IncludeDir["glm"] = "Shapes/External/glm"
+IncludeDir["GLFW"] = "Shapes/External/glfw/include/"
+IncludeDir["ImGui"] = "Shapes/External/imgui/"
+IncludeDir["vulkan"] = "Shapes/External/vulkan/"
+IncludeDir["stb"] = "Shapes/External/stb"
+IncludeDir["SpirvCross"] = "Shapes/External/vulkan/SPIRV-Cross"
+IncludeDir["cereal"] = "Shapes/External/cereal/include"
 --字体相关的库
-IncludeDir["msdf_atlas_gen"] = "Shape/External/msdf-atlas-gen/msdf-atlas-gen"
-IncludeDir["msdfgen"] = "Shape/External/msdf-atlas-gen/msdfgen"
+IncludeDir["msdf_atlas_gen"] = "Shapes/External/msdf-atlas-gen/msdf-atlas-gen"
+IncludeDir["msdfgen"] = "Shapes/External/msdf-atlas-gen/msdfgen"
 --IMGui 相关
-IncludeDir["freetype"] = "Shape/External/freetype/include"
+IncludeDir["freetype"] = "Shapes/External/freetype/include"
 
-IncludeDir["cereal"] = "Shape/External/cereal/include"
+IncludeDir["cereal"] = "Shapes/External/cereal/include"
 -- 物理引擎相关
-IncludeDir["Box2D"] = "Shape/External/box2d/include/"
+IncludeDir["Box2D"] = "Shapes/External/box2d/include/"
 -- 脚本控制相关
-IncludeDir["lua"] = "Shape/External/lua/src/"
+IncludeDir["lua"] = "Shapes/External/lua/src/"
 -- Audio 相关库
-IncludeDir["OpenAL"] = "Shape/External/OpenAL/include/"
+IncludeDir["OpenAL"] = "Shapes/External/OpenAL/include/"
 
-workspace "Shape"
+workspace "Shapes"
     architecture "x64"
     startproject "Editor"
 
@@ -39,23 +39,23 @@ workspace "Shape"
     outputdir="%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
 group "External"
-	require("Shape/External/spdlog/premake5")
+	require("Shapes/External/spdlog/premake5")
 		SetRecommendedSettings()
-	require("Shape/External/GLFWpremake5")
+	require("Shapes/External/GLFWpremake5")
 		SetRecommendedSettings()	
-	require("Shape/External/imguipremake5")
+	require("Shapes/External/imguipremake5")
 		SetRecommendedSettings()
-	require("Shape/External/SPIRVCrosspremake5")
+	require("Shapes/External/SPIRVCrosspremake5")
 		SetRecommendedSettings()
-	require("Shape/External/ModelLoaders/meshoptimizer/premake5")
+	require("Shapes/External/ModelLoaders/meshoptimizer/premake5")
 		SetRecommendedSettings()
-	require("Shape/External/msdf-atlas-gen/premake5")
+	require("Shapes/External/msdf-atlas-gen/premake5")
 		SetRecommendedSettings()
-	require("Shape/External/freetype/premake5")
+	require("Shapes/External/freetype/premake5")
 		SetRecommendedSettings()
-	require("Shape/External/box2dpremake5")
+	require("Shapes/External/box2dpremake5")
 			SetRecommendedSettings()
-	require("Shape/External/lua/premake5")
+	require("Shapes/External/lua/premake5")
 			SetRecommendedSettings()
 
 
@@ -64,8 +64,8 @@ group ""
 
 
 --静态链接库，核心文件
-project "Shape"
-	location "Shape"
+project "Shapes"
+	location "Shapes"
 	kind "StaticLib"
 	language "C++"
 	cppdialect "C++17"
@@ -83,7 +83,8 @@ project "Shape"
 	includedirs
 	{
 		"%{prj.name}/Src",
-		"%{prj.name}/Src/Shape",
+		"%{prj.name}/Src/Shapes",
+		"%{prj.name}/Assets/Shaders",
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.external}",
 		"%{IncludeDir.glm}",
@@ -117,7 +118,7 @@ project "Shape"
 	filter 'architecture:x86_64'
 		defines { "USE_VMA_ALLOCATOR"}
 
-	filter { "files:Shaper/External/**"}
+	filter { "files:Shapes/External/**"}
 		warnings "Off"
 
 	filter "system:windows"
@@ -127,16 +128,29 @@ project "Shape"
 		disablewarnings { 4307 }
 		characterset ("Unicode")
 
-		pchheader "hzpch.h"
-		pchsource "Shape/Src/hzpch.cpp"
+		pchheader "Precompiled.h"
+		pchsource "Shapes/Src/Precompiled.cpp"
 
 		defines
 		{
-			"IMGUI_USER_CONFIG=\"../Src/Shape/ImGui/ImConfig.h\"",
+			"SHAPES_ENGINE",
+			"FREEIMAGE_LIB",
+			"IMGUI_USER_CONFIG=\"../Src/Shapes/ImGui/ImConfig.h\"",
+			"SPDLOG_COMPILED_LIB",
+			"GLM_FORCE_INTRINSICS",
+			"GLM_FORCE_DEPTH_ZERO_TO_ONE",
+			"SHAPES_PLATFORM_WINDOWS",
+			"SHAPES_RENDER_API_VULKAN",
+			"VK_USE_PLATFORM_WIN32_KHR",
+			"WIN32_LEAN_AND_MEAN",
 			"_CRT_SECURE_NO_WARNINGS",
 			"_DISABLE_EXTENDED_ALIGNED_STORAGE",
-			"SHAPE_ENGINE",
-			"SHAPE_OPENAL"
+			"_SILENCE_CXX17_OLD_ALLOCATOR_MEMBERS_DEPRECATION_WARNING",
+			"_SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING",
+			"SHAPES_IMGUI",
+			"SHAPES_OPENAL",
+			"SHAPES_VOLK",
+			"SHAPES_USE_GLFW_WINDOWS"
 		}
 		
 		links
@@ -156,9 +170,9 @@ project "Shape"
 		"/MP", "/bigobj"
 		}
 
-		filter 'files:Shape/External/**.cpp'
+		filter 'files:Shapes/External/**.cpp'
 			flags  { 'NoPCH' }
-		filter 'files:Shape/External/**.c'
+		filter 'files:Shapes/External/**.c'
 			flags  { 'NoPCH' }
 
 
@@ -189,8 +203,8 @@ project "Editor"
 
     includedirs
 	{
-        "Shape/Src/Shape",
-        "Shape/Src",
+        "Shapes/Src/Shapes",
+        "Shapes/Src",
 
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.external}",
@@ -211,7 +225,7 @@ project "Editor"
 
     links
     {
-        "Shape",
+        "Shapes",
 		"glfw",
 		"imgui",
 		"SpirvCross",
@@ -224,13 +238,16 @@ project "Editor"
 
 	defines
 	{
-		"IMGUI_USER_CONFIG=\"../../Shape/Src/Shape/ImGui/ImConfig.h\"",
+		"IMGUI_USER_CONFIG=\"../../Shapes/Src/Shapes/ImGui/ImConfig.h\"",
 		"GLM_FORCE_INTRINSICS",
 		"GLM_FORCE_DEPTH_ZERO_TO_ONE",
-		"SHAPE_ENGINE"
+		"SHAPES_ENGINE",
+		"SHAPES_PLATFORM_WINDOWS",
+		"SHAPES_RENDER_API_VULKAN",
+		"VK_USE_PLATFORM_WIN32_KHR",
 	}
 
-	filter { "files:Shape/External/**"}
+	filter { "files:Shapes/External/**"}
 	warnings "Off"
 
 filter 'architecture:x86_64'

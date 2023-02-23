@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D6A4170E-42B9-3FBF-0B3B-E31E770E3CF0}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Shape</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\bin\Debug-windows-x86_64\Shape\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\Shape\</IntDir>
+    <TargetName>Shape</TargetName>
+    <TargetExt>.lib</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>hzpch.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
+      <PreprocessorDefinitions>GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;USE_VMA_ALLOCATOR;IMGUI_USER_CONFIG="../Src/Shape/ImGui/ImConfig.h";_CRT_SECURE_NO_WARNINGS;_DISABLE_EXTENDED_ALIGNED_STORAGE;SHAPE_ENGINE;SHAPE_OPENAL;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>Src;Src\Shape;External\spdlog\include;External;External\glm;External\glfw\include;External\imgui;External\vulkan;External\stb;External\vulkan\SPIRV-Cross;External\msdf-atlas-gen\msdfgen;External\msdf-atlas-gen\msdf-atlas-gen;External\freetype\include;External\cereal\include;External\box2d\include;External\lua\src;External\OpenAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MP /bigobj %(AdditionalOptions)</AdditionalOptions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalLibraryDirectories>..\spdlog;..\SpirvCross;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Precompiled.h" />
+    <ClInclude Include="Src\Shape\AI\AINode.h" />
+    <ClInclude Include="Src\Shape\AI\AStar.h" />
+    <ClInclude Include="Src\Shape\AI\PathEdge.h" />
+    <ClInclude Include="Src\Shape\AI\PathNode.h" />
+    <ClInclude Include="Src\Shape\AI\PathNodePriorityQueue.h" />
+    <ClInclude Include="Src\Shape\AI\QueueablePathNode.h" />
+    <ClInclude Include="Src\Shape\Audio\AudioData.h" />
+    <ClInclude Include="Src\Shape\Audio\AudioManager.h" />
+    <ClInclude Include="Src\Shape\Audio\OggLoader.h" />
+    <ClInclude Include="Src\Shape\Audio\Sound.h" />
+    <ClInclude Include="Src\Shape\Audio\SoundNode.h" />
+    <ClInclude Include="Src\Shape\Audio\WavLoader.h" />
+    <ClInclude Include="Src\Shape\Core\Application.h" />
+    <ClInclude Include="Src\Shape\Core\Asset.h" />
+    <ClInclude Include="Src\Shape\Core\Buffer.h" />
+    <ClInclude Include="Src\Shape\Core\CommandLine.h" />
+    <ClInclude Include="Src\Shape\Core\Core.h" />
+    <ClInclude Include="Src\Shape\Core\CoreSystem.h" />
+    <ClInclude Include="Src\Shape\Core\Engine.h" />
+    <ClInclude Include="Src\Shape\Core\EntryPoint.h" />
+    <ClInclude Include="Src\Shape\Core\JobSystem.h" />
+    <ClInclude Include="Src\Shape\Core\LMLog.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Allocators\Allocator.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Allocators\BinAllocator.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Allocators\DefaultAllocator.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Allocators\StbAllocator.h" />
+    <ClInclude Include="Src\Shape\Core\OS\FileSystem.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Input.h" />
+    <ClInclude Include="Src\Shape\Core\OS\KeyCodes.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Memory.h" />
+    <ClInclude Include="Src\Shape\Core\OS\MemoryManager.h" />
+    <ClInclude Include="Src\Shape\Core\OS\OS.h" />
+    <ClInclude Include="Src\Shape\Core\OS\Window.h" />
+    <ClInclude Include="Src\Shape\Core\Profiler.h" />
+    <ClInclude Include="Src\Shape\Core\Reference.h" />
+    <ClInclude Include="Src\Shape\Core\ReferenceCounter.h" />
+    <ClInclude Include="Src\Shape\Core\StringUtilities.h" />
+    <ClInclude Include="Src\Shape\Core\UUID.h" />
+    <ClInclude Include="Src\Shape\Core\VFS.h" />
+    <ClInclude Include="Src\Shape\Core\Version.h" />
+    <ClInclude Include="Src\Shape\Embedded\EmbedAsset.h" />
+    <ClInclude Include="Src\Shape\Events\ApplicationEvent.h" />
+    <ClInclude Include="Src\Shape\Events\Event.h" />
+    <ClInclude Include="Src\Shape\Events\KeyEvent.h" />
+    <ClInclude Include="Src\Shape\Events\MouseEvent.h" />
+    <ClInclude Include="Src\Shape\Graphics\AnimatedSprite.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\Camera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\Camera2D.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\CameraController.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\EditorCamera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\FPSCamera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.h" />
+    <ClInclude Include="Src\Shape\Graphics\Environment.h" />
+    <ClInclude Include="Src\Shape\Graphics\Font.h" />
+    <ClInclude Include="Src\Shape\Graphics\GBuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\Light.h" />
+    <ClInclude Include="Src\Shape\Graphics\MSDFData.h" />
+    <ClInclude Include="Src\Shape\Graphics\Material.h" />
+    <ClInclude Include="Src\Shape\Graphics\Mesh.h" />
+    <ClInclude Include="Src\Shape\Graphics\MeshFactory.h" />
+    <ClInclude Include="Src\Shape\Graphics\Model.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\BufferLayout.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\CommandBuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Definitions.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\DescriptorSet.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Framebuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\GPUProfile.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\GraphicsContext.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\IMGUIRenderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\IndexBuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Pipeline.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderDevice.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderDoc.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\RenderPass.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Renderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Shader.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\SwapChain.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\Texture.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\UniformBuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\RHI\VertexBuffer.h" />
+    <ClInclude Include="Src\Shape\Graphics\Renderable2D.h" />
+    <ClInclude Include="Src\Shape\Graphics\Renderers\DebugRenderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\Renderers\GridRenderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\Renderers\IRenderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\Renderers\RenderCommand.h" />
+    <ClInclude Include="Src\Shape\Graphics\Renderers\SceneRenderer.h" />
+    <ClInclude Include="Src\Shape\Graphics\Sprite.h" />
+    <ClInclude Include="Src\Shape\Graphics\Terrain.h" />
+    <ClInclude Include="Src\Shape\ImGui\IconsMaterialDesignIcons.h" />
+    <ClInclude Include="Src\Shape\ImGui\ImConfig.h" />
+    <ClInclude Include="Src\Shape\ImGui\ImGuiManager.h" />
+    <ClInclude Include="Src\Shape\ImGui\ImGuiUtilities.h" />
+    <ClInclude Include="Src\Shape\Maths\BoundingBox.h" />
+    <ClInclude Include="Src\Shape\Maths\BoundingSphere.h" />
+    <ClInclude Include="Src\Shape\Maths\Frustum.h" />
+    <ClInclude Include="Src\Shape\Maths\Maths.h" />
+    <ClInclude Include="Src\Shape\Maths\MathsUtilities.h" />
+    <ClInclude Include="Src\Shape\Maths\Plane.h" />
+    <ClInclude Include="Src\Shape\Maths\Random.h" />
+    <ClInclude Include="Src\Shape\Maths\Ray.h" />
+    <ClInclude Include="Src\Shape\Maths\Rect.h" />
+    <ClInclude Include="Src\Shape\Maths\Transform.h" />
+    <ClInclude Include="Src\Shape\Physics\B2PhysicsEngine\B2DebugDraw.h" />
+    <ClInclude Include="Src\Shape\Physics\B2PhysicsEngine\B2PhysicsEngine.h" />
+    <ClInclude Include="Src\Shape\Physics\B2PhysicsEngine\RigidBody2D.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Broadphase\Broadphase.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Broadphase\BruteForceBroadphase.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Broadphase\OctreeBroadphase.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Broadphase\SortAndSweepBroadphase.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\CapsuleCollisionShape.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\CollisionShape.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\CuboidCollisionShape.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\Hull.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\HullCollisionShape.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\PyramidCollisionShape.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\SphereCollisionShape.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\AxisConstraint.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\Constraint.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\DistanceConstraint.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\SpringConstraint.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\WeldConstraint.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Integration.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\LumosPhysicsEngine.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Narrowphase\CollisionDetection.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\Narrowphase\Manifold.h" />
+    <ClInclude Include="Src\Shape\Physics\LumosPhysicsEngine\RigidBody3D.h" />
+    <ClInclude Include="Src\Shape\Physics\RigidBody.h" />
+    <ClInclude Include="Src\Shape\Platform\GLFW\GLFWKeyCodes.h" />
+    <ClInclude Include="Src\Shape\Platform\GLFW\GLFWWindow.h" />
+    <ClInclude Include="Src\Shape\Platform\Headless\HeadlessWindow.h" />
+    <ClInclude Include="Src\Shape\Platform\Headless\RenderAPINone.h" />
+    <ClInclude Include="Src\Shape\Platform\MacOS\MacOSOS.h" />
+    <ClInclude Include="Src\Shape\Platform\MacOS\MacOSPower.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenAL\ALManager.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenAL\ALSound.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenAL\ALSoundNode.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GL.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLCommandBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLContext.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLDebug.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLDescriptorSet.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLFramebuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLFunctions.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLIMGUIRenderer.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLIndexBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLPipeline.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLRenderDevice.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLRenderPass.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLRenderer.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLShader.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLSwapChain.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLTexture.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLTypes.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLUniformBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLUtilities.h" />
+    <ClInclude Include="Src\Shape\Platform\OpenGL\GLVertexBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\Unix\UnixOS.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VK.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKCommandPool.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKContext.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKDescriptorSet.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKDevice.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKFence.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKFramebuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKFunctions.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKInitialisers.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKPipeline.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderDevice.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderPass.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKRenderer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKShader.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKSwapChain.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKTexture.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKUniformBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKUtilities.h" />
+    <ClInclude Include="Src\Shape\Platform\Vulkan\VKVertexBuffer.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsKeycodes.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsOS.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsPower.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsUtilities.h" />
+    <ClInclude Include="Src\Shape\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="Src\Shape\Platform\iOS\iOSKeyCodes.h" />
+    <ClInclude Include="Src\Shape\Platform\iOS\iOSOS.h" />
+    <ClInclude Include="Src\Shape\Platform\iOS\iOSPower.h" />
+    <ClInclude Include="Src\Shape\Platform\iOS\iOSWindow.h" />
+    <ClInclude Include="Src\Shape\Scene\Component\AIComponent.h" />
+    <ClInclude Include="Src\Shape\Scene\Component\Components.h" />
+    <ClInclude Include="Src\Shape\Scene\Component\ModelComponent.h" />
+    <ClInclude Include="Src\Shape\Scene\Component\RigidBody2DComponent.h" />
+    <ClInclude Include="Src\Shape\Scene\Component\RigidBody3DComponent.h" />
+    <ClInclude Include="Src\Shape\Scene\Component\SoundComponent.h" />
+    <ClInclude Include="Src\Shape\Scene\Component\TextureMatrixComponent.h" />
+    <ClInclude Include="Src\Shape\Scene\Entity.h" />
+    <ClInclude Include="Src\Shape\Scene\EntityFactory.h" />
+    <ClInclude Include="Src\Shape\Scene\EntityManager.h" />
+    <ClInclude Include="Src\Shape\Scene\ISystem.h" />
+    <ClInclude Include="Src\Shape\Scene\Scene.h" />
+    <ClInclude Include="Src\Shape\Scene\SceneGraph.h" />
+    <ClInclude Include="Src\Shape\Scene\SceneManager.h" />
+    <ClInclude Include="Src\Shape\Scene\Serialisation.h" />
+    <ClInclude Include="Src\Shape\Scene\SystemManager.h" />
+    <ClInclude Include="Src\Shape\Scripting\Lua\ImGuiLua.h" />
+    <ClInclude Include="Src\Shape\Scripting\Lua\LuaManager.h" />
+    <ClInclude Include="Src\Shape\Scripting\Lua\LuaScriptComponent.h" />
+    <ClInclude Include="Src\Shape\Scripting\Lua\MathsLua.h" />
+    <ClInclude Include="Src\Shape\Scripting\Lua\PhysicsLua.h" />
+    <ClInclude Include="Src\Shape\Utilities\AssetManager.h" />
+    <ClInclude Include="Src\Shape\Utilities\CombineHash.h" />
+    <ClInclude Include="Src\Shape\Utilities\IniFile.h" />
+    <ClInclude Include="Src\Shape\Utilities\LoadImage.h" />
+    <ClInclude Include="Src\Shape\Utilities\TSingleton.h" />
+    <ClInclude Include="Src\Shape\Utilities\TimeStep.h" />
+    <ClInclude Include="Src\Shape\Utilities\Timer.h" />
+    <ClInclude Include="Src\ShapeEngine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Precompiled.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\AI\AStar.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\AI\PathEdge.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\AI\PathNode.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\AudioManager.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\OggLoader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\Sound.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\SoundNode.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Audio\WavLoader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Application.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\CommandLine.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\CoreSystem.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Engine.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\JobSystem.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\LMLog.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\Allocators\BinAllocator.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\Allocators\DefaultAllocator.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\Allocators\StbAllocator.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\FileSystem.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\Input.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\Memory.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\MemoryManager.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\OS.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\OS\Window.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\Reference.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\StringUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\UUID.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Core\VFS.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Embedded\EmbedAsset.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\AnimatedSprite.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\Camera.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\Camera2D.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\EditorCamera.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\FPSCamera.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Camera\ThirdPersonCamera.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Environment.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Font.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\GBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Light.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Material.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Mesh.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\MeshFactory.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Model.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\FBXLoader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\GLTFLoader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\ModelLoader\OBJLoader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\BufferLayout.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\CommandBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\DescriptorSet.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Framebuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\GraphicsContext.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\IMGUIRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\IndexBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Pipeline.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderDevice.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderDoc.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\RenderPass.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Renderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Shader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\SwapChain.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\Texture.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\UniformBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\RHI\VertexBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderable2D.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderers\DebugRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderers\GridRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderers\IRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Renderers\SceneRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Sprite.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Graphics\Terrain.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\ImGui\ImGuiManager.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\ImGui\ImGuiUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\BoundingBox.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\BoundingSphere.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Frustum.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Maths.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\MathsUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Plane.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Random.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Ray.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Rect.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Maths\Transform.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\B2PhysicsEngine\B2DebugDraw.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\B2PhysicsEngine\B2PhysicsEngine.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\B2PhysicsEngine\RigidBody2D.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Broadphase\BruteForceBroadphase.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Broadphase\OctreeBroadphase.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Broadphase\SortAndSweepBroadphase.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\CapsuleCollisionShape.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\CuboidCollisionShape.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\Hull.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\HullCollisionShape.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\PyramidCollisionShape.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\CollisionShapes\SphereCollisionShape.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\AxisConstraint.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\DistanceConstraint.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\SpringConstraint.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Constraints\WeldConstraint.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Integration.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\LumosPhysicsEngine.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Narrowphase\CollisionDetection.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\Narrowphase\Manifold.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\LumosPhysicsEngine\RigidBody3D.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Physics\RigidBody.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\GLFW\GLFWWindow.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Headless\HeadlessWindow.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Headless\RenderAPINone.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenAL\ALManager.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenAL\ALSound.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenAL\ALSoundNode.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLCommandBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLContext.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLDebug.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLDescriptorSet.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLFramebuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLFunctions.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLIMGUIRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLIndexBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLPipeline.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLRenderDevice.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLRenderPass.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLShader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLSwapChain.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLTexture.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLUniformBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\OpenGL\GLVertexBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Unix\UnixFileSystem.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Unix\UnixOS.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Unix\UnixTimer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Unix\UnixVulkan.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VK.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKCommandPool.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKContext.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDescriptorSet.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKDevice.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKFence.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKFramebuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKFunctions.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIMGUIRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKIndexBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKPipeline.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderDevice.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderPass.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKRenderer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKShader.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKSwapChain.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKTexture.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUniformBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Vulkan\VKVertexBuffer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsFileSystem.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsOS.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsPower.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsTimer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsUtilities.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsVulkan.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Platform\Windows\WindowsWindow.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\AIComponent.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\ModelComponent.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\RigidBody2DComponent.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\RigidBody3DComponent.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\SoundComponent.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Component\TextureMatrixComponent.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\EntityFactory.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\EntityManager.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\Scene.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\SceneGraph.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scene\SceneManager.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\ImGuiLua.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\LuaManager.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\LuaScriptComponent.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\MathsLua.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Scripting\Lua\PhysicsLua.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Utilities\ExternalBuild.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Utilities\IniFile.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Utilities\LoadImage.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Utilities\TimeStep.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\Shape\Utilities\Timer.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="External\glfw.vcxproj">
+      <Project>{9563977C-819A-980D-2A87-7E10169D140F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\imgui.vcxproj">
+      <Project>{0098A80F-6CAC-D0C0-352E-7420A101CDF1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\ModelLoaders\meshoptimizer\meshoptimizer.vcxproj">
+      <Project>{75046AD2-E1C4-E508-AAFF-2E86167F2AE5}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\msdf-atlas-gen\msdf-atlas-gen.vcxproj">
+      <Project>{38BD587B-248B-4C81-0D1F-BDA7F98B28E6}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\freetype\freetype.vcxproj">
+      <Project>{89895BD8-7556-B6E3-9E6F-A48B8A9BEB71}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\box2d.vcxproj">
+      <Project>{E4442B0F-5059-53C0-19DB-F61F85AE4FF1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="External\lua\lua.vcxproj">
+      <Project>{C78D880B-3397-887C-BC12-9F7C281B947C}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

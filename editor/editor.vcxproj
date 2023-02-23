@@ -39,8 +39,8 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <PreprocessorDefinitions>IMGUI_USER_CONFIG="../../Shape/Src/Shape/ImGui/ImConfig.h";GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;SHAPE_ENGINE;USE_VMA_ALLOCATOR;WIN32_LEAN_AND_MEAN;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Shape\Src\Shape;..\Shape\Src;..\Shape\External\spdlog\include;..\Shape\External;..\Shape\External\glm;..\Shape\External\glfw\include;..\Shape\External\imgui;..\Shape\External\vulkan;..\Shape\External\stb;..\Shape\External\vulkan\SPIRV-Cross;..\Shape\External\msdf-atlas-gen\msdfgen;..\Shape\External\msdf-atlas-gen\msdf-atlas-gen;..\Shape\External\freetype\include;..\Shape\External\cereal\include;..\Shape\External\box2d\include;..\Shape\External\lua\src;..\Shape\External\OpenAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>IMGUI_USER_CONFIG="../../Shapes/Src/Shapes/ImGui/ImConfig.h";GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;SHAPES_ENGINE;SHAPES_PLATFORM_WINDOWS;SHAPES_RENDER_API_VULKAN;VK_USE_PLATFORM_WIN32_KHR;USE_VMA_ALLOCATOR;WIN32_LEAN_AND_MEAN;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Shapes\Src\Shapes;..\Shapes\Src;..\Shapes\External\spdlog\include;..\Shapes\External;..\Shapes\External\glm;..\Shapes\External\glfw\include;..\Shapes\External\imgui;..\Shapes\External\vulkan;..\Shapes\External\stb;..\Shapes\External\vulkan\SPIRV-Cross;..\Shapes\External\msdf-atlas-gen\msdfgen;..\Shapes\External\msdf-atlas-gen\msdf-atlas-gen;..\Shapes\External\freetype\include;..\Shapes\External\cereal\include;..\Shapes\External\box2d\include;..\Shapes\External\lua\src;..\Shapes\External\OpenAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -59,31 +59,31 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Shape\Shape.vcxproj">
-      <Project>{D6A4170E-42B9-3FBF-0B3B-E31E770E3CF0}</Project>
+    <ProjectReference Include="..\Shapes\Shapes.vcxproj">
+      <Project>{09400CD1-F5E1-36A7-DE9C-4AFBCADDBDF7}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Shape\External\glfw.vcxproj">
+    <ProjectReference Include="..\Shapes\External\glfw.vcxproj">
       <Project>{9563977C-819A-980D-2A87-7E10169D140F}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Shape\External\imgui.vcxproj">
+    <ProjectReference Include="..\Shapes\External\imgui.vcxproj">
       <Project>{0098A80F-6CAC-D0C0-352E-7420A101CDF1}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Shape\External\SpirvCross.vcxproj">
+    <ProjectReference Include="..\Shapes\External\SpirvCross.vcxproj">
       <Project>{434A39C2-2F02-7B0F-9809-546B84E01500}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Shape\External\ModelLoaders\meshoptimizer\meshoptimizer.vcxproj">
+    <ProjectReference Include="..\Shapes\External\ModelLoaders\meshoptimizer\meshoptimizer.vcxproj">
       <Project>{75046AD2-E1C4-E508-AAFF-2E86167F2AE5}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Shape\External\msdf-atlas-gen\msdf-atlas-gen.vcxproj">
+    <ProjectReference Include="..\Shapes\External\msdf-atlas-gen\msdf-atlas-gen.vcxproj">
       <Project>{38BD587B-248B-4C81-0D1F-BDA7F98B28E6}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Shape\External\freetype\freetype.vcxproj">
+    <ProjectReference Include="..\Shapes\External\freetype\freetype.vcxproj">
       <Project>{89895BD8-7556-B6E3-9E6F-A48B8A9BEB71}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Shape\External\box2d.vcxproj">
+    <ProjectReference Include="..\Shapes\External\box2d.vcxproj">
       <Project>{E4442B0F-5059-53C0-19DB-F61F85AE4FF1}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Shape\External\lua\lua.vcxproj">
+    <ProjectReference Include="..\Shapes\External\lua\lua.vcxproj">
       <Project>{C78D880B-3397-887C-BC12-9F7C281B947C}</Project>
     </ProjectReference>
   </ItemGroup>

@@ -1,0 +1,1143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Shapes">
+      <UniqueIdentifier>{09400CD1-F5E1-36A7-DE9C-4AFBCADDBDF7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\AI">
+      <UniqueIdentifier>{0200AAE8-6E6A-5E5F-B7A8-0F0523523CB4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Audio">
+      <UniqueIdentifier>{CAF08420-B653-14C5-5FD9-4C7B4B1BE047}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Core">
+      <UniqueIdentifier>{01D22BBB-6D87-A4B0-F67B-9E8762309BB4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Core\OS">
+      <UniqueIdentifier>{D2F073E2-BEBE-67E8-A752-D80E93BF434D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Core\OS\Allocators">
+      <UniqueIdentifier>{55FF4585-C1C1-790F-0A72-089C767352ED}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Embedded">
+      <UniqueIdentifier>{621D4C4A-CEA8-B90E-D7B9-3C0343C4150F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Events">
+      <UniqueIdentifier>{CD678A3A-3928-0671-0263-4FEE6EE24A4D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Graphics">
+      <UniqueIdentifier>{692227A2-D5AD-9466-DEBE-175B4AC9F066}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Graphics\Camera">
+      <UniqueIdentifier>{C1C6E03A-ADC0-098D-962D-A09D82C66FF9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Graphics\ModelLoader">
+      <UniqueIdentifier>{80F88805-EC05-B7EB-75EC-B2D6E1F882A2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Graphics\RHI">
+      <UniqueIdentifier>{1B5B6FCC-87BC-4CDA-102A-938C7C8A8399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Graphics\Renderers">
+      <UniqueIdentifier>{82B2F309-EE74-2794-3725-B620A3260072}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\ImGui">
+      <UniqueIdentifier>{F3D71021-DF3A-A0C5-88C0-D87B74026C48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Maths">
+      <UniqueIdentifier>{35635321-21C6-E2C5-CA4B-1B7CB68DAE48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Physics">
+      <UniqueIdentifier>{7B3C5CBB-670A-50C1-509E-C0E73C0B2C26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Physics\B2PhysicsEngine">
+      <UniqueIdentifier>{77D3BA67-63F9-84CE-4C3F-0A9A3804AA9A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Physics\ShapesPhysicsEngine">
+      <UniqueIdentifier>{070524B9-F340-2723-5C53-3F1A48AECF3D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Physics\ShapesPhysicsEngine\Broadphase">
+      <UniqueIdentifier>{CF130D45-3B84-0FBE-04A3-894670D247BF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Physics\ShapesPhysicsEngine\CollisionShapes">
+      <UniqueIdentifier>{A6CBA12B-925F-97D3-FB23-F187E7D6D1C5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Physics\ShapesPhysicsEngine\Constraints">
+      <UniqueIdentifier>{4ED8E45B-3A56-35F5-234E-F38C0F6B771D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Physics\ShapesPhysicsEngine\Narrowphase">
+      <UniqueIdentifier>{80E8D14F-6C66-22E9-555E-E080417B6411}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Platform">
+      <UniqueIdentifier>{7D96E122-E921-4FE7-F232-D2DB5E3DABE7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Platform\GLFW">
+      <UniqueIdentifier>{DCE75E24-C876-E8ED-7195-FCE85D03F993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Platform\OpenAL">
+      <UniqueIdentifier>{4B70FECC-376A-271F-20D7-BD2F0C708D8B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Platform\Vulkan">
+      <UniqueIdentifier>{5DD5B0DD-49CF-D92F-323C-70401ED53F9C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Platform\Windows">
+      <UniqueIdentifier>{B76DE8C4-23A5-305C-2CAF-947F98655755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Scene">
+      <UniqueIdentifier>{E6CFC021-D232-50C6-7BB8-887C67FA1B49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Scene\Component">
+      <UniqueIdentifier>{C83F8C98-B439-B5EA-9DA6-4BFB893F1B57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Scripting">
+      <UniqueIdentifier>{4B14E691-370D-05E4-603F-EA684C97E4EF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Scripting\Lua">
+      <UniqueIdentifier>{5C5A3884-48E9-C14D-F107-D648DD75D2F3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shapes\Utilities">
+      <UniqueIdentifier>{B4C3F27C-A0BC-11CF-C9EE-F653B546F1DA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Precompiled.h" />
+    <ClInclude Include="Src\Shapes\AI\AINode.h">
+      <Filter>Shapes\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\AI\AStar.h">
+      <Filter>Shapes\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\AI\PathEdge.h">
+      <Filter>Shapes\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\AI\PathNode.h">
+      <Filter>Shapes\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\AI\PathNodePriorityQueue.h">
+      <Filter>Shapes\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\AI\QueueablePathNode.h">
+      <Filter>Shapes\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Audio\AudioData.h">
+      <Filter>Shapes\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Audio\AudioManager.h">
+      <Filter>Shapes\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Audio\OggLoader.h">
+      <Filter>Shapes\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Audio\Sound.h">
+      <Filter>Shapes\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Audio\SoundNode.h">
+      <Filter>Shapes\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Audio\WavLoader.h">
+      <Filter>Shapes\Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\Application.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\Asset.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\Buffer.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\CommandLine.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\Core.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\CoreSystem.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\Engine.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\EntryPoint.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\JobSystem.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\LMLog.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\Allocators\Allocator.h">
+      <Filter>Shapes\Core\OS\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\Allocators\BinAllocator.h">
+      <Filter>Shapes\Core\OS\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\Allocators\DefaultAllocator.h">
+      <Filter>Shapes\Core\OS\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\Allocators\StbAllocator.h">
+      <Filter>Shapes\Core\OS\Allocators</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\FileSystem.h">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\Input.h">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\KeyCodes.h">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\Memory.h">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\MemoryManager.h">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\OS.h">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\OS\Window.h">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\Profiler.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\Reference.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\ReferenceCounter.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\StringUtilities.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\UUID.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\VFS.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Core\Version.h">
+      <Filter>Shapes\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Embedded\EmbedAsset.h">
+      <Filter>Shapes\Embedded</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Events\ApplicationEvent.h">
+      <Filter>Shapes\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Events\Event.h">
+      <Filter>Shapes\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Events\KeyEvent.h">
+      <Filter>Shapes\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Events\MouseEvent.h">
+      <Filter>Shapes\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\AnimatedSprite.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Camera\Camera.h">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Camera\Camera2D.h">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Camera\CameraController.h">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Camera\EditorCamera.h">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Camera\FPSCamera.h">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Camera\ThirdPersonCamera.h">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Environment.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Font.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\GBuffer.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Light.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\MSDFData.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Material.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Mesh.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\MeshFactory.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Model.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\BufferLayout.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\CommandBuffer.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\Definitions.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\DescriptorSet.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\Framebuffer.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\GPUProfile.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\GraphicsContext.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\IMGUIRenderer.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\IndexBuffer.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\Pipeline.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\RenderDevice.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\RenderDoc.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\RenderPass.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\Renderer.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\Shader.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\SwapChain.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\Texture.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\UniformBuffer.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\RHI\VertexBuffer.h">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Renderable2D.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Renderers\DebugRenderer.h">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Renderers\GridRenderer.h">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Renderers\IRenderer.h">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Renderers\RenderCommand.h">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Renderers\SceneRenderer.h">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Sprite.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Graphics\Terrain.h">
+      <Filter>Shapes\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\ImGui\IconsMaterialDesignIcons.h">
+      <Filter>Shapes\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\ImGui\ImConfig.h">
+      <Filter>Shapes\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\ImGui\ImGuiManager.h">
+      <Filter>Shapes\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\ImGui\ImGuiUtilities.h">
+      <Filter>Shapes\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\BoundingBox.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\BoundingSphere.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\Frustum.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\Maths.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\MathsUtilities.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\Plane.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\Random.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\Ray.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\Rect.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Maths\Transform.h">
+      <Filter>Shapes\Maths</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\B2PhysicsEngine\B2DebugDraw.h">
+      <Filter>Shapes\Physics\B2PhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\B2PhysicsEngine\B2PhysicsEngine.h">
+      <Filter>Shapes\Physics\B2PhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\B2PhysicsEngine\RigidBody2D.h">
+      <Filter>Shapes\Physics\B2PhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\RigidBody.h">
+      <Filter>Shapes\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Broadphase\Broadphase.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Broadphase\BruteForceBroadphase.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Broadphase\OctreeBroadphase.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Broadphase\SortAndSweepBroadphase.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Broadphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\CapsuleCollisionShape.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\CollisionShape.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\CuboidCollisionShape.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\Hull.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\HullCollisionShape.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\PyramidCollisionShape.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\SphereCollisionShape.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\AxisConstraint.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\Constraint.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\DistanceConstraint.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\SpringConstraint.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\WeldConstraint.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Integration.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Narrowphase\CollisionDetection.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Narrowphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\Narrowphase\Manifold.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Narrowphase</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\RigidBody3D.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Physics\ShapesPhysicsEngine\ShapesPhysicsEngine.h">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\GLFW\GLFWKeyCodes.h">
+      <Filter>Shapes\Platform\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\GLFW\GLFWWindow.h">
+      <Filter>Shapes\Platform\GLFW</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\OpenAL\ALManager.h">
+      <Filter>Shapes\Platform\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\OpenAL\ALSound.h">
+      <Filter>Shapes\Platform\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\OpenAL\ALSoundNode.h">
+      <Filter>Shapes\Platform\OpenAL</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VK.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKBuffer.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKCommandBuffer.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKCommandPool.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKContext.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKDescriptorSet.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKDevice.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKFence.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKFramebuffer.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKFunctions.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKIMGUIRenderer.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKIndexBuffer.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKInitialisers.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKPipeline.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKRenderDevice.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKRenderPass.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKRenderer.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKShader.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKSwapChain.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKTexture.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKUniformBuffer.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKUtilities.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Vulkan\VKVertexBuffer.h">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Windows\WindowsKeycodes.h">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Windows\WindowsOS.h">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Windows\WindowsPower.h">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Windows\WindowsUtilities.h">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Platform\Windows\WindowsWindow.h">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Component\AIComponent.h">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Component\Components.h">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Component\ModelComponent.h">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Component\RigidBody2DComponent.h">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Component\RigidBody3DComponent.h">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Component\SoundComponent.h">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Component\TextureMatrixComponent.h">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Entity.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\EntityFactory.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\EntityManager.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\ISystem.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Scene.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\SceneGraph.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\SceneManager.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\Serialisation.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scene\SystemManager.h">
+      <Filter>Shapes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scripting\Lua\ImGuiLua.h">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scripting\Lua\LuaManager.h">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scripting\Lua\LuaScriptComponent.h">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scripting\Lua\MathsLua.h">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Scripting\Lua\PhysicsLua.h">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Utilities\AssetManager.h">
+      <Filter>Shapes\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Utilities\CombineHash.h">
+      <Filter>Shapes\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Utilities\IniFile.h">
+      <Filter>Shapes\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Utilities\LoadImage.h">
+      <Filter>Shapes\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Utilities\TSingleton.h">
+      <Filter>Shapes\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Utilities\TimeStep.h">
+      <Filter>Shapes\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Shapes\Utilities\Timer.h">
+      <Filter>Shapes\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\ShapesEngine.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Precompiled.cpp" />
+    <ClCompile Include="Src\Shapes\AI\AStar.cpp">
+      <Filter>Shapes\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\AI\PathEdge.cpp">
+      <Filter>Shapes\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\AI\PathNode.cpp">
+      <Filter>Shapes\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Audio\AudioManager.cpp">
+      <Filter>Shapes\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Audio\OggLoader.cpp">
+      <Filter>Shapes\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Audio\Sound.cpp">
+      <Filter>Shapes\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Audio\SoundNode.cpp">
+      <Filter>Shapes\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Audio\WavLoader.cpp">
+      <Filter>Shapes\Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\Application.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\CommandLine.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\CoreSystem.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\Engine.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\JobSystem.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\LMLog.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\Allocators\BinAllocator.cpp">
+      <Filter>Shapes\Core\OS\Allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\Allocators\DefaultAllocator.cpp">
+      <Filter>Shapes\Core\OS\Allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\Allocators\StbAllocator.cpp">
+      <Filter>Shapes\Core\OS\Allocators</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\FileSystem.cpp">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\Input.cpp">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\Memory.cpp">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\MemoryManager.cpp">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\OS.cpp">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\OS\Window.cpp">
+      <Filter>Shapes\Core\OS</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\Reference.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\StringUtilities.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\UUID.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Core\VFS.cpp">
+      <Filter>Shapes\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Embedded\EmbedAsset.cpp">
+      <Filter>Shapes\Embedded</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\AnimatedSprite.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Camera\Camera.cpp">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Camera\Camera2D.cpp">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Camera\EditorCamera.cpp">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Camera\FPSCamera.cpp">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Camera\ThirdPersonCamera.cpp">
+      <Filter>Shapes\Graphics\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Environment.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Font.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\GBuffer.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Light.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Material.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Mesh.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\MeshFactory.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Model.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\ModelLoader\FBXLoader.cpp">
+      <Filter>Shapes\Graphics\ModelLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\ModelLoader\GLTFLoader.cpp">
+      <Filter>Shapes\Graphics\ModelLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\ModelLoader\OBJLoader.cpp">
+      <Filter>Shapes\Graphics\ModelLoader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\BufferLayout.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\CommandBuffer.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\DescriptorSet.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\Framebuffer.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\GraphicsContext.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\IMGUIRenderer.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\IndexBuffer.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\Pipeline.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\RenderDevice.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\RenderDoc.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\RenderPass.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\Renderer.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\Shader.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\SwapChain.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\Texture.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\UniformBuffer.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\RHI\VertexBuffer.cpp">
+      <Filter>Shapes\Graphics\RHI</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Renderable2D.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Renderers\DebugRenderer.cpp">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Renderers\GridRenderer.cpp">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Renderers\IRenderer.cpp">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Renderers\SceneRenderer.cpp">
+      <Filter>Shapes\Graphics\Renderers</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Sprite.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Graphics\Terrain.cpp">
+      <Filter>Shapes\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\ImGui\ImGuiManager.cpp">
+      <Filter>Shapes\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\ImGui\ImGuiUtilities.cpp">
+      <Filter>Shapes\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\BoundingBox.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\BoundingSphere.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\Frustum.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\Maths.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\MathsUtilities.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\Plane.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\Random.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\Ray.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\Rect.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Maths\Transform.cpp">
+      <Filter>Shapes\Maths</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\B2PhysicsEngine\B2DebugDraw.cpp">
+      <Filter>Shapes\Physics\B2PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\B2PhysicsEngine\B2PhysicsEngine.cpp">
+      <Filter>Shapes\Physics\B2PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\B2PhysicsEngine\RigidBody2D.cpp">
+      <Filter>Shapes\Physics\B2PhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\RigidBody.cpp">
+      <Filter>Shapes\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Broadphase\BruteForceBroadphase.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Broadphase\OctreeBroadphase.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Broadphase\SortAndSweepBroadphase.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Broadphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\CapsuleCollisionShape.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\CuboidCollisionShape.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\Hull.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\HullCollisionShape.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\PyramidCollisionShape.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\CollisionShapes\SphereCollisionShape.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\CollisionShapes</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\AxisConstraint.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\DistanceConstraint.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\SpringConstraint.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Constraints\WeldConstraint.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Constraints</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Integration.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Narrowphase\CollisionDetection.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Narrowphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\Narrowphase\Manifold.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine\Narrowphase</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\RigidBody3D.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Physics\ShapesPhysicsEngine\ShapesPhysicsEngine.cpp">
+      <Filter>Shapes\Physics\ShapesPhysicsEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\GLFW\GLFWWindow.cpp">
+      <Filter>Shapes\Platform\GLFW</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\OpenAL\ALManager.cpp">
+      <Filter>Shapes\Platform\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\OpenAL\ALSound.cpp">
+      <Filter>Shapes\Platform\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\OpenAL\ALSoundNode.cpp">
+      <Filter>Shapes\Platform\OpenAL</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VK.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKBuffer.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKCommandBuffer.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKCommandPool.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKContext.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKDescriptorSet.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKDevice.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKFence.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKFramebuffer.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKFunctions.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKIMGUIRenderer.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKIndexBuffer.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKPipeline.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKRenderDevice.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKRenderPass.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKRenderer.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKShader.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKSwapChain.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKTexture.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKUniformBuffer.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKUtilities.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Vulkan\VKVertexBuffer.cpp">
+      <Filter>Shapes\Platform\Vulkan</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Windows\WindowsFileSystem.cpp">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Windows\WindowsOS.cpp">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Windows\WindowsPower.cpp">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Windows\WindowsTimer.cpp">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Windows\WindowsUtilities.cpp">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Windows\WindowsVulkan.cpp">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Shapes\Platform\Windows</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\Component\AIComponent.cpp">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\Component\ModelComponent.cpp">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\Component\RigidBody2DComponent.cpp">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\Component\RigidBody3DComponent.cpp">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\Component\SoundComponent.cpp">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\Component\TextureMatrixComponent.cpp">
+      <Filter>Shapes\Scene\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\EntityFactory.cpp">
+      <Filter>Shapes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\EntityManager.cpp">
+      <Filter>Shapes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\Scene.cpp">
+      <Filter>Shapes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\SceneGraph.cpp">
+      <Filter>Shapes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scene\SceneManager.cpp">
+      <Filter>Shapes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scripting\Lua\ImGuiLua.cpp">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scripting\Lua\LuaManager.cpp">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scripting\Lua\LuaScriptComponent.cpp">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scripting\Lua\MathsLua.cpp">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Scripting\Lua\PhysicsLua.cpp">
+      <Filter>Shapes\Scripting\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Utilities\ExternalBuild.cpp">
+      <Filter>Shapes\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Utilities\IniFile.cpp">
+      <Filter>Shapes\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Utilities\LoadImage.cpp">
+      <Filter>Shapes\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Utilities\TimeStep.cpp">
+      <Filter>Shapes\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Shapes\Utilities\Timer.cpp">
+      <Filter>Shapes\Utilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
