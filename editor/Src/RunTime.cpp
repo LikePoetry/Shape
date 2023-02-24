@@ -28,12 +28,8 @@ public:
     void Init() override
     {
         std::vector<std::string> projectLocations = {
-            "ExampleProject/Example.lmproj",
-            "/Users/jmorton/dev/Shapes/ExampleProject/Example.lmproj",
             "../ExampleProject/Example.lmproj",
-            OS::Instance()->GetExecutablePath() + "/ExampleProject/Example.lmproj",
-            OS::Instance()->GetExecutablePath() + "/../ExampleProject/Example.lmproj",
-            OS::Instance()->GetExecutablePath() + "/../../ExampleProject/Example.lmproj"
+            //OS::Instance()->GetExecutablePath() + "/ExampleProject/Example.lmproj",
         };
 
         bool fileFound = false;
