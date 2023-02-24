@@ -234,6 +234,7 @@ project "Editor"
 		"freetype",
 		"box2d",
 		"lua",
+		"spdlog",
     }
 
 	defines
@@ -241,6 +242,7 @@ project "Editor"
 		"IMGUI_USER_CONFIG=\"../../Shapes/Src/Shapes/ImGui/ImConfig.h\"",
 		"GLM_FORCE_INTRINSICS",
 		"GLM_FORCE_DEPTH_ZERO_TO_ONE",
+		"SPDLOG_COMPILED_LIB",
 		"SHAPES_ENGINE",
 		"SHAPES_PLATFORM_WINDOWS",
 		"SHAPES_RENDER_API_VULKAN",
@@ -263,6 +265,18 @@ filter "system:windows"
 		{
 			"WIN32_LEAN_AND_MEAN",
 		}
+
+		libdirs
+		{
+			"Shapes/External/OpenAL/libs/Win32"
+		}
+
+		links
+		{
+			"OpenAL32"
+		}
+
+		postbuildcommands { "xcopy /Y /C \"..\\Shapes\\External\\OpenAL\\libs\\Win32\\OpenAL32.dll\" \"$(OutDir)\"" } 
 
 	disablewarnings { 4307 }
 filter "configurations:Debug"

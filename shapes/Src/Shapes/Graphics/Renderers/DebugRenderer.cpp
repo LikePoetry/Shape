@@ -18,7 +18,6 @@
 #include "Scene/Scene.h"
 #include "Core/Application.h"
 #include "SceneRenderer.h"
-#include "Platform/OpenGL/GLDescriptorSet.h"
 #include "Graphics/Renderable2D.h"
 #include "Graphics/Camera/Camera.h"
 #include "Maths/Transform.h"

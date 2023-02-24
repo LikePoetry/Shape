@@ -39,7 +39,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4307;%(DisableSpecificWarnings)</DisableSpecificWarnings>
-      <PreprocessorDefinitions>IMGUI_USER_CONFIG="../../Shapes/Src/Shapes/ImGui/ImConfig.h";GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;SHAPES_ENGINE;SHAPES_PLATFORM_WINDOWS;SHAPES_RENDER_API_VULKAN;VK_USE_PLATFORM_WIN32_KHR;USE_VMA_ALLOCATOR;WIN32_LEAN_AND_MEAN;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>IMGUI_USER_CONFIG="../../Shapes/Src/Shapes/ImGui/ImConfig.h";GLM_FORCE_INTRINSICS;GLM_FORCE_DEPTH_ZERO_TO_ONE;SPDLOG_COMPILED_LIB;SHAPES_ENGINE;SHAPES_PLATFORM_WINDOWS;SHAPES_RENDER_API_VULKAN;VK_USE_PLATFORM_WIN32_KHR;USE_VMA_ALLOCATOR;WIN32_LEAN_AND_MEAN;TRACY_ENABLE;TRACY_ON_DEMAND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>..\Shapes\Src\Shapes;..\Shapes\Src;..\Shapes\External\spdlog\include;..\Shapes\External;..\Shapes\External\glm;..\Shapes\External\glfw\include;..\Shapes\External\imgui;..\Shapes\External\vulkan;..\Shapes\External\stb;..\Shapes\External\vulkan\SPIRV-Cross;..\Shapes\External\msdf-atlas-gen\msdfgen;..\Shapes\External\msdf-atlas-gen\msdf-atlas-gen;..\Shapes\External\freetype\include;..\Shapes\External\cereal\include;..\Shapes\External\box2d\include;..\Shapes\External\lua\src;..\Shapes\External\OpenAL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
@@ -51,7 +51,12 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>OpenAL32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\Shapes\External\OpenAL\libs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y /C "..\Shapes\External\OpenAL\libs\Win32\OpenAL32.dll" "$(OutDir)"</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Src\RunTime.cpp">
@@ -85,6 +90,9 @@
     </ProjectReference>
     <ProjectReference Include="..\Shapes\External\lua\lua.vcxproj">
       <Project>{C78D880B-3397-887C-BC12-9F7C281B947C}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\Shapes\External\spdlog\spdlog.vcxproj">
+      <Project>{8EAD431C-7A4F-6EF2-630A-82464F4BF542}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
