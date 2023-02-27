@@ -50,7 +50,6 @@ namespace Shapes
     class SHAPES_EXPORT Application
     {
         friend class Editor;
-        friend class Runtime;
 
     public:
         Application();

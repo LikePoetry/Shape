@@ -59,9 +59,11 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Src\Editor.cpp" />
     <ClCompile Include="Src\RunTime.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
+    <ClCompile Include="Src\SceneViewPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Shapes\Shapes.vcxproj">
@@ -94,6 +96,11 @@
     <ProjectReference Include="..\Shapes\External\spdlog\spdlog.vcxproj">
       <Project>{8EAD431C-7A4F-6EF2-630A-82464F4BF542}</Project>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Editor.h" />
+    <ClInclude Include="Src\EditorPanel.h" />
+    <ClInclude Include="Src\SceneViewPanel.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
