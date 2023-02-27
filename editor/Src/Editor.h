@@ -19,6 +19,10 @@ namespace Shapes
 
 		void OnUpdate(const TimeStep& ts) override;
 
+		void DrawMenuBar();
+		void BeginDockSpace(bool gameFullScreen);
+		void EndDockSpace();
+
 	protected:
 		NONCOPYABLE(Editor)
 
