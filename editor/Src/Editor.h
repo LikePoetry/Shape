@@ -22,6 +22,7 @@ namespace Shapes
 		void Init() override;
 		void OnImGui() override;
 		void OnRender() override;
+		void OnEvent(Event& e) override;
 
 		void OnUpdate(const TimeStep& ts) override;
 		void OnNewScene(Scene* scene) override;
@@ -80,17 +81,27 @@ namespace Shapes
 		};
 
 		EditorSettings& GetSettings() { return m_Settings; }
+		void SetSceneViewActive(bool active) { m_SceneViewActive = active; }
+
 	protected:
 		NONCOPYABLE(Editor)
+			
+		uint32_t m_ImGuizmoOperation = 14463;
+		entt::entity m_SelectedEntity;
+
+		bool m_SceneViewActive = false;
 
 		std::vector<SharedPtr<EditorPanel>> m_Panels;
 		EditorSettings m_Settings;		//编辑器的相关设置操作
 
 
 		Camera* m_CurrentCamera = nullptr;
+		EditorCameraController m_EditorCameraController;
+
 		Maths::Transform m_EditorCameraTransform;
 		SharedPtr<Camera> m_EditorCamera = nullptr;
 
+		SharedPtr<Graphics::Texture2D> m_PreviewTexture;
 		SharedPtr<Graphics::GridRenderer> m_GridRenderer; //绘制网格线
 		
 		static Editor* s_Editor;

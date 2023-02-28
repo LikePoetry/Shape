@@ -1,11 +1,17 @@
 #include "Editor.h"
 
 #include "Shapes/Core/OS/FileSystem.h"
+#include "Shapes/Core/OS/OS.h"
 #include "Shapes/Core/StringUtilities.h"
+#include "Shapes/Core/OS/Input.h"
 #include "Shapes/ImGui/ImGuiUtilities.h"
 #include "Shapes/Scene/Scene.h"
 #include "Shapes/Scene/Entity.h"
 #include "Shapes/Scene/Component/ModelComponent.h"
+#include "Shapes/Physics/B2PhysicsEngine/B2PhysicsEngine.h"
+#include "Shapes/Physics/ShapesPhysicsEngine/ShapesPhysicsEngine.h"
+
+
 
 #include "SceneViewPanel.h"
 
@@ -15,6 +21,7 @@
 
 #include <imgui/imgui.h>
 #include <imgui/imgui_internal.h>
+#include <imgui/Plugins/ImGuizmo.h>
 
 namespace Shapes
 {
@@ -33,7 +40,7 @@ namespace Shapes
 	{
 		Application::Init();
 		Application::SetEditorState(EditorState::Preview);
-
+		Application::Get().GetWindow()->SetEventCallback(BIND_EVENT_FN(Editor::OnEvent));
 
 		m_EditorCamera = CreateSharedPtr<Camera>(-20.0f,
 			-40.0f,
@@ -56,8 +63,21 @@ namespace Shapes
 		// 创建网格线绘制类，用于后续网格线的绘制
 		CreateGridRenderer();
 
+		// 不显示 Imgui Demo window!
+		m_Settings.m_ShowImGuiDemo = false;
 
+		m_SelectedEntity = entt::null;
+		m_PreviewTexture = nullptr;
 
+		Application::Get().GetSystem<ShapesPhysicsEngine>()->SetDebugDrawFlags(m_Settings.m_Physics3DDebugFlags);
+		Application::Get().GetSystem<B2PhysicsEngine>()->SetDebugDrawFlags(m_Settings.m_Physics2DDebugFlags);
+
+		ImGuiUtilities::SetTheme(m_Settings.m_Theme);
+		OS::Instance()->SetTitleBarColour(ImGui::GetStyle().Colors[ImGuiCol_MenuBarBg]);
+		Application::Get().GetWindow()->SetWindowTitle("Lumos Editor");
+
+		ImGuizmo::SetGizmoSizeClipSpace(m_Settings.m_ImGuizmoScale);
+		// ImGuizmo::SetGizmoSizeScale(Application::Get().GetWindowDPI());
 	}
 
 	void Editor::OnImGui()
@@ -96,8 +116,40 @@ namespace Shapes
 		}
 	}
 
+	void Editor::OnEvent(Event& e)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		//EventDispatcher dispatcher(e);
+		//dispatcher.Dispatch<WindowFileEvent>(BIND_EVENT_FN(Editor::OnFileDrop));
+		// Block events here
+
+		Application::OnEvent(e);
+	}
+
 	void Editor::OnUpdate(const TimeStep& ts)
 	{
+		// 处理输入事件
+		SHAPES_PROFILE_FUNCTION();
+
+
+		if(m_SceneViewActive)
+		{
+			auto& registry = Application::Get().GetSceneManager()->GetCurrentScene()->GetRegistry();
+
+			{
+				// 场景中操作鼠标，场景视角发生改变
+				const glm::vec2 mousePos = Input::Get().GetMousePosition();
+
+				m_EditorCameraController.HandleMouse(m_EditorCameraTransform, (float)ts.GetSeconds(), mousePos.x, mousePos.y);
+				m_EditorCameraController.HandleKeyboard(m_EditorCameraTransform, (float)ts.GetSeconds());
+
+			}
+		}
+		else 
+		{
+			m_EditorCameraController.StopMovement();
+		}
+
 		Application::OnUpdate(ts);
 	}
 

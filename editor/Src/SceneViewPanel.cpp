@@ -108,6 +108,19 @@ namespace Shapes
 		// 将纹理数据取出绘制
 		ImGui::Image(m_GameViewTexture.get(), glm::vec2(sceneViewSize.x, sceneViewSize.y));
 
+		// 确定鼠标是否悬浮在Sceneview上操作 sceneview
+		auto windowSize = ImGui::GetWindowSize();
+		ImVec2 minBound = sceneViewPosition;
+
+		ImVec2 maxBound = { minBound.x + windowSize.x, minBound.y + windowSize.y };
+		bool updateCamera = ImGui::IsMouseHoveringRect(minBound, maxBound); // || Input::Get().GetMouseMode() == MouseMode::Captured;
+
+		app.SetSceneActive(ImGui::IsWindowFocused() && !ImGuizmo::IsUsing() && updateCamera);
+
+		ImGuizmo::SetRect(sceneViewPosition.x, sceneViewPosition.y, sceneViewSize.x, sceneViewSize.y);
+
+		m_Editor->SetSceneViewActive(updateCamera);
+
 
 		ImGui::End();
 	}
