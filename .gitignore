@@ -33,11 +33,5 @@
 /.vs
 /bin
 /bin-int
-/shape/External/obj
-/shape/External/bin
-/shape/External/freetype/bin
-/shape/External/freetype/bin
-/shape/External/freetype/obj
-/shape/External/msdf-atlas-gen/obj
-/shape/External/ModelLoaders/meshoptimizer/bin
-/shape/External/ModelLoaders/meshoptimizer/obj
+/shape/External
+/shapes/External
