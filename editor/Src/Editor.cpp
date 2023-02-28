@@ -3,8 +3,14 @@
 #include "Shapes/Core/OS/FileSystem.h"
 #include "Shapes/Core/StringUtilities.h"
 #include "Shapes/ImGui/ImGuiUtilities.h"
+#include "Shapes/Scene/Scene.h"
+#include "Shapes/Scene/Entity.h"
+#include "Shapes/Scene/Component/ModelComponent.h"
 
 #include "SceneViewPanel.h"
+
+#include <Shapes/Graphics/Renderers/DebugRenderer.h>
+
 
 
 #include <imgui/imgui.h>
@@ -28,11 +34,30 @@ namespace Shapes
 		Application::Init();
 		Application::SetEditorState(EditorState::Preview);
 
+
+		m_EditorCamera = CreateSharedPtr<Camera>(-20.0f,
+			-40.0f,
+			glm::vec3(-31.0f, 12.0f, 51.0f),
+			60.0f,
+			m_Settings.m_CameraNear,
+			m_Settings.m_CameraFar,
+			(float)Application::Get().GetWindowSize().x / (float)Application::Get().GetWindowSize().y);
+		m_CurrentCamera = m_EditorCamera.get();
+
+		glm::mat4 viewMat = glm::inverse(glm::lookAt(glm::vec3(-31.0f, 12.0f, 51.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f)));
+		m_EditorCameraTransform.SetLocalTransform(viewMat);
+
 		// 添加视图页面
 		m_Panels.emplace_back(CreateSharedPtr<SceneViewPanel>());
 
 		for (auto& panel : m_Panels)
 			panel->SetEditor(this);
+
+		// 创建网格线绘制类，用于后续网格线的绘制
+		CreateGridRenderer();
+
+
+
 	}
 
 	void Editor::OnImGui()
@@ -51,6 +76,10 @@ namespace Shapes
 		bool showDemo = true;
 		ImGui::ShowDemoWindow(&showDemo);
 
+
+		if (Application::Get().GetEditorState() == EditorState::Preview)
+			Application::Get().GetSceneManager()->GetCurrentScene()->UpdateSceneGraph();
+
 		EndDockSpace();
 
 		Application::OnImGui();
@@ -59,11 +88,33 @@ namespace Shapes
 	void Editor::OnRender()
 	{
 		Application::OnRender();
+
+		if (m_Settings.m_ShowGrid)
+		{
+			//绘制 3D 空间中的网格线
+			Draw3DGrid();
+		}
 	}
 
 	void Editor::OnUpdate(const TimeStep& ts)
 	{
 		Application::OnUpdate(ts);
+	}
+
+	void Editor::OnNewScene(Scene* scene)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		Application::OnNewScene(scene);
+
+		for (auto panel : m_Panels)
+		{
+			panel->OnNewScene(scene);
+		}
+
+		// TODO 测试代码，在场景中加入一个CUBE
+		auto scene1 = Application::Get().GetSceneManager()->GetCurrentScene();
+		auto entity = scene1->CreateEntity("Cube");
+		entity.AddComponent<Graphics::ModelComponent>(Graphics::PrimitiveType::Cube);
 	}
 
 
@@ -127,6 +178,31 @@ namespace Shapes
 		static std::vector<SharedPtr<EditorPanel>> hiddenPanels;
 
 		//全屏模式下的设置
+		if (m_Settings.m_FullScreenSceneView != gameFullScreen)
+		{
+			m_Settings.m_FullScreenSceneView = gameFullScreen;
+
+			if (m_Settings.m_FullScreenSceneView)
+			{
+				for (auto panel : m_Panels)
+				{
+					if (panel->GetSimpleName() != "Game" && panel->Active())
+					{
+						panel->SetActive(false);
+						hiddenPanels.push_back(panel);
+					}
+				}
+			}
+			else
+			{
+				for (auto panel : hiddenPanels)
+				{
+					panel->SetActive(true);
+				}
+
+				hiddenPanels.clear();
+			}
+		}
 
 		if (!ImGui::DockBuilderGetNode(DockspaceID))
 		{
@@ -184,4 +260,40 @@ namespace Shapes
 		ImGui::End();
 	}
 
+	/// <summary>
+	/// 绘制3D 空间中的网格线
+	/// </summary>
+	void Editor::Draw3DGrid()
+	{
+		SHAPES_PROFILE_FUNCTION();
+
+		if (!m_GridRenderer || !Application::Get().GetSceneManager()->GetCurrentScene())
+		{
+			return;
+		}
+
+		DebugRenderer::DrawHairLine(glm::vec3(-5000.0f, 0.0f, 0.0f), glm::vec3(5000.0f, 0.0f, 0.0f), glm::vec4(1.0f, 0.0f, 0.0f, 1.0f));
+		DebugRenderer::DrawHairLine(glm::vec3(0.0f, -5000.0f, 0.0f), glm::vec3(0.0f, 5000.0f, 0.0f), glm::vec4(0.0f, 1.0f, 0.0f, 1.0f));
+		DebugRenderer::DrawHairLine(glm::vec3(0.0f, 0.0f, -5000.0f), glm::vec3(0.0f, 0.0f, 5000.0f), glm::vec4(0.0f, 0.0f, 1.0f, 1.0f));
+
+		m_GridRenderer->OnImGui();
+
+		m_GridRenderer->BeginScene(Application::Get().GetSceneManager()->GetCurrentScene(), m_EditorCamera.get(), &m_EditorCameraTransform);
+		m_GridRenderer->RenderScene();
+	}
+
+	void Editor::CreateGridRenderer()
+	{
+		SHAPES_PROFILE_FUNCTION();
+		if (!m_GridRenderer)
+			m_GridRenderer = CreateSharedPtr<Graphics::GridRenderer>(uint32_t(Application::Get().m_SceneViewWidth), uint32_t(Application::Get().m_SceneViewHeight));
+	}
+
+	const SharedPtr<Graphics::GridRenderer>& Editor::GetGridRenderer()
+	{
+		SHAPES_PROFILE_FUNCTION();
+		if (!m_GridRenderer)
+			m_GridRenderer = CreateSharedPtr<Graphics::GridRenderer>(uint32_t(Application::Get().m_SceneViewWidth), uint32_t(Application::Get().m_SceneViewHeight));
+		return m_GridRenderer;
+	}
 }
