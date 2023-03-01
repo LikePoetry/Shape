@@ -14,6 +14,11 @@
 
 namespace Shapes
 {
+
+#define BIND_FILEBROWSER_FN(fn) [this](auto&&... args) -> decltype(auto) { \
+    return this->fn(std::forward<decltype(args)>(args)...);                \
+}
+
 	class Editor:public Application
 	{
 		friend class Application;
@@ -34,9 +39,29 @@ namespace Shapes
 		void BeginDockSpace(bool gameFullScreen);
 		void EndDockSpace();
 
+		bool IsTextFile(const std::string& filePath);
+		bool IsAudioFile(const std::string& filePath);
+		bool IsSceneFile(const std::string& filePath);
+		bool IsModelFile(const std::string& filePath);
+		bool IsTextureFile(const std::string& filePath);
+		bool IsShaderFile(const std::string& filePath);
+		bool IsFontFile(const std::string& filePath);
+
 		void Draw3DGrid();
 		void CreateGridRenderer();
 		const SharedPtr<Graphics::GridRenderer>& GetGridRenderer();
+
+		void OpenFile();
+		void EmbedFile();
+		const char* GetIconFontIcon(const std::string& fileType);
+
+		void FileOpenCallback(const std::string& filepath);
+		void FileEmbedCallback(const std::string& filepath);
+
+		FileBrowserPanel& GetFileBrowserPanel()
+		{
+			return m_FileBrowserPanel;
+		}
 
 		Maths::Transform& GetEditorCameraTransform()
 		{
@@ -97,7 +122,6 @@ namespace Shapes
 		std::vector<SharedPtr<EditorPanel>> m_Panels;
 		EditorSettings m_Settings;		//编辑器的相关设置操作
 
-
 		Camera* m_CurrentCamera = nullptr;
 		EditorCameraController m_EditorCameraController;
 
@@ -107,9 +131,13 @@ namespace Shapes
 		SharedPtr<Graphics::Texture2D> m_PreviewTexture;
 		SharedPtr<Graphics::GridRenderer> m_GridRenderer; //绘制网格线
 
+		SharedPtr<Graphics::Texture2D> m_TestTexture;
+
 		// 文件浏览工具
 		FileBrowserPanel m_FileBrowserPanel;
 		
+
+
 		static Editor* s_Editor;
 
 	};

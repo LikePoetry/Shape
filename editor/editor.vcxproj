@@ -62,13 +62,19 @@
     <ClInclude Include="Src\Editor.h" />
     <ClInclude Include="Src\EditorPanel.h" />
     <ClInclude Include="Src\FileBrowserPanel.h" />
+    <ClInclude Include="Src\ResourcePanel.h" />
     <ClInclude Include="Src\SceneViewPanel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\Editor.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>
-    <ClCompile Include="Src\FileBrowserPanel.cpp" />
+    <ClCompile Include="Src\FileBrowserPanel.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <ClCompile Include="Src\ResourcePanel.cpp">
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
     <ClCompile Include="Src\RunTime.cpp">
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
     </ClCompile>

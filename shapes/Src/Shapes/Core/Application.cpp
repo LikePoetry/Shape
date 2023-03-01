@@ -209,7 +209,7 @@ namespace Shapes
         if(FileSystem::FolderExists(m_ProjectSettings.m_EngineAssetPath + "Shaders"))
             loadEmbeddedShaders = false;
 
-        Graphics::Renderer::Init(false);
+        Graphics::Renderer::Init(loadEmbeddedShaders);
 
         if(m_ProjectSettings.Fullscreen)
             m_Window->Maximise();

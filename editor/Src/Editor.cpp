@@ -5,6 +5,7 @@
 #include "Shapes/Core/StringUtilities.h"
 #include "Shapes/Core/OS/Input.h"
 #include "Shapes/ImGui/ImGuiUtilities.h"
+#include "Shapes/ImGui/IconsMaterialDesignIcons.h"
 #include "Shapes/Scene/Scene.h"
 #include "Shapes/Scene/Entity.h"
 #include "Shapes/Scene/Component/ModelComponent.h"
@@ -14,7 +15,7 @@
 
 
 #include "SceneViewPanel.h"
-
+#include "ResourcePanel.h"
 
 #include <Shapes/Graphics/Renderers/DebugRenderer.h>
 
@@ -43,6 +44,9 @@ namespace Shapes
 		Application::SetEditorState(EditorState::Preview);
 		Application::Get().GetWindow()->SetEventCallback(BIND_EVENT_FN(Editor::OnEvent));
 
+		//TODO 默认文件路径需要修改
+		m_ProjectSettings.m_ProjectRoot = "../ExampleProject/";
+
 		m_EditorCamera = CreateSharedPtr<Camera>(-20.0f,
 			-40.0f,
 			glm::vec3(-31.0f, 12.0f, 51.0f),
@@ -57,6 +61,9 @@ namespace Shapes
 
 		// 添加视图页面
 		m_Panels.emplace_back(CreateSharedPtr<SceneViewPanel>());
+		// 资源管理试图
+		m_Panels.emplace_back(CreateSharedPtr<ResourcePanel>());
+
 
 
 		for (auto& panel : m_Panels)
@@ -76,12 +83,91 @@ namespace Shapes
 
 		ImGuiUtilities::SetTheme(m_Settings.m_Theme);
 		OS::Instance()->SetTitleBarColour(ImGui::GetStyle().Colors[ImGuiCol_MenuBarBg]);
-		Application::Get().GetWindow()->SetWindowTitle("Lumos Editor");
+		Application::Get().GetWindow()->SetWindowTitle("Shapes Editor");
 
 		ImGuizmo::SetGizmoSizeClipSpace(m_Settings.m_ImGuizmoScale);
 		// ImGuizmo::SetGizmoSizeScale(Application::Get().GetWindowDPI());
 	}
 
+#pragma region 文件类型的判断部分
+	bool Editor::IsTextFile(const std::string& filePath)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		std::string extension = StringUtilities::GetFilePathExtension(filePath);
+
+		if (extension == "txt" || extension == "glsl" || extension == "shader" || extension == "vert"
+			|| extension == "frag" || extension == "lua" || extension == "Lua")
+			return true;
+
+		return false;
+	}
+
+	bool Editor::IsFontFile(const std::string& filePath)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		std::string extension = StringUtilities::GetFilePathExtension(filePath);
+
+		if (extension == "ttf")
+			return true;
+
+		return false;
+	}
+
+	bool Editor::IsAudioFile(const std::string& filePath)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		std::string extension = StringUtilities::GetFilePathExtension(filePath);
+
+		if (extension == "ogg" || extension == "wav")
+			return true;
+
+		return false;
+	}
+
+	bool Editor::IsShaderFile(const std::string& filePath)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		std::string extension = StringUtilities::GetFilePathExtension(filePath);
+
+		if (extension == "vert" || extension == "frag" || extension == "comp")
+			return true;
+
+		return false;
+	}
+
+	bool Editor::IsSceneFile(const std::string& filePath)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		std::string extension = StringUtilities::GetFilePathExtension(filePath);
+
+		if (extension == "lsn")
+			return true;
+
+		return false;
+	}
+
+	bool Editor::IsModelFile(const std::string& filePath)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		std::string extension = StringUtilities::GetFilePathExtension(filePath);
+
+		if (extension == "obj" || extension == "gltf" || extension == "glb" || extension == "fbx" || extension == "FBX")
+			return true;
+
+		return false;
+	}
+
+	bool Editor::IsTextureFile(const std::string& filePath)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		std::string extension = StringUtilities::GetFilePathExtension(filePath);
+		extension = StringUtilities::ToLower(extension);
+		if (extension == "png" || extension == "tga" || extension == "jpg")
+			return true;
+
+		return false;
+	}
+#pragma endregion
 	void Editor::OnImGui()
 	{
 		//非全屏模式
@@ -89,6 +175,10 @@ namespace Shapes
 
 
 		ImGui::Begin("Metrics");
+
+
+		ImGui::Image(m_TestTexture.get(), glm::vec2(200, 200));
+
 		ImGui::Text("FPS : %.2f", (float)Shapes::Engine::Get().Statistics().FramesPerSecond);
 		ImGui::End();
 
@@ -135,7 +225,7 @@ namespace Shapes
 		SHAPES_PROFILE_FUNCTION();
 
 
-		if(m_SceneViewActive)
+		if (m_SceneViewActive)
 		{
 			auto& registry = Application::Get().GetSceneManager()->GetCurrentScene()->GetRegistry();
 
@@ -148,7 +238,7 @@ namespace Shapes
 
 			}
 		}
-		else 
+		else
 		{
 			m_EditorCameraController.StopMovement();
 		}
@@ -170,6 +260,9 @@ namespace Shapes
 		auto scene1 = Application::Get().GetSceneManager()->GetCurrentScene();
 		auto entity = scene1->CreateEntity("Cube");
 		entity.AddComponent<Graphics::ModelComponent>(Graphics::PrimitiveType::Cube);
+
+		m_TestTexture = SharedPtr<Graphics::Texture2D>(Graphics::Texture2D::CreateFromFile("../ExampleProject/Assets/Meshes/Scene/textures/canopy_diffuse.png", "../ExampleProject/Assets/Meshes/Scene/textures/canopy_diffuse.png"));
+
 	}
 
 
@@ -350,5 +443,70 @@ namespace Shapes
 		if (!m_GridRenderer)
 			m_GridRenderer = CreateSharedPtr<Graphics::GridRenderer>(uint32_t(Application::Get().m_SceneViewWidth), uint32_t(Application::Get().m_SceneViewHeight));
 		return m_GridRenderer;
+	}
+
+	/// <summary>
+	/// 打开文件
+	/// </summary>
+	void Editor::OpenFile()
+	{
+		SHAPES_PROFILE_FUNCTION();
+
+		// Set filePath to working directory;
+		auto path = OS::Instance()->GetExecutablePath();
+		std::filesystem::current_path(path);
+		m_FileBrowserPanel.SetCallback(BIND_FILEBROWSER_FN(Editor::FileOpenCallback));
+		m_FileBrowserPanel.Open();
+	}
+
+	/// <summary>
+	/// 文件嵌入
+	/// </summary>
+	void Editor::EmbedFile()
+	{
+		m_FileBrowserPanel.SetCallback(BIND_FILEBROWSER_FN(Editor::FileEmbedCallback));
+		m_FileBrowserPanel.Open();
+	}
+
+
+	const char* Editor::GetIconFontIcon(const std::string& filePath)
+	{
+		SHAPES_PROFILE_FUNCTION();
+		if (IsTextFile(filePath))
+		{
+			return ICON_MDI_FILE_XML;
+		}
+		else if (IsModelFile(filePath))
+		{
+			return ICON_MDI_SHAPE;
+		}
+		else if (IsAudioFile(filePath))
+		{
+			return ICON_MDI_FILE_MUSIC;
+		}
+		else if (IsTextureFile(filePath))
+		{
+			return ICON_MDI_FILE_IMAGE;
+		}
+
+		return ICON_MDI_FILE;
+	}
+
+	/// <summary>
+	/// 文件打开处理
+	/// </summary>
+	/// <param name="filePath"></param>
+	void Editor::FileOpenCallback(const std::string& filePath)
+	{
+
+	}
+
+	/// <summary>
+	/// 文件嵌入处理
+	/// </summary>
+	/// <param name="filePath"></param>
+	void Editor::FileEmbedCallback(const std::string& filePath)
+	{
+
 	}
 }
