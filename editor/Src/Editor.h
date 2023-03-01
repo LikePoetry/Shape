@@ -1,6 +1,7 @@
 #pragma once
 
 #include "EditorPanel.h"
+
 #include <Shapes/Core/Application.h>
 #include <Shapes/Maths/Transform.h>
 #include <Shapes/Utilities/IniFile.h>
@@ -8,6 +9,8 @@
 #include <Shapes/Graphics/Camera/Camera.h>
 #include <Shapes/ImGui/ImGuiUtilities.h>
 #include <Shapes/Graphics/Renderers/GridRenderer.h>
+
+#include "FileBrowserPanel.h"
 
 namespace Shapes
 {
@@ -103,6 +106,9 @@ namespace Shapes
 
 		SharedPtr<Graphics::Texture2D> m_PreviewTexture;
 		SharedPtr<Graphics::GridRenderer> m_GridRenderer; //绘制网格线
+
+		// 文件浏览工具
+		FileBrowserPanel m_FileBrowserPanel;
 		
 		static Editor* s_Editor;
 

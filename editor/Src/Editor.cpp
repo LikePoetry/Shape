@@ -15,6 +15,7 @@
 
 #include "SceneViewPanel.h"
 
+
 #include <Shapes/Graphics/Renderers/DebugRenderer.h>
 
 
@@ -57,6 +58,7 @@ namespace Shapes
 		// ÃÌº” ”Õº“≥√Ê
 		m_Panels.emplace_back(CreateSharedPtr<SceneViewPanel>());
 
+
 		for (auto& panel : m_Panels)
 			panel->SetEditor(this);
 
@@ -96,6 +98,7 @@ namespace Shapes
 		bool showDemo = true;
 		ImGui::ShowDemoWindow(&showDemo);
 
+		m_FileBrowserPanel.OnImGui();
 
 		if (Application::Get().GetEditorState() == EditorState::Preview)
 			Application::Get().GetSceneManager()->GetCurrentScene()->UpdateSceneGraph();
