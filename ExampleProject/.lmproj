@@ -1,0 +1,17 @@
+{
+    "value0": {
+        "Project Version": 8,
+        "RenderAPI": 1,
+        "Fullscreen": false,
+        "VSync": true,
+        "ShowConsole": false,
+        "Title": "App",
+        "Scenes": [
+            "//Scenes/Empty Scene"
+        ],
+        "SceneIndex": 0,
+        "Borderless": false,
+        "EngineAssetPath": "D:/Github/Shape/bin/Debug-windows-x86_64/Editor/../../Shapes/Assets/",
+        "GPUIndex": -1
+    }
+}

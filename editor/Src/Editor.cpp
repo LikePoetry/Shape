@@ -8,9 +8,11 @@
 #include "Shapes/ImGui/IconsMaterialDesignIcons.h"
 #include "Shapes/Scene/Scene.h"
 #include "Shapes/Scene/Entity.h"
+#include "Shapes/Scene/EntityManager.h"
 #include "Shapes/Scene/Component/ModelComponent.h"
 #include "Shapes/Physics/B2PhysicsEngine/B2PhysicsEngine.h"
 #include "Shapes/Physics/ShapesPhysicsEngine/ShapesPhysicsEngine.h"
+#include <Shapes/Graphics/Light.h>
 
 
 
@@ -257,10 +259,14 @@ namespace Shapes
 		}
 
 		// TODO 测试代码，在场景中加入一个CUBE
-		auto scene1 = Application::Get().GetSceneManager()->GetCurrentScene();
-		auto entity = scene1->CreateEntity("Cube");
-		entity.AddComponent<Graphics::ModelComponent>(Graphics::PrimitiveType::Cube);
+		//auto scene1 = Application::Get().GetSceneManager()->GetCurrentScene();
+		//auto entity = scene1->CreateEntity("Cube");
+		//entity.AddComponent<Graphics::ModelComponent>(Graphics::PrimitiveType::Cube);
+		// TODO 测试代码，在场景中加入一个光照模型
+		auto lightEntity = Application::Get().GetSceneManager()->GetCurrentScene()->CreateEntity("Light");
+		lightEntity.AddComponent<Graphics::Light>();
 
+		// TODO 测试样张代码，尝试将本地图片渲染到 ImGui;
 		m_TestTexture = SharedPtr<Graphics::Texture2D>(Graphics::Texture2D::CreateFromFile("../ExampleProject/Assets/Meshes/Scene/textures/canopy_diffuse.png", "../ExampleProject/Assets/Meshes/Scene/textures/canopy_diffuse.png"));
 
 	}
@@ -498,7 +504,14 @@ namespace Shapes
 	/// <param name="filePath"></param>
 	void Editor::FileOpenCallback(const std::string& filePath)
 	{
-
+		SHAPES_PROFILE_FUNCTION();
+		// 模型文件的处理,打开模型文件
+		if(IsModelFile(filePath))
+		{
+			Entity modelEntity= Application::Get().GetSceneManager()->GetCurrentScene()->GetEntityManager()->Create();
+			modelEntity.AddComponent<Graphics::ModelComponent>(filePath);
+			m_SelectedEntity = modelEntity.GetHandle();
+		}
 	}
 
 	/// <summary>
